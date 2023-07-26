@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'redis' => [
+    /*'redis' => [
 
         'client' => env('REDIS_CLIENT', 'phpredis'),
 
@@ -116,6 +116,6 @@ return [
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
 
-    ],
+    ],*/
 
 ];
