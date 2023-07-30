@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+/**
+ *  Sezione pubblica del sito
+**/ 
+Route::get('/', [PublicController::class, 'showHome'])
+    ->name('home');
+
+Route::get('/home', [PublicController::class, 'showHome'])
+    ->name('home');
+
+Route::get("/faq", [PublicController::class, 'showFAQ'])
+    ->name("faq");
+
+Route::get("/contatti", [PublicController::class, 'showContatti'])
+    ->name('contatti');
