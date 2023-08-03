@@ -118,15 +118,15 @@ class DatabaseSeeder extends Seeder
         */
         DB::table('utente')->insert([
             ['nome' => 'Giacomo', 'cognome' => 'Verdi', 'email' => 'clie@clie.it', 'username' => 'clieclie',
-                'password' => Hash::make('clieclie'), 'role' => 'user','created_at' => date("Y-m-d H:i:s"),
+                'password' => Hash::make('clieclie'), 'ruolo' => 'user','created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
-            ['name' => 'Marco', 'surname' => 'Bianchi', 'email' => 'staff@staff.it', 'username' => 'staffstaff',
-                'password' => Hash::make('staffstaff'), 'role' => 'staff', 'created_at' => date("Y-m-d H:i:s"),
+            ['nome' => 'Marco', 'cognome' => 'Bianchi', 'email' => 'staff@staff.it', 'username' => 'staffstaff',
+                'password' => Hash::make('staffstaff'), 'ruolo' => 'staff', 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
-            ['name' => 'Mario', 'surname' => 'Rossi', 'email' => 'mario@rossi.it', 'username' => 'adminadmin',
-                'password' => Hash::make('adminadmin'), 'role' => 'admin', 'created_at' => date("Y-m-d H:i:s"),
+            ['nome' => 'Mario', 'cognome' => 'Rossi', 'email' => 'mario@rossi.it', 'username' => 'adminadmin',
+                'password' => Hash::make('adminadmin'), 'ruolo' => 'admin', 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
         ]);
