@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Faq extends Model
+class Categoria extends Model
 {
     use HasFactory;
 
-    protected $table = 'faq';
-    protected $primaryKey = 'faqId';
+    protected $table = 'categoria';
+    protected $primaryKey = 'catId';
     public $incrementing = true;
     public $timestamps = false;
-    protected $fillable = ['domanda', 'risposta'];
 }

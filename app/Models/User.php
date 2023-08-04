@@ -15,6 +15,7 @@ class User extends Authenticatable
     protected $table = 'utente';
     protected $primaryKey = 'username';
     public $incrementing = false;
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -49,4 +50,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Funzione che serve a verificare se l'utente ha 
+     * un determinato ruolo specificato come parametro
+     */
+    public function hasRole($ruolo) {
+        $ruolo = (array)$ruolo;
+        return in_array($this->ruolo, $ruolo);
+    }
 }
