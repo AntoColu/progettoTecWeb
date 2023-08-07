@@ -48,70 +48,96 @@ class DatabaseSeeder extends Seeder
         *   Tabella dedicata ai modelli di auto
         */
         DB::table('auto')->insert([
-            ['nome' => 'Fiat 500', 'catId' => 1,
+            ['marca' => 'Fiat', 'modello' => '500', 'targa' => '',
+                'anno' => '2018', 'nPosti' => 4,
+                'allestimento' => '', 'catId' => 1,
                 'descrizione' => '4 posti; 3 porte; Cambio manuale; Motore: 1200 cc 70 CV; Carburante: Benzina',
                 'prezzo' => 219.34, 'discountPerc' => 12, 'discounted' => 0, 
-                'image' => fread(fopen("./public/images/auto/fiat500.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/fiat500.png", 'rb'), filesize("./public/images/piccole.png"))
             ],
-            ['nome' => 'Fiat Panda', 'catId' => 1,
+            ['marca' => 'Fiat', 'modello' => 'Panda', 'targa' => '',
+                'anno' => '2019', 'nPosti' => 4,
+                'allestimento' => '', 'catId' => 1,
                 'descrizione' => '4 posti; 4 porte; Cambio manuale; Motore: 1200 cc 70 CV; Carburante: Benzina',
                 'prezzo' => 86.37, 'discountPerc' => 15, 'discounted' => 1, 
-                'image' => fread(fopen("./public/images/auto/fiatPanda.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/fiatPanda.png", 'rb'), filesize("./public/images/piccole.png"))
             ],
-            ['nome' => 'Peugeot 208', 'catId' => 1,
+            ['marca' => 'Peugeot', 'modello' => '208', 'targa' => '',
+                'anno' => '2021', 'nPosti' => 5,
+                'allestimento' => '', 'catId' => 1,
                 'descrizione' => '5 posti; 4 porte; Cambio manuale; Motore: 1500 cc 102 CV; Carburante: Diesel',
                 'prezzo' => 1230.49, 'discountPerc' => 25, 'discounted' => 1, 
-                'image' => fread(fopen("./public/images/auto/peugeot208.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/peugeot208.png", 'rb'), filesize("./public/images/piccole.png"))
             ],
-            ['nome' => 'Toyota Aygo', 'catId' => 1,
+            ['marca' => 'Toyota', 'modello' => 'Aygo', 'targa' => '',
+                'anno' => '2021', 'nPosti' => 5, 
+                'allestimento' => '', 'catId' => 1,
                 'descrizione' => '5 posti; 4 porte; Cambio manuale; Motore: 1000 cc 72 CV; Carburante: Benzina',
                 'prezzo' => 455.37, 'discountPerc' => 17, 'discounted' => 1, 
-                'image' => fread(fopen("./public/images/auto/toyotaAygo.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/toyotaAygo.png", 'rb'), filesize("./public/images/piccole.png"))
             ],
-            ['nome' => 'Fiat Tipo', 'catId' => 2,
+            ['marca' => 'Fiat', 'modello' => 'Tipo', 'targa' => '',
+                'anno' => '2022', 'nPosti' => 5, 
+                'allestimento' => '', 'catId' => 2,
                 'descrizione' => '5 posti; 5 porte; Cambio manuale; Motore: 1600 cc 131 CV; Carburante: Diesel',
                 'prezzo' => 1889.67, 'discountPerc' => 15, 'discounted' => 1, 
-                'image' => fread(fopen("./public/images/auto/fiatTipo.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/fiatTipo.png", 'rb'), filesize("./public/images/piccole.png"))
             ],
-            ['nome' => 'Audi A3 Sportback', 'catId' => 2,
+            ['marca' => 'Audi', 'modello' => 'A3 Sportback', 'targa' => '',
+                'anno' => '2019', 'nPosti' => 5, 
+                'allestimento' => '', 'catId' => 2,
                 'descrizione' => '5 posti; 5 porte; Cambio manuale; Motore: 1900 cc 116 CV; Carburante: Diesel',
                 'prezzo' => 259.99, 'discountPerc' => 17, 'discounted' => 0, 
-                'image' => fread(fopen("./public/images/auto/audiA3.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/audiA3.png", 'rb'), filesize("./public/images/piccole.png"))
             ],
-            ['nome' => 'Volkswagen Golf', 'catId' => 2,
+            ['marca' => 'Volkswagen', 'modello' => 'Golf', 'targa' => '',
+                'anno' => '2017', 'nPosti' => 5, 
+                'allestimento' => '', 'catId' => 2,
                 'descrizione' => '5 posti; 5 porte; Cambio manuale; Motore: 1000 cc 110 CV; Carburante: Benzina',
                 'prezzo' => 998.99, 'discountPerc' => 23, 'discounted' => 1, 
-                'image' => fread(fopen("./public/images/auto/volkswagenGolf.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/volkswagenGolf.png", 'rb'), filesize("./public/images/piccole.png"))
             ],
-            ['nome' => 'Audi A4', 'catId' => 3,
+            ['marca' => 'Audi', 'modello' => 'A4', 'targa' => '',
+                'anno' => '2023', 'nPosti' => 5,
+                'allestimento' => '', 'catId' => 3,
                 'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 1900 cc 136 CV; Carburante: Ibrido-Diesel',
                 'prezzo' => 88.93, 'discountPerc' => 5, 'discounted' => 0, 
-                'image' => fread(fopen("./public/images/auto/audiA4.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/audiA4.png", 'rb'), filesize("./public/images/piccole.png"))
             ],
-            ['nome' => 'Mercedes C-Class', 'catId' => 3,
+            ['marca' => 'Mercedes', 'modello' => 'C-Class', 'targa' => '',
+                'anno' => '2019', 'nPosti' => 5,
+                'allestimento' => '', 'catId' => 3,
                 'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 2000 cc 163 CV; Carburante: Ibrido-Diesel',
                 'prezzo' => 88.93, 'discountPerc' => 5, 'discounted' => 0, 
-                'image' => fread(fopen("./public/images/auto/mercedesC.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/mercedesC.png", 'rb'), filesize("./public/images/piccole.png"))
             ],
-            ['nome' => 'Peugeot 508', 'catId' => 3,
+            ['marca' => 'Peugeot', 'modello' => '508', 'targa' => '',
+                'anno' => '2022', 'nPosti' => 5,
+                'allestimento' => '', 'catId' => 3,
                 'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 1500 cc 131 CV; Carburante: Diesel',
                 'prezzo' => 88.93, 'discountPerc' => 5, 'discounted' => 0, 
-                'image' => fread(fopen("./public/images/auto/peugeot508.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/peugeot508.png", 'rb'), filesize("./public/images/piccole.png"))
             ],
-            ['nome' => 'Audi Q7', 'catId' => 4,
+            ['marca' => 'Audi', 'modello' => 'Q7', 'targa' => '',
+                'anno' => '2021', 'nPosti' => 5,
+                'allestimento' => '', 'catId' => 4,
                 'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 3000 cc 231 CV; Carburante: Ibrido-Diesel',
                 'prezzo' => 78.66, 'discountPerc' => 7, 'discounted' => 01, 
-                'image' => fread(fopen("./public/images/auto/audiQ7.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/audiQ7.png", 'rb'), filesize("./public/images/piccole.png"))
             ],
-            ['nome' => 'Jeep Compass', 'catId' => 4,
+            ['marca' => 'Jeep', 'modello' => 'Compass', 'targa' => '',
+                'anno' => '2017', 'nPosti' => 5,
+                'allestimento' => '', 'catId' => 4,
                 'descrizione' => '5 posti; 4 porte; Cambio manuale; Motore: 1600 cc 131 CV; Carburante: Diesel',
                 'prezzo' => 78.66, 'discountPerc' => 7, 'discounted' => 01, 
-                'image' => fread(fopen("./public/images/auto/jeepCompass.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/jeepCompass.png", 'rb'), filesize("./public/images/piccole.png"))
             ],
-            ['nome' => 'Alfa Romeo Stelvio', 'catId' => 4,
+            ['marca' => 'Alfa Romeo ', 'modello' => 'Stelvio', 'targa' => '',
+                'anno' => '2021', 'nPosti' => 5,
+                'allestimento' => '', 'catId' => 4,
                 'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 2100 cc 160 CV; Carburante: Diesel',
                 'prezzo' => 78.66, 'discountPerc' => 7, 'discounted' => 01, 
-                'image' => fread(fopen("./public/images/auto/alfaStelvio.png", 'rb'), filesize("./public/images/piccole.png"))
+                'foto' => fread(fopen("./public/images/auto/alfaStelvio.png", 'rb'), filesize("./public/images/piccole.png"))
             ]
         ]);
 
