@@ -13,4 +13,8 @@ class Categoria extends Model
     protected $primaryKey = 'catId';
     public $incrementing = true;
     public $timestamps = false;
+
+    public function auto(){
+        return $this->hasMany(Auto::class);
+    }
 }

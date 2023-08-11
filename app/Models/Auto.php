@@ -14,6 +14,7 @@ class Auto extends Model
     public $incrementing = false;
     public $timestamps = false;
     
+    // catId non è fillable
     protected $fillable = [
         'marca',
         'modello',
@@ -21,11 +22,23 @@ class Auto extends Model
         'anno',
         'nPosti',
         'allestimento',
-        'catId',
         'descrizione',
         'prezzo',
         'foto'
     ];
 
     protected $hidden = ['targa'];
+
+    /**
+     * Metodo che restituisce il prezzo giornaliero del noleggio della vettura
+     */
+    public function getDailyPrice() {
+        $prezzo = $this->prezzo;
+        return $prezzo;
+    }
+
+    // Realazione One-To-One con Categoria
+    public function carCat() {
+        return $this->hasOne(Categoria::class, 'catId', 'catId');
+    }
 }
