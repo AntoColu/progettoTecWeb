@@ -14,6 +14,9 @@ class Categoria extends Model
     public $incrementing = true;
     public $timestamps = false;
 
+    /**
+     * Relazione uno-molti con le auto
+     */
     public function auto(){
         return $this->hasMany(Auto::class);
     }

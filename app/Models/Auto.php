@@ -37,7 +37,9 @@ class Auto extends Model
         return $prezzo;
     }
 
-    // Realazione One-To-One con Categoria
+    /** 
+     * Relazione One-To-One con Categoria
+     */
     public function carCat() {
         return $this->hasOne(Categoria::class, 'catId', 'catId');
     }

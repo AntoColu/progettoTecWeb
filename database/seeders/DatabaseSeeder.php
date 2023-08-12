@@ -146,17 +146,20 @@ class DatabaseSeeder extends Seeder
         *   Tabella dedicata agli utenti con diversi ruoli
         */
         DB::table('utente')->insert([
-            ['nome' => 'Giacomo', 'cognome' => 'Verdi', 'email' => 'clie@clie.it', 'usernome' => 'clieclie',
-                'password' => Hash::make('clieclie'), 'ruolo' => 'user','created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s")
+            ['nome' => 'Giacomo', 'cognome' => 'Verdi',
+                'residenza' => 'Via Matteotti, 11', 'nascita' => '1999-07-22',
+                'email' => 'clie@clie.it', 'occupazione' => 'Studente',
+                'username' => 'clieclie', 'password' => Hash::make('clieclie'), 'ruolo' => 'user'
             ],
-            ['nome' => 'Marco', 'cognome' => 'Bianchi', 'email' => 'staff@staff.it', 'usernome' => 'staffstaff',
-                'password' => Hash::make('staffstaff'), 'ruolo' => 'staff', 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s")
+            ['nome' => 'Marco', 'cognome' => 'Bianchi',
+                'residenza' => 'Via Garibaldi, 85', 'nascita' => '1986-05-08',
+                'email' => 'staff@staff.it', 'occupazione' => 'Dipendente',
+                'username' => 'staffstaff', 'password' => Hash::make('staffstaff'), 'ruolo' => 'staff'
             ],
-            ['nome' => 'Mario', 'cognome' => 'Rossi', 'email' => 'mario@rossi.it', 'usernome' => 'adminadmin',
-                'password' => Hash::make('adminadmin'), 'ruolo' => 'admin', 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s")
+            ['nome' => 'Mario', 'cognome' => 'Rossi',
+                'residenza' => 'Via Cavour, 30', 'nascita' => '1975-10-15',
+                'email' => 'mario@rossi.it', 'occupazione' => 'Imprenditore',
+                'username' => 'adminadmin', 'password' => Hash::make('adminadmin'), 'ruolo' => 'admin',
             ]
         ]);
 
