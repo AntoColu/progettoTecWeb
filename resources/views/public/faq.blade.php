@@ -1,10 +1,8 @@
 @extends('layouts.contenitore')
 
-@section("title")
-    FAQ
-@endsection
+@section('title', 'FAQ')
 
-@section("contenuto")
+@section("content")
     <h2 id="titolo_faq">Domande frequenti</h2>
 
     <ul id="elenco_risposte">
