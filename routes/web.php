@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 /**
- *  Sezione pubblica del sito
+ *  Sezione PUBBLICA
 **/ 
 Route::get('/', [PublicController::class, 'showHome'])
     ->name('home');
@@ -23,8 +23,5 @@ Route::get('/', [PublicController::class, 'showHome'])
 Route::get('/home', [PublicController::class, 'showHome'])
     ->name('home');
 
-Route::get("/faq", [PublicController::class, 'showFAQ'])
-    ->name("faq");
-
-Route::get("/contatti", [PublicController::class, 'showContatti'])
-    ->name('contatti');
+Route::get("/catalogo", [PublicController::class, 'showCatalogo'])
+    ->name('catalogo');

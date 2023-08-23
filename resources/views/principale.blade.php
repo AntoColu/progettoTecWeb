@@ -20,13 +20,15 @@
     </head>
     <body>
         <header>
+            <!-- Sezione per il logo che rimanda alla home -->
             <div class="text-center mt-2">
-                <a href="{{route('catalogo')}}">
+                <a href="{{route('home')}}">
                     <img src="{{asset('images/logo.png')}}" class="rounded" style="width: 100px" alt="logo">
                 </a>
                 <h1 class="h-f_color">Tavernelle Noleggi</h1>
             </div>
 
+            <!-- Sezione della navbar che cambia in base al ruolo dell'utente -->
             <nav>
                 @auth
                     @include('layouts/_nav'.auth()->user()->ruolo)

@@ -1,4 +1,4 @@
-@extends('layouts.public')
+@extends('layouts.principale')
 
 @section('title', 'Catalogo noleggi')
 
