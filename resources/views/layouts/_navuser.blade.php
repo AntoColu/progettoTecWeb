@@ -6,10 +6,13 @@
         <a href="{{ route('catalogo') }}" title="Visualizza il Catalogo Noleggi">Noleggi</a>
     </li>
     <li>
+        <a href="{{ route('riepilogo') }}" title="Le auto che hai noleggiato">I miei noleggi</a>
+    </li>
+    <li>
         <a href="{{ route('contatti') }}" title="Contatti">Contatti</a>
     </li>
     <li>
-        <a href="{{ route('account-user') }}" title="Visualizza i tuoi dati">Account {{Auth::user()->username}}</a>
+        <a href="{{ route('user-account') }}" title="Visualizza i tuoi dati">Account {{Auth::user()->username}}</a>
     </li>
     @auth
         <li>

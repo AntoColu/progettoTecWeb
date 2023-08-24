@@ -9,7 +9,7 @@
         <a href="{{ route('gest-clienti') }}" title="Gestisci i clienti">Clienti</a>
     </li>
     <li>
-        <a href="{{ route('gest-auto') }}" title="Aggiungi, modifica, cancella auto">Noleggi</a>
+        <a href="{{ route('gest-auto') }}" title="Aggiungi, modifica, cancella auto">Gestione auto</a>
     </li>
     <li>
         <a href="{{ route('gest-faq') }}" title="Gestisci le FAQ">FAQ</a>

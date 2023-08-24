@@ -3,13 +3,10 @@
         <a href="{{ route('staff') }}" title="Va alla Home dello Staff">Home</a>
     </li>
     <li>
-        <a href="{{ route('gest-clienti') }}" title="Gestisci i clienti">Clienti</a>
+        <a href="{{ route('gest-auto') }}" title="Aggiungi, modifica, cancella auto">Gestione auto</a>
     </li>
     <li>
-        <a href="{{ route('gest-auto') }}" title="Aggiungi, modifica, cancella auto">Noleggi</a>
-    </li>
-    <li>
-        <a href="{{ route('gest-faq') }}" title="Gestisci le FAQ">FAQ</a>
+        <a href="{{ route('storico-noleggi') }}" title="Visualizza lo storico dei noleggi">Storico dei noleggi</a>
     </li>
     @auth
         <li>

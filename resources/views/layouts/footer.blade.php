@@ -8,7 +8,8 @@
     <li><a class="footer-link" id="condizioni-uso" data-popup-caller>Condizioni d'uso</a></li>
     <li><a class="footer-link" id="privacy" data-popup-caller>Privacy Policy</a></li>
 </ul>
-<span class="copyright">Copyright © 2023 Progetto di Antonio Colucci.
-    <br>All Rights Reserved.</span>
+<a href="{{ asset('files/documentazione-progetto.pdf') }}" download>Scarica la documentazione del progetto</a>
+
+<span class="copyright">Copyright © 2023 Progetto di Antonio Colucci</span>
 
 <span class="copyright">Via Brecce Bianche, 4, Ancona, Italy</span>
