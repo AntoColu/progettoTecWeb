@@ -39,6 +39,7 @@
             </nav>
         </header>
 
+        <!-- Contenuto della pagina -->
         @yield('content')
 
         <footer>
