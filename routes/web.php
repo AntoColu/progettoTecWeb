@@ -139,5 +139,9 @@ Route::prefix('gest-faq')->group(function () {
 Route::get("/statistiche", [AdminController::class, 'showStatistiche'])->middleware('can:isAdmin')
     ->name('statistiche');
 
+/**
+ *  FINE sezione ADMIN
+**/
+
     
 require __DIR__.'/auth.php';

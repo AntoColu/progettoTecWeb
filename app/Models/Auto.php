@@ -21,6 +21,8 @@ class Auto extends Model
         'targa',
         'anno',
         'nPosti',
+        'motore',
+        'carburante',
         'allestimento',
         'descrizione',
         'prezzo',
