@@ -8,28 +8,28 @@
         <div class="carousel-inner">
             <!-- Foto iniziale -->
             <div class="carousel-item active">
-                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->principale) }}" class="image_carousel" alt="Principale">
+                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img-principale'}) }}" class="image_carousel" alt="Principale">
             </div>
 
             <!-- Foto successive -->
             <div class="carousel-item">
                 <!-- Foto lato destro -->
-                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->destra) }}" class="image_carousel" alt="Lato destro">
+                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img-destra'}) }}" class="image_carousel" alt="Lato destro">
             </div>
 
             <div class="carousel-item">
                 <!-- Foto lato sinistro -->
-                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->sinistra) }}" class="image_carousel" alt="Lato sinistra">
+                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img-sinistra'}) }}" class="image_carousel" alt="Lato sinistra">
             </div>
 
             <div class="carousel-item">
                 <!-- Foto lato frontale -->
-                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->frontale) }}" class="image_carousel" alt="Lato frontale">
+                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img-frontale'}) }}" class="image_carousel" alt="Lato frontale">
             </div>
 
             <div class="carousel-item">
                 <!-- Foto lato posteriore -->
-                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->posteriore) }}" class="image_carousel" alt="Lato posteriore">
+                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img-posteriore'}) }}" class="image_carousel" alt="Lato posteriore">
             </div>
         </div>
 
@@ -49,7 +49,7 @@
         <h2>
             {{$auto->marca}} {{$auto->modello}}
         </h2>
-        <ul>
+        <ul style="list-style-type:none;">
             <li>
                 <!-- Icona di Bootstrap raffigurante un'auto --> 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">

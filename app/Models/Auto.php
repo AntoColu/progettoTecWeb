@@ -26,7 +26,11 @@ class Auto extends Model
         'allestimento',
         'descrizione',
         'prezzo',
-        'foto'
+        'img-principale',
+        'img-destra',
+        'img-sinistra',
+        'img-frontale',
+        'img-posteriore'
     ];
 
     protected $hidden = ['targa'];
