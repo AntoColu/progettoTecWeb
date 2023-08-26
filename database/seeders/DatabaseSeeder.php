@@ -214,17 +214,17 @@ class DatabaseSeeder extends Seeder
             ['nome' => 'Giacomo', 'cognome' => 'Verdi',
                 'residenza' => 'Via Matteotti, 11', 'nascita' => '1999-07-22',
                 'email' => 'clie@clie.it', 'occupazione' => 'Studente',
-                'username' => 'clieclie', 'password' => Hash::make('clieclie'), 'ruolo' => 'user'
+                'username' => 'clieclie', 'password' => Hash::make('41ecbOq3'), 'ruolo' => 'user'
             ],
             ['nome' => 'Marco', 'cognome' => 'Bianchi',
                 'residenza' => 'Via Garibaldi, 85', 'nascita' => '1986-05-08',
                 'email' => 'staff@staff.it', 'occupazione' => 'Dipendente',
-                'username' => 'staffstaff', 'password' => Hash::make('staffstaff'), 'ruolo' => 'staff'
+                'username' => 'staffstaff', 'password' => Hash::make('41ecbOq3'), 'ruolo' => 'staff'
             ],
             ['nome' => 'Mario', 'cognome' => 'Rossi',
                 'residenza' => 'Via Cavour, 30', 'nascita' => '1975-10-15',
                 'email' => 'mario@rossi.it', 'occupazione' => 'Imprenditore',
-                'username' => 'adminadmin', 'password' => Hash::make('adminadmin'), 'ruolo' => 'admin',
+                'username' => 'adminadmin', 'password' => Hash::make('41ecbOq3'), 'ruolo' => 'admin',
             ]
         ]);
 

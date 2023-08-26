@@ -24,12 +24,12 @@
                 @foreach($automobili as $auto)
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->foto)}}" class="card-img-top custom_card" alt="Foto Automobile">
+                            <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img-principale'})}}" class="card-img-top custom_card" alt="Foto Automobile">
                             <div class="card-body">
                                 <h3 class="card-title">{{$auto->marca}}</h3>
-                                <h4 class="card-title">{{$auto->modello}}</h4>
+                                <h3 class="card-title">{{$auto->modello}}</h3>
                                 <p class="card-text">{{$auto->descrizione}}</p>
-                                <a href="{{ route('dettagli-auto', ['id' => $auto->targa])}}" class="btn btn-primary">Vai al noleggio</a>
+                                <a href="{{ route('dettagli-auto', [$auto->targa])}}" class="btn btn-primary">Vai al noleggio</a>
                             </div>
                         </div>
                     </div>
