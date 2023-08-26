@@ -3,7 +3,7 @@
 @section('title', 'Gestione auto')
 
 @section('content')
-    <main class="main-container">
+    <div class="container">
         <!-- Bottone per l'aggiunta di una nuova auto -->
         <a href="{{ route('inserisci-auto-view') }}" class="btn btn-primary">Nuova auto</a>
 
@@ -24,8 +24,8 @@
                     </div>
                 @endforeach
             </div>
-            
+
             @include('paginator.paginator', ['paginator' => $automobili->withQueryString()])
         </section>
-    </main>
+    </div>
 @endsection

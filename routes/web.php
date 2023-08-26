@@ -57,16 +57,16 @@ Route::prefix('gest-auto')->group(function () {
         ->name('gest-auto');
 
     Route::get("/inserisci", [StaffController::class, 'showNuovaAuto'])->middleware("can:isStaff")
-        ->name('inserisci-auto-view');
+        ->name('inserisci-auto');
 
     Route::post("/inserisci", [StaffController::class, 'inserisciAuto'])->middleware("can:isStaff")
-        ->name('inserisci-auto-save');
+        ->name('inserisci-auto.store');
 
     Route::get("/modifica/{targa}", [StaffController::class, 'showModificaAuto'])->middleware("can:isStaff")
-        ->name('modifica-auto-view');
+        ->name('modifica-auto');
 
     Route::post("/modifica", [StaffController::class, 'modificaAuto'])->middleware("can:isStaff")
-        ->name('modifica-auto-save');
+        ->name('modifica-auto.store');
 
     Route::get("/elimina/{targa}", [StaffController::class, 'eliminaAuto'])->middleware("can:isStaff")
         ->name('elimina-auto');
@@ -87,16 +87,16 @@ Route::prefix('gest-staff')->group(function () {
         ->name('gest-staff');
 
     Route::get("/inserisci", [AdminController::class, 'showNuovoStaff'])->middleware("can:isAdmin")
-        ->name('inserisci-staff-view');
+        ->name('inserisci-staff');
 
     Route::post("/inserisci", [AdminController::class, 'inserisciStaff'])->middleware("can:isAdmin")
-        ->name('inserisci-staff-save');
+        ->name('inserisci-staff.store');
 
     Route::get("/modifica/{username}", [AdminController::class, 'showModificaStaff'])->middleware("can:isAdmin")
-        ->name('modifica-staff-view');
+        ->name('modifica-staff');
 
     Route::post("/modifica", [AdminController::class, 'modificaStaff'])->middleware("can:isAdmin")
-        ->name('modifica-staff-save');
+        ->name('modifica-staff.store');
 
     Route::get("/elimina/{username}", [AdminController::class, 'eliminaStaff'])->middleware("can:isAdmin")
         ->name('elimina-staff');
@@ -119,16 +119,16 @@ Route::prefix('gest-faq')->group(function () {
         ->name('gest-faq');
 
     Route::get("/inserisci", [AdminController::class, 'showNuovaFaq'])->middleware("can:isAdmin")
-        ->name("crea-faq-view");
+        ->name("crea-faq");
 
     Route::post("/inserisci", [AdminController::class, 'inserisciFaq'])->middleware("can:isAdmin")
-        ->name("crea-faq-save");
+        ->name("crea-faq.store");
 
     Route::get("/modifica/{faqId}", [AdminController::class, 'showModificaFaq'])->middleware("can:isAdmin")
-        ->name("modifica-faq-view");
+        ->name("modifica-faq");
 
     Route::post("/modifica/conferma", [AdminController::class, 'modificaFaq'])->middleware("can:isAdmin")
-        ->name("modifica-faq-save");
+        ->name("modifica-faq.store");
 
     Route::get("/elim/{faqId}", [AdminController::class, 'eliminaFaq'])->middleware("can:isAdmin")
         ->name("elimina-faq");
