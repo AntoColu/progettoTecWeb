@@ -1,4 +1,4 @@
-@extends('layouts.principale')
+@extends('principale')
 
 @section('title', 'Dettagli auto')
 
@@ -8,28 +8,28 @@
         <div class="carousel-inner">
             <!-- Foto iniziale -->
             <div class="carousel-item active">
-                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img-principale'}) }}" class="image_carousel" alt="Principale">
+                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img_principale'}) }}" class="image_carousel" alt="Principale">
             </div>
 
             <!-- Foto successive -->
             <div class="carousel-item">
                 <!-- Foto lato destro -->
-                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img-destra'}) }}" class="image_carousel" alt="Lato destro">
+                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img_destra'}) }}" class="image_carousel" alt="Lato destro">
             </div>
 
             <div class="carousel-item">
                 <!-- Foto lato sinistro -->
-                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img-sinistra'}) }}" class="image_carousel" alt="Lato sinistra">
+                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img_sinistra'}) }}" class="image_carousel" alt="Lato sinistra">
             </div>
 
             <div class="carousel-item">
                 <!-- Foto lato frontale -->
-                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img-frontale'}) }}" class="image_carousel" alt="Lato frontale">
+                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img_frontale'}) }}" class="image_carousel" alt="Lato frontale">
             </div>
 
             <div class="carousel-item">
                 <!-- Foto lato posteriore -->
-                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img-posteriore'}) }}" class="image_carousel" alt="Lato posteriore">
+                <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img_posteriore'}) }}" class="image_carousel" alt="Lato posteriore">
             </div>
         </div>
 

@@ -1,4 +1,4 @@
-@extends('layouts.principale')
+@extends('principale')
 
 @section('title', 'Inserisci una nuova auto')
 
@@ -34,7 +34,7 @@
         <h1>Inserisci una nuova auto:</h1>
 
         <div class="wrap">
-            {{ Form::open(array('route' => 'inserisci-auto.store', 'id' => 'inserisci-auto', 'files' => true, class => 'inserisci-annuncio')) }}
+            {{ Form::open(array('route' => 'inserisci-auto.store', 'id' => 'inserisci-auto', 'files' => true, 'class' => 'inserisci-auto')) }}
 
             <!-- Campo 'categoria' -->
             <div>
@@ -96,34 +96,34 @@
                 {{ Form::number('prezzo', null, ['class' => 'form-control', 'id' => 'prezzo']) }}
             </div>
 
-            <!-- Campo 'img-principale' -->
+            <!-- Campo 'img_principale' -->
             <div>
-                {{ Form::label('img-principale', 'Immagine principale') }}
-                {{ Form::file('img-principale', ['class' => 'form-control', 'id' => 'img-principale']) }}
+                {{ Form::label('img_principale', 'Immagine principale') }}
+                {{ Form::file('img_principale', ['class' => 'form-control', 'id' => 'img_principale']) }}
             </div>
 
-            <!-- Campo 'img-destra' -->
+            <!-- Campo 'img_destra' -->
             <div>
-                {{ Form::label('img-destra', 'Lato destro') }}
-                {{ Form::file('img-destra', ['class' => 'form-control', 'id' => 'img-destra']) }}
+                {{ Form::label('img_destra', 'Lato destro') }}
+                {{ Form::file('img_destra', ['class' => 'form-control', 'id' => 'img_destra']) }}
             </div>
 
-            <!-- Campo 'img-sinistra' -->
+            <!-- Campo 'img_sinistra' -->
             <div>
-                {{ Form::label('img-sinistra', 'Lato sinistro') }}
-                {{ Form::file('img-sinistra', ['class' => 'form-control', 'id' => 'img-sinistra']) }}
+                {{ Form::label('img_sinistra', 'Lato sinistro') }}
+                {{ Form::file('img_sinistra', ['class' => 'form-control', 'id' => 'img_sinistra']) }}
             </div>
 
-            <!-- Campo 'img-frontale' -->
+            <!-- Campo 'img_frontale' -->
             <div>
-                {{ Form::label('img-frontale', 'Lato anteriore') }}
-                {{ Form::file('img-frontale', ['class' => 'form-control', 'id' => 'img-frontale']) }}
+                {{ Form::label('img_frontale', 'Lato anteriore') }}
+                {{ Form::file('img_frontale', ['class' => 'form-control', 'id' => 'img_frontale']) }}
             </div>
 
-            <!-- Campo 'img-posteriore' -->
+            <!-- Campo 'img_posteriore' -->
             <div>
-                {{ Form::label('img-posteriore', 'Lato posteriore') }}
-                {{ Form::file('img-posteriore', ['class' => 'form-control', 'id' => 'img-posteriore']) }}
+                {{ Form::label('img_posteriore', 'Lato posteriore') }}
+                {{ Form::file('img_posteriore', ['class' => 'form-control', 'id' => 'img_posteriore']) }}
             </div>
 
             <div>

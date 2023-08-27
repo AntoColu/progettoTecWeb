@@ -1,4 +1,4 @@
-@extends('layouts.principale')
+@extends('principale')
 
 @section('title', 'Tavernelle Noleggi | Homepage')
 

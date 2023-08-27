@@ -1,10 +1,6 @@
-@extends('layouts.principale')
+@extends('principale')
 
 @section('title', 'Catalogo noleggi')
-
-@section('js')
-    <script src="{{asset('js/catalogo.js')}}"></script>
-@endsection
 
 @section('content')
     <div class="container">
@@ -26,7 +22,7 @@
                 @foreach($automobili as $auto)
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img-principale'})}}" class="card-img-top custom_card" alt="Foto Automobile">
+                            <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img_principale'})}}" class="card-img-top custom_card" alt="Foto Automobile">
                             <div class="card-body">
                                 <h3 class="card-title">{{$auto->marca}}</h3>
                                 <h3 class="card-title">{{$auto->modello}}</h3>
