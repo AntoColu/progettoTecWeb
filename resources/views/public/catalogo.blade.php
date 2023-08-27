@@ -8,10 +8,11 @@
 
 @section('content')
     <div class="container">
+        <!-- Barra laterale dove è possibile filtrare le auto per categoria -->
         <aside class="lateral-bar">
             <h2> Categorie </h2>
-            @foreach ($topCategories as $category)
-                <a href="{{ route('catalog2', [$category->catId]) }}">{{ $category->nome }}</a>
+            @foreach ($categorie as $categoria)
+                <a href="{{ route('catalogo2', [$categoria->catId]) }}">{{ $categoria->nome }}</a>
             @endforeach
 
             <h2> Filtri </h2>
@@ -20,6 +21,7 @@
 
         <section class="catalogo">
             <h1> Auto disponibili al noleggio </h1>
+            <!-- Elenco di tutte le auto a catalogo, usando la struttura di Bootstrap "card" -->
             <div class="row justify-content-center">
                 @foreach($automobili as $auto)
                     <div class="col-md-4 mb-4">

@@ -27,8 +27,13 @@ Route::get('/home', [PublicController::class, 'showHome'])
 Route::get("/contatti", [PublicController::class, 'showContatti'])
     ->name('contatti');
 
+// Mostra tutte le auto a catalogo
 Route::get("/catalogo", [PublicController::class, 'showCatalogo'])
     ->name('catalogo');
+
+// Mostra le auto di una certa categoria
+Route::get("/catalogo/withCat/{catId}", [PublicController::class, 'showCatalogo2'])
+    ->name('catalogo2');
 
 Route::get("/dettagli-auto/{targa}", [PublicController::class, 'showDettagliAuto'])
     ->name('dettagli-auto');

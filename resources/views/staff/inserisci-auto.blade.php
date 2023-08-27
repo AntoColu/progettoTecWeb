@@ -7,14 +7,21 @@
 
     <script>
         $(function () {
+            // Rotta per l'inserimento dell'auto
             var actionUrl = "{{ route('inserisci-auto.store') }}";
             var formId = 'inserisci-auto';
+
             $(":input").on('blur', function (event) {
+                // Prendo l'id dell'elemento che ha perso il focus
                 var formElementId = $(this).attr('id');
+                // Funzione che valida l'elemento della form di cui ho preso l'id
                 doElemValidation(formElementId, actionUrl, formId);
             });
+
             $("#inserisci-auto").on('submit', function (event) {
+                // Impedisco l'invio del form (submit) normale, per consentire la validazione personalizzata
                 event.preventDefault();
+                // Funzione di validazione dell'intera form
                 doFormValidation(actionUrl, formId);
             });
         });
@@ -27,7 +34,7 @@
         <h1>Inserisci una nuova auto:</h1>
 
         <div class="wrap">
-            {{ Form::open(array('route' => 'inserisci-auto', 'id' => 'inserisci-auto', 'files' => true, class => 'inserisci-annuncio')) }}
+            {{ Form::open(array('route' => 'inserisci-auto.store', 'id' => 'inserisci-auto', 'files' => true, class => 'inserisci-annuncio')) }}
 
             <!-- Campo 'categoria' -->
             <div>
