@@ -26,6 +26,8 @@ class Auto extends Model
         'allestimento',
         'descrizione',
         'prezzo',
+        'data_inizio',
+        'data_fine',
         'img_principale',
         'img_destra',
         'img_sinistra',

@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,9 +30,9 @@ Route::get("/contatti", [PublicController::class, 'showContatti'])
 Route::get("/catalogo", [PublicController::class, 'showCatalogo'])
     ->name('catalogo');
 
-// Mostra le auto di una certa categoria
-Route::get("/catalogo/withCat/{catId}", [PublicController::class, 'showCatalogo2'])
-    ->name('catalogo2');
+// Mostra le auto di una certa categoria e dentro una fascia di prezzo
+Route::get("/catalogo-filtrato", [PublicController::class, 'showCatalogoFiltrato'])
+    ->name('catalogo-filtrato');
 
 Route::get("/dettagli-auto/{targa}", [PublicController::class, 'showDettagliAuto'])
     ->name('dettagli-auto');
@@ -79,6 +78,9 @@ Route::prefix('gest-auto')->group(function () {
 
 Route::get("/storico-noleggi", [StaffController::class, 'showStorico'])->middleware("can:isStaff")
         ->name('storico-noleggi');
+
+Route::post("/storico-filtrato/date", [StaffController::class, 'storicoAutoMese'])->middleware("can:isStaff")
+        ->name('storico-mese');
 
 
 
