@@ -8,13 +8,6 @@ use App\Models\Auto;
 
 class StaffController extends Controller
 {
-    protected $autoModel;
-    
-    public function __construct() {
-        $this->autoModel = new Auto();
-    }
-
-
     /**
      *  Ritorno la pagina riguardante la gestione delle auto, passando la lista delle auto
     **/
@@ -46,7 +39,7 @@ class StaffController extends Controller
             'nPosti' => $array['nPosti'],
             'motore' => $array['motore'],
             'carburante' => $array['carburante'],
-            'allestimento' => $array['allestimento'],
+            'user' => $array['user'],
             'descrizione' => $array['descrizione'],
             'prezzo' => $array['prezzo']
         ]);
@@ -227,7 +220,7 @@ class StaffController extends Controller
                 'nPosti' => $array['nPosti'],
                 'motore' => $array['motore'],
                 'carburante' => $array['carburante'],
-                'allestimento' => $array['allestimento'],
+                'user' => $array['user'],
                 'descrizione' => $array['descrizione'],
                 'prezzo' => $array['prezzo']
               ]);

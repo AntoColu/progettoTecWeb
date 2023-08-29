@@ -42,15 +42,22 @@ Route::get("/dettagli-auto/{targa}", [PublicController::class, 'showDettagliAuto
 /**
  *  Sezione USER livello 2
 **/
-Route::get("/user-account", [UserController::class, 'showAccount'])->middleware("can:isUser")
-    ->name('user-account');
+Route::prefix('user')->group(function () {
+    Route::get("/account", [UserController::class, 'showAccount'])->middleware("can:isUser")
+        ->name('user-account');
 
-Route::get("/dettagli-auto/noleggio/{targa}", [UserController::class, 'noleggiaAuto'])->middleware("can:isUser")
-    ->name('noleggio');
+    Route::get("/account/modifica-dati/{username}", [UserController::class, 'showModificaDati'])->middleware("can:isUser")
+        ->name('modifica-dati');
 
-Route::get("/riepilogo-noleggi", [UserController::class, 'showRiepilogo'])->middleware("can:isUser")
-    ->name('riepilogo');
+    Route::get("/account/modifica-dati", [UserController::class, 'modificaDati'])->middleware("can:isUser")
+        ->name('modifica-dati.store');
 
+    Route::get("/dettagli-auto/noleggio/{targa}", [UserController::class, 'noleggiaAuto'])->middleware("can:isUser")
+        ->name('noleggio');
+
+    Route::get("/riepilogo-noleggi", [UserController::class, 'showRiepilogo'])->middleware("can:isUser")
+        ->name('riepilogo-noleggi');
+});
 
 
 /**

@@ -23,7 +23,7 @@ class Auto extends Model
         'nPosti',
         'motore',
         'carburante',
-        'allestimento',
+        'user',
         'descrizione',
         'prezzo',
         'data_inizio',
