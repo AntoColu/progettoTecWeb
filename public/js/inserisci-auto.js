@@ -1,4 +1,24 @@
 /**
+ *  Funzione che implementa l'iniezione nel DOM di uno/più messaggi di errore 
+ *  legati ad un singolo elemento della form
+**/
+function getErrorHtml(elemErrors) {
+    // Nel caso in cui non ci siano errori non ritorna niente
+    if ((typeof (elemErrors) === 'undefined') || (elemErrors.length < 1))
+        return;
+
+    // Stampa ogni errore
+    var out = '<ul class="errors">';
+    for (var i = 0; i < elemErrors.length; i++) {
+        out += '<li>' + elemErrors[i] + '</li>';
+    }
+    out += '</ul>';
+
+    return out;
+}
+
+
+/**
  *  Funzione per la validazione dell'elemento della form di cui ho passato l'id
 **/
 function doElemValidation(id, actionUrl, formId) {

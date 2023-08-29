@@ -8,16 +8,12 @@ use App\Models\Auto;
 
 class StaffController extends Controller
 {
-    protected $listaAuto;
-    protected $listaUtenti;
-
-    // Auth::user() ritorna null se si trova nel costruttore del Controller
-    // quindi si sposta il costruttore in un metodo custom da far runnare
-    // carico nel costuttore la lista di tuple che devo manipolare
-    public function setup(){
-        $this->listaAuto = Auto::paginate(5);
-        $this->listaUtenti = User::getUtenti();
+    protected $autoModel;
+    
+    public function __construct() {
+        $this->autoModel = new Auto();
     }
+
 
     /**
      *  Ritorno la pagina riguardante la gestione delle auto, passando la lista delle auto
@@ -26,12 +22,14 @@ class StaffController extends Controller
         return view('staff/gestione-auto')->with('automobili', Auto::all());
     }
 
+
     /**
      *  Ritorno la pagina riguardante l'inserimento di una nuova auto
     **/
     public function showNuovaAuto(){
         return view('staff/inserisci-auto');
     }
+
 
     /**
      *  Funzione che va ad inserire la nuova auto
@@ -40,7 +38,7 @@ class StaffController extends Controller
         $array = $request->all();
 
         // Crea l'auto
-        $nuova_auto = Auto::create([
+        Auto::create([
             'marca' => $array['marca'],
             'modello' => $array['modello'],
             'targa' => $array['targa'],
@@ -50,38 +48,349 @@ class StaffController extends Controller
             'carburante' => $array['carburante'],
             'allestimento' => $array['allestimento'],
             'descrizione' => $array['descrizione'],
-            'prezzo' => $array['prezzo'],
-            /*'img_principale' => $array[],
-            'img_destra' => $array[],
-            'img_sinistra' => $array[],
-            'img_frontale' => $array[],
-            'img_posteriore' => $array[]*/
+            'prezzo' => $array['prezzo']
         ]);
 
-        if ($request->hasFile('immagine')) {
-            $image = $request->file('immagine');
-            $arrayImage = $this->imageCompose($image);
-            $estensione = '.' . $arrayImage[1];
+        // Elaboro il nome dell'immagine principale
+        if($request->hasFile('img_principale')){
+            $image = $request->file('img_principale');
+            $nomeImg = $image->getClientOriginalName();
 
-            //$fullImageName = $new_foto->id_foto.$estensione;
+            $arrayImg = explode('.', $nomeImg);
+            
+            // Se la marca presenta degli spazi, allora li elimino
+            $marcaAuto = explode(' ', $array['marca']);
+            $nomeCompleto = $marcaAuto[0];
+            for($i = 0; $i < count($marcaAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
+            }
 
-            //sposta l'immagine
-            $destinationPath = public_path() . '/images_case';
-            //$image->move($destinationPath, $fullImageName);
+            // Se il modello presenta degli spazi, allora li elimino
+            $modelloAuto = explode(' ', $array['modello']);
+            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
+            for($i = 0; $i < count($modelloAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
+            }
+
+            // Ora al nome aggiungo '_principale' e l'estensione
+            $nomeCompleto = $nomeCompleto . '_principale' . '.' . $arrayImg[1];
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompleto);
         }
+
+        // Elaboro il nome dell'immagine del lato destro
+        if($request->hasFile('img_destra')){
+            $image = $request->file('img_destra');
+            $nomeImg = $image->getClientOriginalName();
+
+            // Separo il nome dall'estensione
+            $arrayImg = explode('.', $nomeImg);
+            
+            // Se la marca presenta degli spazi, allora li elimino
+            $marcaAuto = explode(' ', $array['marca']);
+            $nomeCompleto = $marcaAuto[0];
+            for($i = 0; $i < count($marcaAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
+            }
+
+            // Se il modello presenta degli spazi, allora li elimino
+            $modelloAuto = explode(' ', $array['modello']);
+            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
+            for($i = 0; $i < count($modelloAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
+            }
+
+            // Ora al nome aggiungo '_destra' e l'estensione
+            $nomeCompleto = $nomeCompleto . '_destra' . '.' . $arrayImg[1];
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompleto);
+        }
+
+        // Elaboro il nome dell'immagine del lato sinistro
+        if($request->hasFile('img_sinistra')){
+            $image = $request->file('img_sinistra');
+            $nomeImg = $image->getClientOriginalName();
+
+            $arrayImg = explode('.', $nomeImg);
+            
+            // Se la marca presenta degli spazi, allora li elimino
+            $marcaAuto = explode(' ', $array['marca']);
+            $nomeCompleto = $marcaAuto[0];
+            for($i = 0; $i < count($marcaAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
+            }
+
+            // Se il modello presenta degli spazi, allora li elimino
+            $modelloAuto = explode(' ', $array['modello']);
+            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
+            for($i = 0; $i < count($modelloAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
+            }
+
+            // Ora al nome aggiungo '_sinistra' e l'estensione
+            $nomeCompleto = $nomeCompleto . '_sinistra' . '.' . $arrayImg[1];
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompleto);
+        }
+
+        // Elaboro il nome dell'immagine del lato frontale
+        if($request->hasFile('img_frontale')){
+            $image = $request->file('img_frontale');
+            $nomeImg = $image->getClientOriginalName();
+
+            $arrayImg = explode('.', $nomeImg);
+            
+            // Se la marca presenta degli spazi, allora li elimino
+            $marcaAuto = explode(' ', $array['marca']);
+            $nomeCompleto = $marcaAuto[0];
+            for($i = 0; $i < count($marcaAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
+            }
+
+            // Se il modello presenta degli spazi, allora li elimino
+            $modelloAuto = explode(' ', $array['modello']);
+            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
+            for($i = 0; $i < count($modelloAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
+            }
+
+            // Ora al nome aggiungo '_frontale' e l'estensione
+            $nomeCompleto = $nomeCompleto . '_frontale' . '.' . $arrayImg[1];
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompleto);
+        }
+
+        // Elaboro il nome dell'immagine del lato posteriore
+        if($request->hasFile('img_posteriore')){
+            $image = $request->file('img_posteriore');
+            $nomeImg = $image->getClientOriginalName();
+
+            $arrayImg = explode('.', $nomeImg);
+            
+            // Se la marca presenta degli spazi, allora li elimino
+            $marcaAuto = explode(' ', $array['marca']);
+            $nomeCompleto = $marcaAuto[0];
+            for($i = 0; $i < count($marcaAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
+            }
+
+            // Se il modello presenta degli spazi, allora li elimino
+            $modelloAuto = explode(' ', $array['modello']);
+            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
+            for($i = 0; $i < count($modelloAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
+            }
+
+            // Ora al nome aggiungo '_posteriore' e l'estensione
+            $nomeCompleto = $nomeCompleto . '_posteriore' . '.' . $arrayImg[1];
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompleto);
+        }
+
+        return response()->json(['redirect' => route('gest-auto')]);
     }
 
-    public function showModificaAuto(){
 
+    /**
+     *  Ritorno la pagina riguardante la modifica un'auto, data la targa
+    **/
+    public function showModificaAuto($targa){
+        $auto = Auto::find($targa);
+
+        return view('staff/modifica-auto')->with(['auto' => $auto]);
     }
 
-    public function modificaAuto(){
 
+    /**
+     *  Funzione che va a modificare l'auto selezionata
+    **/
+    public function modificaAuto(Request $request){
+        $array = $request->all();
+
+        // Modifico i dati dell'auto in base alla targa
+        Auto::where('targa', $array['targa'])
+              ->update([
+                'marca' => $array['marca'],
+                'modello' => $array['modello'],
+                'targa' => $array['targa'],
+                'anno' => $array['anno'],
+                'nPosti' => $array['nPosti'],
+                'motore' => $array['motore'],
+                'carburante' => $array['carburante'],
+                'allestimento' => $array['allestimento'],
+                'descrizione' => $array['descrizione'],
+                'prezzo' => $array['prezzo']
+              ]);
+
+        // Elaboro il nome dell'immagine principale
+        if($request->hasFile('img_principale')){
+            $image = $request->file('img_principale');
+            $nomeImg = $image->getClientOriginalName();
+
+            $arrayImg = explode('.', $nomeImg);
+            
+            // Se la marca presenta degli spazi, allora li elimino
+            $marcaAuto = explode(' ', $array['marca']);
+            $nomeCompleto = $marcaAuto[0];
+            for($i = 0; $i < count($marcaAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
+            }
+
+            // Se il modello presenta degli spazi, allora li elimino
+            $modelloAuto = explode(' ', $array['modello']);
+            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
+            for($i = 0; $i < count($modelloAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
+            }
+
+            // Ora al nome aggiungo '_principale' e l'estensione
+            $nomeCompleto = $nomeCompleto . '_principale' . '.' . $arrayImg[1];
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompleto);
+        }
+
+        // Elaboro il nome dell'immagine del lato destro
+        if($request->hasFile('img_destra')){
+            $image = $request->file('img_destra');
+            $nomeImg = $image->getClientOriginalName();
+
+            // Separo il nome dall'estensione
+            $arrayImg = explode('.', $nomeImg);
+            
+            // Se la marca presenta degli spazi, allora li elimino
+            $marcaAuto = explode(' ', $array['marca']);
+            $nomeCompleto = $marcaAuto[0];
+            for($i = 0; $i < count($marcaAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
+            }
+
+            // Se il modello presenta degli spazi, allora li elimino
+            $modelloAuto = explode(' ', $array['modello']);
+            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
+            for($i = 0; $i < count($modelloAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
+            }
+
+            // Ora al nome aggiungo '_destra' e l'estensione
+            $nomeCompleto = $nomeCompleto . '_destra' . '.' . $arrayImg[1];
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompleto);
+        }
+
+        // Elaboro il nome dell'immagine del lato sinistro
+        if($request->hasFile('img_sinistra')){
+            $image = $request->file('img_sinistra');
+            $nomeImg = $image->getClientOriginalName();
+
+            $arrayImg = explode('.', $nomeImg);
+            
+            // Se la marca presenta degli spazi, allora li elimino
+            $marcaAuto = explode(' ', $array['marca']);
+            $nomeCompleto = $marcaAuto[0];
+            for($i = 0; $i < count($marcaAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
+            }
+
+            // Se il modello presenta degli spazi, allora li elimino
+            $modelloAuto = explode(' ', $array['modello']);
+            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
+            for($i = 0; $i < count($modelloAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
+            }
+
+            // Ora al nome aggiungo '_sinistra' e l'estensione
+            $nomeCompleto = $nomeCompleto . '_sinistra' . '.' . $arrayImg[1];
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompleto);
+        }
+
+        // Elaboro il nome dell'immagine del lato frontale
+        if($request->hasFile('img_frontale')){
+            $image = $request->file('img_frontale');
+            $nomeImg = $image->getClientOriginalName();
+
+            $arrayImg = explode('.', $nomeImg);
+            
+            // Se la marca presenta degli spazi, allora li elimino
+            $marcaAuto = explode(' ', $array['marca']);
+            $nomeCompleto = $marcaAuto[0];
+            for($i = 0; $i < count($marcaAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
+            }
+
+            // Se il modello presenta degli spazi, allora li elimino
+            $modelloAuto = explode(' ', $array['modello']);
+            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
+            for($i = 0; $i < count($modelloAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
+            }
+
+            // Ora al nome aggiungo '_frontale' e l'estensione
+            $nomeCompleto = $nomeCompleto . '_frontale' . '.' . $arrayImg[1];
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompleto);
+        }
+
+        // Elaboro il nome dell'immagine del lato posteriore
+        if($request->hasFile('img_posteriore')){
+            $image = $request->file('img_posteriore');
+            $nomeImg = $image->getClientOriginalName();
+
+            $arrayImg = explode('.', $nomeImg);
+            
+            // Se la marca presenta degli spazi, allora li elimino
+            $marcaAuto = explode(' ', $array['marca']);
+            $nomeCompleto = $marcaAuto[0];
+            for($i = 0; $i < count($marcaAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
+            }
+
+            // Se il modello presenta degli spazi, allora li elimino
+            $modelloAuto = explode(' ', $array['modello']);
+            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
+            for($i = 0; $i < count($modelloAuto); $i++){
+                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
+            }
+
+            // Ora al nome aggiungo '_posteriore' e l'estensione
+            $nomeCompleto = $nomeCompleto . '_posteriore' . '.' . $arrayImg[1];
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompleto);
+        }
+
+        return redirect('gest-auto');
     }
 
-    public function eliminaAuto(){
 
+    /**
+     *  Funzione che va ad eliminare l'auto selezionata
+    **/
+    public function eliminaAuto($targa){
+        Auto::destroy($targa);
+
+        return redirect('gest-auto');
     }
+
 
     /**
      *  Ritorna la lista delle auto noleggiate un certo mese
