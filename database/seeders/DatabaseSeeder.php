@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -23,21 +24,21 @@ class DatabaseSeeder extends Seeder
         */
         DB::table('categoria')->insert([
             ['catId' => 1, 'nome' => 'Piccole', 
-                'imgEsempio' => fread(fopen("./public/images/categorie/piccole.png", 'rb'), filesize("./public/images/piccole.png")), 
+                'imgEsempio' => fread(fopen("./public/images/categorie/piccole.png", 'rb'), filesize("./public/images/categorie/piccole.png")), 
                 'descrizione' => 'Automobili compatte, ottime per l&rsquo;utilizzo in citt&agrave'
             ],
             ['catId' => 2, 'nome' => 'Medie', 
-                'imgEsempio' => fread(fopen("./public/images/categorie/medie.png", 'rb'), filesize("./public/images/medie.png")), 
+                'imgEsempio' => fread(fopen("./public/images/categorie/medie.png", 'rb'), filesize("./public/images/categorie/medie.png")), 
                 'descrizione' => 'Automobili non troppo grandi, che permettono un buon utilizzo cittadino, 
                                 ma anche possibilit&agrave di spostamenti più lunghi'
             ],
             ['catId' => 3, 'nome' => 'Grandi', 
-                'imgEsempio' => fread(fopen("./public/images/categorie/grandi.png", 'rb'), filesize("./public/images/grandi.png")), 
+                'imgEsempio' => fread(fopen("./public/images/categorie/grandi.png", 'rb'), filesize("./public/images/categorie/grandi.png")), 
                 'descrizione' => 'Automobili comode ed ottime per affrontare lunghi spostamenti, 
                                 con maggiore spazio per i bagagli'
             ],
             ['catId' => 4, 'nome' => 'SUV', 
-                'imgEsempio' => fread(fopen("./public/images/categorie/suv.png", 'rb'), filesize("./public/images/suv.png")), 
+                'imgEsempio' => fread(fopen("./public/images/categorie/suv.png", 'rb'), filesize("./public/images/categorie/suv.png")), 
                 'descrizione' => 'Automobili grandi e alte, che permettono una visuale migliore alla guida 
                                 ed un comfort di primo livello'
             ]

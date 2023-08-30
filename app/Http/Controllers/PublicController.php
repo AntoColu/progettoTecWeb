@@ -13,7 +13,8 @@ class PublicController extends Controller
      *  Mostra la homepage
     **/
     public function showHome() {
-        return view('public/home');
+        $faqs = Faq::all();
+        return view('public/home')->with('faq', $faqs);
     }
 
     /**
