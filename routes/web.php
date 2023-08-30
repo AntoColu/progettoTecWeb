@@ -46,7 +46,7 @@ Route::prefix('user')->group(function () {
     Route::get("/account", [UserController::class, 'showAccount'])->middleware("can:isUser")
         ->name('user-account');
 
-    Route::get("/account/modifica-dati/{username}", [UserController::class, 'showModificaDati'])->middleware("can:isUser")
+    Route::get("/account/modifica-dati", [UserController::class, 'showModificaDati'])->middleware("can:isUser")
         ->name('modifica-dati');
 
     Route::get("/account/modifica-dati", [UserController::class, 'modificaDati'])->middleware("can:isUser")

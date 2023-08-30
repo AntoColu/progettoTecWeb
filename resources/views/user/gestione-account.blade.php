@@ -16,6 +16,6 @@
             <li>Password: {{ $user->password }}</li>
         </ul>
 
-        <a href="{{ route('modifica-dati', [$user->username]) }}" class="btn btn-info">Modifica</a>
+        <a href="{{ route('modifica-dati') }}" class="btn btn-info">Modifica</a>
     </div>
 @endsection

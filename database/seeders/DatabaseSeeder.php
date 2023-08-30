@@ -212,17 +212,17 @@ class DatabaseSeeder extends Seeder
         */
         DB::table('utente')->insert([
             ['nome' => 'Giacomo', 'cognome' => 'Verdi',
-                'residenza' => 'Via Matteotti, 11, Ancona', 'nascita' => '1999-07-22',
+                'residenza' => 'Via Matteotti, 11, Ancona', 'nascita' => '22-07-1999',
                 'email' => 'clie@clie.it', 'occupazione' => 'Studente',
                 'username' => 'clieclie', 'password' => Hash::make('41ecbOq3'), 'ruolo' => 'user'
             ],
             ['nome' => 'Marco', 'cognome' => 'Bianchi',
-                'residenza' => 'Via Garibaldi, 85, Roma', 'nascita' => '1986-05-08',
+                'residenza' => 'Via Garibaldi, 85, Roma', 'nascita' => '08-05-1986',
                 'email' => 'staff@staff.it', 'occupazione' => 'Dipendente',
                 'username' => 'staffstaff', 'password' => Hash::make('41ecbOq3'), 'ruolo' => 'staff'
             ],
             ['nome' => 'Mario', 'cognome' => 'Rossi',
-                'residenza' => 'Via Cavour, 30, Milano', 'nascita' => '1975-10-15',
+                'residenza' => 'Via Cavour, 30, Milano', 'nascita' => '15-10-1975',
                 'email' => 'mario@rossi.it', 'occupazione' => 'Imprenditore',
                 'username' => 'adminadmin', 'password' => Hash::make('41ecbOq3'), 'ruolo' => 'admin',
             ]
