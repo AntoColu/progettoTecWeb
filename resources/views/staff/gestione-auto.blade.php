@@ -25,7 +25,17 @@
                 @endforeach
             </div>
 
-            @include('paginator.paginator', ['paginator' => $automobili->withQueryString()])
+            <!-- Sezione per eventuale messaggio di successo del noleggio o di errore -->
+            <div class="text-center">
+                @if(session('success'))
+                    <strong style="color: green">{{ session('success') }}</strong>
+                @endif
+                @error('auto-non-eliminata')
+                <span style="color: red">{{ $message }}</span>
+                @enderror
+    
+                @include('paginator.paginator', ['paginator' => $automobili->withQueryString()])
+            </div>
         </section>
     </div>
 @endsection

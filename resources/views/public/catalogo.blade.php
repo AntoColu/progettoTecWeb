@@ -62,6 +62,7 @@
                     </div>
                 @endforeach
             </div>
+            
             @include('paginator.paginator', ['paginator' => $automobili->withQueryString()])
         </section>
     </div>

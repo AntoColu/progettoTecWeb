@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('faq', function (Blueprint $table) {
-            $table->increments('faqId');
-            $table->string('domanda',255);
-            $table->string('risposta',255);
+        Schema::create('auto', function (Blueprint $table) {
+            $table->string('marca',255);
+            $table->string('modello',255);
+            $table->string('targa',255)->primary();
+            $table->integer('anno');
+            /*finire di scrivere*/
         });
     }
 
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('faq');
+        Schema::dropIfExists('auto');
     }
 };

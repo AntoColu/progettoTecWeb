@@ -16,14 +16,14 @@
                         <div class="card-body">
                             <h3 class="card-title">{{$auto->marca}}</h3>
                             <h3 class="card-title">{{$auto->modello}}</h3>
-                            <p class="card-text">{{$auto->descrizione}}</p>
-                            <h5 class="card-text">Prezzo giornaliero: {{$auto->prezzo}}</h5>
-                            <a href="{{ route('dettagli-auto', [$auto->targa])}}" class="btn btn-primary">Vai al noleggio</a>
+                            <p class="card-text">Noleggiata dal: {{$auto->data_inizio}}</p>
+                            <p class="card-text">fino al: {{$auto->data_fine}}</p>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
+        
         @include('paginator.paginator', ['paginator' => $automobili->withQueryString()])
     </div>
 @endsection

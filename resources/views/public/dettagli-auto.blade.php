@@ -108,4 +108,14 @@
         {{ Form::submit('Noleggia', ['class' => 'btn btn-primary', 'id'=>'bottone_noleggio']) }}
         {{ Form::close() }}
     </div>
+
+    <!-- Sezione per eventuale messaggio di successo del noleggio o di errore -->
+    <div class="text-center">
+        @if(session('success'))
+            <strong style="color: green">{{ session('success') }}</strong>
+        @endif
+        @error('auto-occupata')
+        <span style="color: red">{{ $message }}</span>
+        @enderror
+    </div>
 @endsection

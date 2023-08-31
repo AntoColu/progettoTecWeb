@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Auto;
-use Carbon\Carbon;
 
 class StaffController extends Controller
 {
@@ -282,9 +281,12 @@ class StaffController extends Controller
      *  Funzione che va ad eliminare l'auto selezionata
     **/
     public function eliminaAuto($targa){
-        Auto::destroy($targa);
-
-        return redirect('gest-auto');
+        if(Auto::destroy($targa)){
+            return redirect()->route('gest-auto')->with('success', 'Auto eliminata con successo');
+        }
+        else{
+            return redirect()->route('gest-auto')->withErrors(['auto-non-eliminata' => 'Eliminazione non effettuata']);
+        }
     }
 
 
@@ -294,6 +296,6 @@ class StaffController extends Controller
     public function storicoAutoMese(Request $request){
         $auto_filtrate = Auto::whereMonth('data_inizio', $request->meseInizio)->get();
 
-        return view('staff/storico-noleggi')->with(['autoauto_filtrate' => $auto_filtrate]);
+        return view('staff/storico-noleggi')->with(['auto_filtrate' => $auto_filtrate]);
     }
 }

@@ -42,6 +42,7 @@
         <!-- Contenuto della pagina -->
         @yield('content')
 
+        <!-- Footer della pagina -->
         <footer>
             @include('layouts/footer')
         </footer>

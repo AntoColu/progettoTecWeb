@@ -71,13 +71,13 @@ class UserController extends Controller
             $auto->data_fine = $request->data_fine;
             $auto->save();
 
-            // Reindirizzo l'utente alla pagina di riepilogo dei suoi noleggi con un messaggio di successo
-            return redirect()->route('riepilogo-noleggi')->with('success', 'Auto noleggiata con successo');
+            // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un messaggio di successo
+            return redirect()->route('dettagli-auto')->with('success', 'Auto noleggiata con successo');
         }
         // altrimenti l'auto è stata già noleggiata da qualcun altro
         else{
-            // Reindirizzo l'utente alla pagina di riepilogo dei suoi noleggi con un errore
-            return redirect()->route('riepilogo-noleggi')->with('error', 'Auto già noleggiata da un altro utente');
+            // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un errore
+            return redirect()->route('dettagli-auto')->withErrors(['auto-occupata' => 'Auto già noleggiata da un altro utente']);
         }
     }
 
