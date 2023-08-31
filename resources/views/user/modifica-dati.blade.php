@@ -30,7 +30,7 @@
             <!-- Campo 'nascita' -->
             <div class="form-group">
                 {{ Form::label('nascita', 'Data di nascita') }}
-                {{ Form::text('nascita', $user->nascita, ['class' => 'form-control', 'id' => 'nascita']) }}
+                {{ Form::input('date', 'nascita', $user->nascita, ['class' => 'form-control', 'id' => 'nascita']) }}
             </div>
 
             <!-- Campo 'email' -->

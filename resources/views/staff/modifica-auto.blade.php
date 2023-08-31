@@ -10,6 +10,9 @@
             {{ Form::open(array('route' => 'modifica-auto.store', 'id' => 'modifica-auto', 'files' => true, 'class' => 'modifica-auto')) }}
 
             <!-- Parametri che non saranno visibili nella form, ma che devo passare per modificare l'auto -->
+            {{ Form::hidden('username', $auto->username) }}
+            {{ Form::hidden('data_inizio', $auto->data_inizio) }}
+            {{ Form::hidden('data_fine', $auto->data_fine) }}
             {{ Form::hidden('img_principale', $auto->img_principale) }}
             {{ Form::hidden('img_destra', $auto->img_destra) }}
             {{ Form::hidden('img_sinistra', $auto->img_sinistra) }}
@@ -18,8 +21,8 @@
 
             <!-- Campo 'categoria' -->
             <div class="form-group">
-                {{ Form::label('categoria', 'Categoria') }}
-                {{ Form::select('categoria', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], $auto->categoria, ['placeholder' => 'Scegli una categoria'], ['id' => 'categoria']) }}
+                {{ Form::label('catId', 'Categoria') }}
+                {{ Form::select('catId', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], $auto->catId, ['placeholder' => 'Scegli una categoria'], ['id' => 'catId']) }}
             </div>
 
             <!-- Campo 'marca' -->

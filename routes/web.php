@@ -50,10 +50,10 @@ Route::prefix('user')->group(function () {
     Route::get("/account/modifica-dati", [UserController::class, 'showModificaDati'])->middleware("can:isUser")
         ->name('modifica-dati');
 
-    Route::get("/account/modifica-dati", [UserController::class, 'modificaDati'])->middleware("can:isUser")
+    Route::post("/account/modifica-dati", [UserController::class, 'modificaDati'])->middleware("can:isUser")
         ->name('modifica-dati.store');
 
-    Route::get("/dettagli-auto/noleggio/{targa}", [UserController::class, 'noleggiaAuto'])->middleware("can:isUser")
+    Route::get("/dettagli-auto/noleggio", [UserController::class, 'noleggiaAuto'])->middleware("can:isUser")
         ->name('noleggio');
 
     Route::get("/riepilogo-noleggi", [UserController::class, 'showRiepilogo'])->middleware("can:isUser")

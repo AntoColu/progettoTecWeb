@@ -36,10 +36,16 @@
         <div class="wrap">
             {{ Form::open(array('route' => 'inserisci-auto.store', 'id' => 'inserisci-auto', 'files' => true, 'class' => 'inserisci-auto')) }}
 
+            <!-- Parametri che non saranno visibili nella form, ma che devo passare per inserire l'auto -->
+            <!-- li ho impostati vuoti, perchè saranno riempiti una volta che l'auto verrà noleggiata -->
+            {{ Form::hidden('username', '') }}
+            {{ Form::hidden('data_inizio', '') }}
+            {{ Form::hidden('data_fine', '') }}
+
             <!-- Campo 'categoria' -->
             <div>
-                {{ Form::label('categoria', 'Categoria') }}
-                {{ Form::select('categoria', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], null, ['placeholder' => 'Scegli una categoria'], ['id' => 'categoria']) }}
+                {{ Form::label('catId', 'Categoria') }}
+                {{ Form::select('catId', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], null, ['placeholder' => 'Scegli una categoria'], ['id' => 'catId']) }}
             </div>
 
             <!-- Campo 'marca' -->

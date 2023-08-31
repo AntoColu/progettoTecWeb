@@ -92,4 +92,20 @@
             </li>
         </ul>
     </div>
+
+    <div class="container">
+        {{ Form::open(['route' => 'noleggio', 'id' => 'noleggio-form']) }}
+
+        <!-- Passo anche la targa dell'auto, ma l'utente non vedrà questo campo -->
+        {{ Form::hidden('targa', $auto->targa) }}
+        
+        <h3>Data di inizio del noleggio:</h3>
+        {{ Form::input('date', 'data_inizio', null, ['class' => 'form-control']) }}
+
+        <h3>Data di fine noleggio:</h3>
+        {{ Form::input('date', 'data_fine', null, ['class' => 'form-control']) }}
+
+        {{ Form::submit('Noleggia', ['class' => 'btn btn-primary', 'id'=>'bottone_noleggio']) }}
+        {{ Form::close() }}
+    </div>
 @endsection

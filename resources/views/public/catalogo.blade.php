@@ -27,7 +27,7 @@
             {{ Form::open(['route' => 'catalogo-filtrato', 'id' => 'catalogo-filtrato-form']) }}
             
             <h2> Categorie </h2>
-            {{ Form::select('categoria', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], null, ['placeholder' => 'Scegli una categoria'], ['id' => 'categoria']) }}
+            {{ Form::select('catId', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], null, ['placeholder' => 'Scegli una categoria'], ['id' => 'catId']) }}
 
             <h2> Fascia di prezzo </h2>
             {{ Form::label('min-prezzo', 'Min:') }}
@@ -48,7 +48,7 @@
                 @foreach($automobili as $auto)
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img_principale'})}}" class="card-img-top custom_card" alt="Foto Automobile">
+                            <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . '_principale'})}}" class="card-img-top custom_card" alt="Foto Automobile">
                             <div class="card-body">
                                 <h3 class="card-title">{{$auto->marca}}</h3>
                                 <h3 class="card-title">{{$auto->modello}}</h3>

@@ -39,9 +39,12 @@ class StaffController extends Controller
             'nPosti' => $array['nPosti'],
             'motore' => $array['motore'],
             'carburante' => $array['carburante'],
-            'user' => $array['user'],
+            'username' => $array['username'],
+            'catId' => $array['catId'],
             'descrizione' => $array['descrizione'],
-            'prezzo' => $array['prezzo']
+            'prezzo' => $array['prezzo'],
+            'data_inizio' => $array['data_inizio'],
+            'data_fine' => $array['data_fine']
         ]);
 
         // Elaboro il nome dell'immagine principale
@@ -220,9 +223,11 @@ class StaffController extends Controller
                 'nPosti' => $array['nPosti'],
                 'motore' => $array['motore'],
                 'carburante' => $array['carburante'],
-                'user' => $array['user'],
+                'username' => $array['username'],
                 'descrizione' => $array['descrizione'],
-                'prezzo' => $array['prezzo']
+                'prezzo' => $array['prezzo'],
+                'data_inizio' => $array['data_inizio'],
+                'data_fine' => $array['data_fine']
               ]);
 
         // Elaboro il nome dell'immagine principale

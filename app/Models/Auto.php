@@ -14,7 +14,6 @@ class Auto extends Model
     public $incrementing = false;
     public $timestamps = false;
     
-    // catId non è fillable
     protected $fillable = [
         'marca',
         'modello',
@@ -23,7 +22,8 @@ class Auto extends Model
         'nPosti',
         'motore',
         'carburante',
-        'user',
+        'username',
+        'catId',
         'descrizione',
         'prezzo',
         'data_inizio',
