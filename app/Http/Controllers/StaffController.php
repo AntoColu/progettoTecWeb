@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Auto;
+use Carbon\Carbon;
 
 class StaffController extends Controller
 {
@@ -291,9 +292,8 @@ class StaffController extends Controller
      *  Ritorna la lista delle auto noleggiate un certo mese
     **/
     public function storicoAutoMese(Request $request){
-        
-        // FARE IL CONTROLLO SUL MESE
+        $auto_filtrate = Auto::whereMonth('data_inizio', $request->meseInizio)->get();
 
-        return json_encode(Auto::where('data_inizio', $request->dataInizio)->get());
+        return view('staff/storico-noleggi')->with(['autoauto_filtrate' => $auto_filtrate]);
     }
 }
