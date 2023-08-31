@@ -64,18 +64,21 @@ class UserController extends Controller
         $user = Auth::user();
         $auto = Auto::find($request->targa);
 
-        // INSERIRE IL CONTROLLO CHE SE L'AUTO È GIA' STATA NOLEGGIATA
-        // QUINDI I CAMPI username, data_inizio, data_fine SONO PIENI
-        // ALLORA MANDA UN MESSAGGIO D'ERRORE
+        // Se il campo username di auto è vuoto allora noleggio l'auto
+        if($auto->username == ''){
+            $auto->username = $user->username;
+            $auto->data_inizio = $request->data_inizio;
+            $auto->data_fine = $request->data_fine;
+            $auto->save();
 
-        $auto->username = $user->username;
-        $auto->data_inizio = $request->data_inizio;
-        $auto->data_fine = $request->data_fine;
-
-        $auto->save();
-
-        // Reindirizzo l'utente alla pagina di riepilogo dei suoi noleggi con un messaggio di successo
-        return redirect()->route('riepilogo-noleggi')->with('success', 'Auto noleggiata con successo');
+            // Reindirizzo l'utente alla pagina di riepilogo dei suoi noleggi con un messaggio di successo
+            return redirect()->route('riepilogo-noleggi')->with('success', 'Auto noleggiata con successo');
+        }
+        // altrimenti l'auto è stata già noleggiata da qualcun altro
+        else{
+            // Reindirizzo l'utente alla pagina di riepilogo dei suoi noleggi con un errore
+            return redirect()->route('riepilogo-noleggi')->with('error', 'Auto già noleggiata da un altro utente');
+        }
     }
 
 

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 use App\Models\Auto;
 
 class StaffController extends Controller
@@ -29,6 +28,7 @@ class StaffController extends Controller
     **/
     public function inserisciAuto(Request $request){
         $array = $request->all();
+        $nomeCompletoImg = $this->getImgName($array);
 
         // Crea l'auto
         Auto::create([
@@ -44,8 +44,10 @@ class StaffController extends Controller
             'descrizione' => $array['descrizione'],
             'prezzo' => $array['prezzo'],
             'data_inizio' => $array['data_inizio'],
-            'data_fine' => $array['data_fine']
+            'data_fine' => $array['data_fine'],
+            'nome_img' => $nomeCompletoImg
         ]);
+        
 
         // Elaboro il nome dell'immagine principale
         if($request->hasFile('img_principale')){
@@ -54,26 +56,12 @@ class StaffController extends Controller
 
             $arrayImg = explode('.', $nomeImg);
             
-            // Se la marca presenta degli spazi, allora li elimino
-            $marcaAuto = explode(' ', $array['marca']);
-            $nomeCompleto = $marcaAuto[0];
-            for($i = 0; $i < count($marcaAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
-            }
-
-            // Se il modello presenta degli spazi, allora li elimino
-            $modelloAuto = explode(' ', $array['modello']);
-            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
-            for($i = 0; $i < count($modelloAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
-            }
-
             // Ora al nome aggiungo '_principale' e l'estensione
-            $nomeCompleto = $nomeCompleto . '_principale' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeCompletoImg . '_principale' . '.' . $arrayImg[1];
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompleto);
+            $image->move($destinationPath, $nomeCompletoImg);
         }
 
         // Elaboro il nome dell'immagine del lato destro
@@ -84,26 +72,12 @@ class StaffController extends Controller
             // Separo il nome dall'estensione
             $arrayImg = explode('.', $nomeImg);
             
-            // Se la marca presenta degli spazi, allora li elimino
-            $marcaAuto = explode(' ', $array['marca']);
-            $nomeCompleto = $marcaAuto[0];
-            for($i = 0; $i < count($marcaAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
-            }
-
-            // Se il modello presenta degli spazi, allora li elimino
-            $modelloAuto = explode(' ', $array['modello']);
-            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
-            for($i = 0; $i < count($modelloAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
-            }
-
             // Ora al nome aggiungo '_destra' e l'estensione
-            $nomeCompleto = $nomeCompleto . '_destra' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeCompletoImg . '_destra' . '.' . $arrayImg[1];
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompleto);
+            $image->move($destinationPath, $nomeCompletoImg);
         }
 
         // Elaboro il nome dell'immagine del lato sinistro
@@ -113,26 +87,12 @@ class StaffController extends Controller
 
             $arrayImg = explode('.', $nomeImg);
             
-            // Se la marca presenta degli spazi, allora li elimino
-            $marcaAuto = explode(' ', $array['marca']);
-            $nomeCompleto = $marcaAuto[0];
-            for($i = 0; $i < count($marcaAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
-            }
-
-            // Se il modello presenta degli spazi, allora li elimino
-            $modelloAuto = explode(' ', $array['modello']);
-            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
-            for($i = 0; $i < count($modelloAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
-            }
-
             // Ora al nome aggiungo '_sinistra' e l'estensione
-            $nomeCompleto = $nomeCompleto . '_sinistra' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeCompletoImg . '_sinistra' . '.' . $arrayImg[1];
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompleto);
+            $image->move($destinationPath, $nomeCompletoImg);
         }
 
         // Elaboro il nome dell'immagine del lato frontale
@@ -142,26 +102,12 @@ class StaffController extends Controller
 
             $arrayImg = explode('.', $nomeImg);
             
-            // Se la marca presenta degli spazi, allora li elimino
-            $marcaAuto = explode(' ', $array['marca']);
-            $nomeCompleto = $marcaAuto[0];
-            for($i = 0; $i < count($marcaAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
-            }
-
-            // Se il modello presenta degli spazi, allora li elimino
-            $modelloAuto = explode(' ', $array['modello']);
-            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
-            for($i = 0; $i < count($modelloAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
-            }
-
             // Ora al nome aggiungo '_frontale' e l'estensione
-            $nomeCompleto = $nomeCompleto . '_frontale' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeCompletoImg . '_frontale' . '.' . $arrayImg[1];
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompleto);
+            $image->move($destinationPath, $nomeCompletoImg);
         }
 
         // Elaboro il nome dell'immagine del lato posteriore
@@ -171,26 +117,12 @@ class StaffController extends Controller
 
             $arrayImg = explode('.', $nomeImg);
             
-            // Se la marca presenta degli spazi, allora li elimino
-            $marcaAuto = explode(' ', $array['marca']);
-            $nomeCompleto = $marcaAuto[0];
-            for($i = 0; $i < count($marcaAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
-            }
-
-            // Se il modello presenta degli spazi, allora li elimino
-            $modelloAuto = explode(' ', $array['modello']);
-            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
-            for($i = 0; $i < count($modelloAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
-            }
-
             // Ora al nome aggiungo '_posteriore' e l'estensione
-            $nomeCompleto = $nomeCompleto . '_posteriore' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeCompletoImg . '_posteriore' . '.' . $arrayImg[1];
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompleto);
+            $image->move($destinationPath, $nomeCompletoImg);
         }
 
         return response()->json(['redirect' => route('gest-auto')]);
@@ -212,6 +144,7 @@ class StaffController extends Controller
     **/
     public function modificaAuto(Request $request){
         $array = $request->all();
+        $nomeCompletoImg = $this->getImgName($array);
 
         // Modifico i dati dell'auto in base alla targa
         Auto::where('targa', $array['targa'])
@@ -227,7 +160,8 @@ class StaffController extends Controller
                 'descrizione' => $array['descrizione'],
                 'prezzo' => $array['prezzo'],
                 'data_inizio' => $array['data_inizio'],
-                'data_fine' => $array['data_fine']
+                'data_fine' => $array['data_fine'],
+                'nome_img' => $nomeCompletoImg
               ]);
 
         // Elaboro il nome dell'immagine principale
@@ -237,26 +171,14 @@ class StaffController extends Controller
 
             $arrayImg = explode('.', $nomeImg);
             
-            // Se la marca presenta degli spazi, allora li elimino
-            $marcaAuto = explode(' ', $array['marca']);
-            $nomeCompleto = $marcaAuto[0];
-            for($i = 0; $i < count($marcaAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
-            }
-
-            // Se il modello presenta degli spazi, allora li elimino
-            $modelloAuto = explode(' ', $array['modello']);
-            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
-            for($i = 0; $i < count($modelloAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
-            }
+            $nomeCompletoImg = $this->getImgName($array);
 
             // Ora al nome aggiungo '_principale' e l'estensione
-            $nomeCompleto = $nomeCompleto . '_principale' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeCompletoImg . '_principale' . '.' . $arrayImg[1];
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompleto);
+            $image->move($destinationPath, $nomeCompletoImg);
         }
 
         // Elaboro il nome dell'immagine del lato destro
@@ -267,26 +189,14 @@ class StaffController extends Controller
             // Separo il nome dall'estensione
             $arrayImg = explode('.', $nomeImg);
             
-            // Se la marca presenta degli spazi, allora li elimino
-            $marcaAuto = explode(' ', $array['marca']);
-            $nomeCompleto = $marcaAuto[0];
-            for($i = 0; $i < count($marcaAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
-            }
-
-            // Se il modello presenta degli spazi, allora li elimino
-            $modelloAuto = explode(' ', $array['modello']);
-            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
-            for($i = 0; $i < count($modelloAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
-            }
+            $nomeCompletoImg = $this->getImgName($array);
 
             // Ora al nome aggiungo '_destra' e l'estensione
-            $nomeCompleto = $nomeCompleto . '_destra' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeCompletoImg . '_destra' . '.' . $arrayImg[1];
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompleto);
+            $image->move($destinationPath, $nomeCompletoImg);
         }
 
         // Elaboro il nome dell'immagine del lato sinistro
@@ -296,26 +206,14 @@ class StaffController extends Controller
 
             $arrayImg = explode('.', $nomeImg);
             
-            // Se la marca presenta degli spazi, allora li elimino
-            $marcaAuto = explode(' ', $array['marca']);
-            $nomeCompleto = $marcaAuto[0];
-            for($i = 0; $i < count($marcaAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
-            }
-
-            // Se il modello presenta degli spazi, allora li elimino
-            $modelloAuto = explode(' ', $array['modello']);
-            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
-            for($i = 0; $i < count($modelloAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
-            }
+            $nomeCompletoImg = $this->getImgName($array);
 
             // Ora al nome aggiungo '_sinistra' e l'estensione
-            $nomeCompleto = $nomeCompleto . '_sinistra' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeCompletoImg . '_sinistra' . '.' . $arrayImg[1];
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompleto);
+            $image->move($destinationPath, $nomeCompletoImg);
         }
 
         // Elaboro il nome dell'immagine del lato frontale
@@ -325,26 +223,14 @@ class StaffController extends Controller
 
             $arrayImg = explode('.', $nomeImg);
             
-            // Se la marca presenta degli spazi, allora li elimino
-            $marcaAuto = explode(' ', $array['marca']);
-            $nomeCompleto = $marcaAuto[0];
-            for($i = 0; $i < count($marcaAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
-            }
-
-            // Se il modello presenta degli spazi, allora li elimino
-            $modelloAuto = explode(' ', $array['modello']);
-            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
-            for($i = 0; $i < count($modelloAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
-            }
+            $nomeCompletoImg = $this->getImgName($array);
 
             // Ora al nome aggiungo '_frontale' e l'estensione
-            $nomeCompleto = $nomeCompleto . '_frontale' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeCompletoImg . '_frontale' . '.' . $arrayImg[1];
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompleto);
+            $image->move($destinationPath, $nomeCompletoImg);
         }
 
         // Elaboro il nome dell'immagine del lato posteriore
@@ -354,29 +240,40 @@ class StaffController extends Controller
 
             $arrayImg = explode('.', $nomeImg);
             
-            // Se la marca presenta degli spazi, allora li elimino
-            $marcaAuto = explode(' ', $array['marca']);
-            $nomeCompleto = $marcaAuto[0];
-            for($i = 0; $i < count($marcaAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $marcaAuto[$i];
-            }
-
-            // Se il modello presenta degli spazi, allora li elimino
-            $modelloAuto = explode(' ', $array['modello']);
-            $nomeCompleto = $nomeCompleto . $modelloAuto[0];
-            for($i = 0; $i < count($modelloAuto); $i++){
-                $nomeCompleto = $nomeCompleto . $modelloAuto[$i];
-            }
+            $nomeCompletoImg = $this->getImgName($array);
 
             // Ora al nome aggiungo '_posteriore' e l'estensione
-            $nomeCompleto = $nomeCompleto . '_posteriore' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeCompletoImg . '_posteriore' . '.' . $arrayImg[1];
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompleto);
+            $image->move($destinationPath, $nomeCompletoImg);
         }
 
         return redirect('gest-auto');
+    }
+
+
+    /** 
+     *  Funzione che costruisce il nome che verrà assegnato alle immagini di un'auto.
+     *  Il nome sarà formato <Marca><Modello> senza nessuno spazio.
+    **/
+    public function getImgName($array){
+        // Se la marca presenta degli spazi, allora li elimino
+        $marcaAuto = explode(' ', $array['marca']);
+        $nomeCompletoImg = $marcaAuto[0];
+        for($i = 0; $i < count($marcaAuto); $i++){
+            $nomeCompletoImg = $nomeCompletoImg . $marcaAuto[$i];
+        }
+
+        // Se il modello presenta degli spazi, allora li elimino
+        $modelloAuto = explode(' ', $array['modello']);
+        $nomeCompletoImg = $nomeCompletoImg . $modelloAuto[0];
+        for($i = 0; $i < count($modelloAuto); $i++){
+            $nomeCompletoImg = $nomeCompletoImg . $modelloAuto[$i];
+        }
+
+        return $nomeCompletoImg;
     }
 
 
@@ -394,6 +291,9 @@ class StaffController extends Controller
      *  Ritorna la lista delle auto noleggiate un certo mese
     **/
     public function storicoAutoMese(Request $request){
+        
+        // FARE IL CONTROLLO SUL MESE
+
         return json_encode(Auto::where('data_inizio', $request->dataInizio)->get());
     }
 }

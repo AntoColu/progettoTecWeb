@@ -48,7 +48,9 @@
                 @foreach($automobili as $auto)
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . '_principale'})}}" class="card-img-top custom_card" alt="Foto Automobile">
+                            {{$img_path = 'images/auto/' . $auto->nome_img . '_principale.png'}}
+                            <img src="{{asset($img_path)}}" class="card-img-top custom_card" alt="Foto Automobile">
+                            {{--<img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . '_principale'})}}" class="card-img-top custom_card" alt="Foto Automobile">--}}
                             <div class="card-body">
                                 <h3 class="card-title">{{$auto->marca}}</h3>
                                 <h3 class="card-title">{{$auto->modello}}</h3>

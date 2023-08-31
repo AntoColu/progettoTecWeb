@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('faq', function (Blueprint $table) {
-            $table->id();
+            $table->increments('faqId');
+            $table->string('domanda',255);
+            $table->string('risposta',255);
             $table->timestamps();
         });
     }
