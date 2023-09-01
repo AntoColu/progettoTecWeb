@@ -87,7 +87,7 @@ Route::prefix('gest-auto')->group(function () {
 Route::get("/storico-noleggi", [StaffController::class, 'showStorico'])->middleware("can:isStaff")
         ->name('storico-noleggi');
 
-Route::post("/storico-filtrato/date", [StaffController::class, 'storicoAutoMese'])->middleware("can:isStaff")
+Route::post("/storico-filtrato", [StaffController::class, 'storicoAutoMese'])->middleware("can:isStaff")
         ->name('storico-mese');
 
 
@@ -101,7 +101,7 @@ Route::prefix('gest-staff')->group(function () {
     Route::get("/", [AdminController::class, 'showGestioneStaff'])->middleware("can:isAdmin")
         ->name('gest-staff');
 
-    Route::get("/inserisci", [AdminController::class, 'showNuovoStaff'])->middleware("can:isAdmin")
+    Route::get("/inserisci", [AdminController::class, 'showNuovoMembroStaff'])->middleware("can:isAdmin")
         ->name('inserisci-staff');
 
     Route::post("/inserisci", [AdminController::class, 'inserisciStaff'])->middleware("can:isAdmin")

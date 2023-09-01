@@ -49,7 +49,7 @@ class User extends Authenticatable
      * The attributes that should be cast.
      *
      * @var array<string, string>
-     */
+    **/
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
@@ -57,7 +57,7 @@ class User extends Authenticatable
     /**
      * Funzione che serve a verificare se l'utente ha 
      * un determinato ruolo specificato come parametro
-     */
+    **/
     public function hasRole($ruolo) {
         $ruolo = (array)$ruolo;
         return in_array($this->ruolo, $ruolo);

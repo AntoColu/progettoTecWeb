@@ -291,7 +291,18 @@ class StaffController extends Controller
 
 
     /**
-     *  Ritorna la lista delle auto noleggiate un certo mese
+     *  Ritorno la pagina riguardante lo storico dei noleggi.
+     * 
+     *  La pagina non presenterà nessuna auto all'inizio, dato che l'utente
+     *  deve compilare la form con un mese
+    **/
+    public function showStorico(){
+        return view('staff/storico-noleggi');
+    }
+
+
+    /**
+     *  Ritorno la lista delle auto noleggiate un certo mese
     **/
     public function storicoAutoMese(Request $request){
         $auto_filtrate = Auto::whereMonth('data_inizio', $request->meseInizio)->get();
