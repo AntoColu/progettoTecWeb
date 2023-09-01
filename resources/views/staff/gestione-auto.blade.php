@@ -14,9 +14,11 @@
             <div class="row justify-content-center">
                 @foreach($automobili as $auto)
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img_principale'})}}" alt="Foto Automobile">
+                        {{$img_path = 'images/auto/' . $auto->nome_img . '_principale.png'}}
+                        <img src="{{asset($img_path)}}" class="card-img-top custom_card" alt="Foto Automobile">
+                        {{--<img class="card-img-top" src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img_principale'})}}" alt="Foto Automobile">--}}
                         <div class="card-body">
-                            <h4 class="card-title">{{$auto->marca}} {{$auto->modello}}</h4>
+                            <h4 class="card-title">{{$auto->marca}} {{$auto->modello}} - {{$auto->anno}}</h4>
                             <p class="card-text">{{$auto->descrizione}}</p>
                             <a href="{{ route('modifica-auto', [$auto->targa]) }}" class="btn btn-info">Modifica</a>
                             <a href="{{ route('elimina-auto', [$auto->targa]) }}" class="btn btn-danger"  onclick="return confirm('Sei sicuro di voler proseguire?')">Elimina</a>

@@ -47,7 +47,7 @@
     <!-- Informazioni dell'auto -->
     <div id="dettagli-auto">
         <h2>
-            {{$auto->marca}} {{$auto->modello}}
+            {{$auto->marca}} {{$auto->modello}} - {{ $auto->anno }}
         </h2>
         <ul style="list-style-type:none;">
             <li>

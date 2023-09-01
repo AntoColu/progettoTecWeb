@@ -18,7 +18,14 @@ return new class extends Migration
             $table->string('modello',255);
             $table->string('targa',255)->primary();
             $table->integer('anno');
-            /*finire di scrivere*/
+            $table->integer('nPosti');
+            $table->string('motore',255);
+            $table->string('carburante',255);
+            $table->string('descrizione',255);
+            $table->integer('prezzo');
+            $table->string('data_inizio',255);
+            $table->string('data_fine',255);
+            $table->string('nome_img',255);
         });
     }
 

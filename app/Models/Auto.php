@@ -28,11 +28,12 @@ class Auto extends Model
         'prezzo',
         'data_inizio',
         'data_fine',
-        'img_principale',
+        'nome_img'
+        /*'img_principale',
         'img_destra',
         'img_sinistra',
         'img_frontale',
-        'img_posteriore'
+        'img_posteriore'*/
     ];
 
     protected $hidden = ['targa'];

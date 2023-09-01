@@ -46,7 +46,7 @@
             <!-- Campo 'anno' -->
             <div class="form-group">
                 {{ Form::label('anno', 'Anno') }}
-                {{ Form::text('anno', $auto->anno, ['class' => 'form-control', 'id' => 'anno']) }}
+                {{ Form::number('anno', $auto->anno, ['class' => 'form-control', 'id' => 'anno']) }}
             </div>
 
             <!-- Campo 'nPosti' -->

@@ -42,6 +42,7 @@
                         <div class="card-body">
                             <h3 class="card-title">{{$auto->marca}}</h3>
                             <h3 class="card-title">{{$auto->modello}}</h3>
+                            <h3 class="card-title"> - {{$auto->anno}}</h3>
                             <h5 class="card-text">Utente: {{$auto->username}}</h5>
                             <p class="card-text">Noleggiata dal: {{$auto->data_inizio}}</p>
                             <p class="card-text">fino al: {{$auto->data_fine}}</p>

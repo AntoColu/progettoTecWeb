@@ -69,7 +69,7 @@
             <!-- Campo 'anno' -->
             <div>
                 {{ Form::label('anno', 'Anno') }}
-                {{ Form::text('anno', null, ['class' => 'form-control', 'id' => 'anno']) }}
+                {{ Form::number('anno', null, ['class' => 'form-control', 'id' => 'anno']) }}
             </div>
 
             <!-- Campo 'nPosti' -->
