@@ -3,16 +3,16 @@
         <a href="{{ route('admin') }}" title="Va alla Home di Admin">Home</a>
     </li>
     <li>
-        <a href="{{ route('gest-staff') }}" title="Gestisci lo staff">Staff</a>
+        <a href="{{ route('gestione-staff') }}" title="Gestisci lo staff">Staff</a>
     </li>
     <li>
-        <a href="{{ route('gest-clienti') }}" title="Gestisci i clienti">Clienti</a>
+        <a href="{{ route('gestione-clienti') }}" title="Gestisci i clienti">Clienti</a>
     </li>
     <li>
-        <a href="{{ route('gest-auto') }}" title="Aggiungi, modifica, cancella auto">Gestione auto</a>
+        <a href="{{ route('gestione-auto') }}" title="Aggiungi, modifica, cancella auto">Gestione auto</a>
     </li>
     <li>
-        <a href="{{ route('gest-faq') }}" title="Gestisci le FAQ">FAQ</a>
+        <a href="{{ route('gestione-faq') }}" title="Gestisci le FAQ">FAQ</a>
     </li>
     <li>
         <a href="{{ route('statistiche') }}" title="Statistiche">Statistiche</a>

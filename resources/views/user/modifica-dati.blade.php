@@ -65,4 +65,11 @@
                 {{ Form::close() }}
             </div>
         </div>
+
+        <!-- Sezione per eventuale messaggio di errore -->
+        <div class="text-center">
+            @error('errore-modifica-dati')
+                <span style="color: red">{{ $message }}</span>
+            @enderror
+        </div>
 @endsection

@@ -64,9 +64,9 @@ Route::prefix('user')->group(function () {
 /**
  *  Sezione STAFF livello 3
 **/
-Route::prefix('gest-auto')->group(function () {
+Route::prefix('gestione-auto')->group(function () {
     Route::get("/", [StaffController::class, 'showGestioneAuto'])->middleware("can:isStaff")
-        ->name('gest-auto');
+        ->name('gestione-auto');
 
     Route::get("/inserisci", [StaffController::class, 'showNuovaAuto'])->middleware("can:isStaff")
         ->name('inserisci-auto');
@@ -97,11 +97,11 @@ Route::post("/storico-filtrato", [StaffController::class, 'storicoAutoMese'])->m
 **/
 
 // Rotte dedicate alla gestione dello staff
-Route::prefix('gest-staff')->group(function () {
+Route::prefix('gestione-staff')->group(function () {
     Route::get("/", [AdminController::class, 'showGestioneStaff'])->middleware("can:isAdmin")
-        ->name('gest-staff');
+        ->name('gestione-staff');
 
-    Route::get("/inserisci", [AdminController::class, 'showNuovoMembroStaff'])->middleware("can:isAdmin")
+    Route::get("/inserisci", [AdminController::class, 'showInserisciStaff'])->middleware("can:isAdmin")
         ->name('inserisci-staff');
 
     Route::post("/inserisci", [AdminController::class, 'inserisciStaff'])->middleware("can:isAdmin")
@@ -119,9 +119,9 @@ Route::prefix('gest-staff')->group(function () {
 
 
 // Rotte per l'eliminazione dei clienti
-Route::prefix('gest-clienti')->group(function () {
+Route::prefix('gestione-clienti')->group(function () {
     Route::get("/", [AdminController::class, 'showGestioneClienti'])->middleware('can:isAdmin')
-        ->name('gest-clienti');
+        ->name('gestione-clienti');
 
     Route::get("/elimina-clienti/{username}", [AdminController::class, 'eliminaClienti'])->middleware('can:isAdmin')
         ->name('elimina-clienti');
@@ -129,9 +129,9 @@ Route::prefix('gest-clienti')->group(function () {
 
 
 // Rotte per la gestione delle faq
-Route::prefix('gest-faq')->group(function () {
+Route::prefix('gestione-faq')->group(function () {
     Route::get("/", [AdminController::class, 'showGestioneFaq'])->middleware('can:isAdmin')
-        ->name('gest-faq');
+        ->name('gestione-faq');
 
     Route::get("/inserisci", [AdminController::class, 'showNuovaFaq'])->middleware("can:isAdmin")
         ->name("crea-faq");

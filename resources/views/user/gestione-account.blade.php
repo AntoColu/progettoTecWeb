@@ -18,4 +18,11 @@
 
         <a href="{{ route('modifica-dati') }}" class="btn btn-info">Modifica</a>
     </div>
+
+    <!-- Sezione per eventuale messaggio di successo -->
+    <div class="text-center">
+        @if(session('success'))
+            <strong style="color: green">{{ session('success') }}</strong>
+        @endif
+    </div>
 @endsection

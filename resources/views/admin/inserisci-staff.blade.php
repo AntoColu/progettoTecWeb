@@ -93,5 +93,12 @@
                 {{ Form::close() }}
             </div>
         </div>
+
+        <!-- Sezione per eventuale messaggio di errore -->
+        <div class="text-center">
+            @error('errore-inserimento-staff')
+                <span style="color: red">{{ $message }}</span>
+            @enderror
+        </div>
     </div>
 @endsection

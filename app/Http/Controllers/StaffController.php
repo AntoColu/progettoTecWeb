@@ -125,7 +125,7 @@ class StaffController extends Controller
             $image->move($destinationPath, $nomeCompletoImg);
         }
 
-        return response()->json(['redirect' => route('gest-auto')]);
+        return response()->json(['redirect' => route('gestione-auto')]);
     }
 
 
@@ -250,7 +250,7 @@ class StaffController extends Controller
             $image->move($destinationPath, $nomeCompletoImg);
         }
 
-        return redirect('gest-auto');
+        return redirect('gestione-auto');
     }
 
 
@@ -282,10 +282,10 @@ class StaffController extends Controller
     **/
     public function eliminaAuto($targa){
         if(Auto::destroy($targa)){
-            return redirect()->route('gest-auto')->with('success', 'Auto eliminata con successo');
+            return redirect()->route('gestione-auto')->with('success', 'Auto eliminata con successo');
         }
         else{
-            return redirect()->route('gest-auto')->withErrors(['auto-non-eliminata' => 'Eliminazione non effettuata']);
+            return redirect()->route('gestione-auto')->withErrors(['auto-non-eliminata' => 'Eliminazione non effettuata']);
         }
     }
 

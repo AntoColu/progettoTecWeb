@@ -35,9 +35,9 @@ class UserController extends Controller
 
         // Controllo se il nuovo username modificato esiste già:
         // in caso affermativo l'utente viene reindirizzato di nuovo alla pagina di modifica
-        // con un messaggio d'erroe
+        // con un messaggio d'errore
         if(User::find($request->username)){
-            return redirect()->route('modifica-dati')->with('error', 'Username già utilizzato da un altro utente');
+            return redirect()->route('modifica-dati')->withErrors(['errore-modifica-dati' => 'Username già utilizzato da un altro utente']);
         }
         // se il nuovo username non è ancora stato usato, allora effettuo la modifica dei dati
         else{
