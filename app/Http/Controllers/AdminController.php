@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Auto;
 use App\Models\Faq;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class AdminController extends Controller
      *  Ritorno la pagina riguardante la gestione dello staff, passando la lista dei membri dello staff
     **/
     public function showGestioneStaff(){
-        return view('staff/gestione-staff')->with('membri_staff', User::where('ruolo', 'staff')->get());
+        return view('admin/gestione-staff')->with('membri_staff', User::where('ruolo', 'staff')->get());
     }
 
 
@@ -24,7 +25,7 @@ class AdminController extends Controller
      *  Ritorno la pagina riguardante l'inserimento di un nuovo membro dello staff
     **/
     public function showInserisciStaff(){
-        return view('staff/inserisci-staff');
+        return view('admin/inserisci-staff');
     }
 
 
@@ -65,7 +66,7 @@ class AdminController extends Controller
     public function showModificaStaff($username){
         $staff = User::find($username);
 
-        return view('staff/modifica-staff')->with(['staff' => $staff]);
+        return view('admin/modifica-staff')->with(['staff' => $staff]);
     }
 
 
@@ -122,7 +123,7 @@ class AdminController extends Controller
      *  Ritorno la pagina riguardante la gestione dei clienti, passando la lista dei clienti
     **/
     public function showGestioneClienti(){
-        return view('staff/gestione-clienti')->with('clienti', User::where('ruolo', 'user')->get());
+        return view('admin/gestione-clienti')->with('clienti', User::where('ruolo', 'user')->get());
     }
 
 
@@ -148,7 +149,7 @@ class AdminController extends Controller
      *  Ritorno la pagina riguardante la gestione delle faq, passando la lista delle faq
     **/
     public function showGestioneFaq(){
-        return view('staff/gestione-faq')->with('faqs', Faq::all());
+        return view('admin/gestione-faq')->with('faqs', Faq::all());
     }
 
 
@@ -156,7 +157,7 @@ class AdminController extends Controller
      *  Ritorno la pagina riguardante l'inserimento di una nuova faq
     **/
     public function showInserisciFaq(){
-        return view('staff/inserisci-faq');
+        return view('admin/inserisci-faq');
     }
 
 
@@ -177,7 +178,7 @@ class AdminController extends Controller
      *  Ritorno la pagina riguardante la modifica di una faq
     **/
     public function showModificaFaq(){
-        return view('staff/modifica-faq');
+        return view('admin/modifica-faq');
     }
 
 
@@ -218,6 +219,16 @@ class AdminController extends Controller
      *  Ritorno la pagina riguardante le statistiche di noleggio auto
     **/
     public function showStatistiche(){
+        return view('admin/statistiche');
+    }
 
+
+    public function statisticheAuto(Request $request){
+        $anno_corrente = date('Y'); // Prendo l'anno corrente
+        $num_auto = Auto::whereYear('data_inizio', $anno_corrente)
+                    ->whereMonth('data_inizio', $request->meseInizio)
+                    ->count();
+
+        return view('admin/storico-noleggi')->with(['num_auto' => $num_auto]);
     }
 }

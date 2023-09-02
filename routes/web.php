@@ -154,6 +154,9 @@ Route::prefix('gestione-faq')->group(function () {
 Route::get("/statistiche", [AdminController::class, 'showStatistiche'])->middleware('can:isAdmin')
     ->name('statistiche');
 
+Route::get("/statistiche/auto-nol", [AdminController::class, 'statisticheAuto'])->middleware('can:isAdmin')
+    ->name('statistiche-auto');
+
 /**
  *  FINE sezione ADMIN
 **/
