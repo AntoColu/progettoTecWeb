@@ -27,5 +27,25 @@ class AdminController extends Controller
      *  Funzione che inserisce un nuovo membro dello staff
     **/
     public function inserisciStaff(){
+
+    }
+
+
+    /**
+     *  Ritorno la pagina riguardante la modifica di un membro dello staff, 
+     *  dato lo username
+    **/
+    public function showModificaStaff($username){
+        $staff = User::find($username);
+
+        return view('staff/modifica-staff')->with(['staff' => $staff]);
+    }
+
+
+    /**
+     *  Funzione che va a modificare il membro dello staff selezionato
+    **/
+    public function modificaStaff(Request $request){
+
     }
 }

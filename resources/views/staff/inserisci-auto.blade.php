@@ -3,7 +3,7 @@
 @section('title', 'Inserisci una nuova auto')
 
 @section('js')
-    <script src="{{ asset('js/inserisci-auto.js') }}"></script>
+    <script src="{{ asset('js/inserimento.js') }}"></script>
 
     <script>
         $(function () {

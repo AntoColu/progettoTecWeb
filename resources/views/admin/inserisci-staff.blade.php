@@ -1,9 +1,9 @@
 @extends('principale')
 
-@section('title', 'Inserisci una nuova auto')
+@section('title', 'Nuovo membro dello staff')
 
 @section('js')
-    <script src="{{ asset('js/inserisci-auto.js') }}"></script>
+    <script src="{{ asset('js/inserimento.js') }}"></script>
 
     <script>
         $(function () {
@@ -33,6 +33,65 @@
     <div class="container">
         <h1>Inserisci un nuovo membro dello staff:</h1>
 
+        <div class="wrap">
+            {{ Form::open(array('route' => 'inserisci-staff.store', 'id' => 'inserisci-staff', 'files' => true, 'class' => 'inserisci-staff')) }}
 
+            <!-- Parametri che non saranno visibili nella form, ma che devo passare per inserire il nuovo membro -->
+            {{ Form::hidden('occupazione', 'Dipendente') }}
+            {{ Form::hidden('ruolo', 'staff') }}
+
+            <!-- Campo 'nome' -->
+            <div>
+                {{ Form::label('nome', 'Nome') }}
+                {{ Form::text('nome', null, ['class' => 'form-control', 'id' => 'nome']) }}
+            </div>
+
+            <!-- Campo 'cognome' -->
+            <div>
+                {{ Form::label('cognome', 'Cognome') }}
+                {{ Form::text('cognome', null, ['class' => 'form-control', 'id' => 'cognome']) }}
+            </div>
+
+            <!-- Campo 'residenza' -->
+            <div>
+                {{ Form::label('residenza', 'Residenza') }}
+                {{ Form::text('residenza', null, ['class' => 'form-control', 'id' => 'residenza']) }}
+            </div>
+
+            <!-- Campo 'nascita' -->
+            <div>
+                {{ Form::label('nascita', 'Nascita') }}
+                {{ Form::input('date', 'nascita', null, ['class' => 'form-control', 'id' => 'nascita']) }}
+            </div>
+
+            <!-- Campo 'email' -->
+            <div>
+                {{ Form::label('email', 'Email') }}
+                {{ Form::text('email', null, ['class' => 'form-control', 'id' => 'email']) }}
+            </div>
+
+            <!-- Campo 'username' -->
+            <div>
+                {{ Form::label('username', 'Username') }}
+                {{ Form::text('username', null, ['class' => 'form-control', 'id' => 'username']) }}
+            </div>
+
+            <!-- Campo 'password' -->
+            <div>
+                {{ Form::label('password', 'Password') }}
+                {{ Form::text('password', null, ['class' => 'form-control', 'id' => 'password']) }}
+            </div>
+
+            <div>
+                <!-- Bottone per confermare l'inserimento -->
+                {{ Form::submit('Conferma', ['class' => 'btn btn-primary', 'onclick' => "return confirm('Sei sicuro di voler proseguire?')"]) }}
+
+                <!-- Bottone per svuotare i campi -->
+                <button class="bottone" onclick="document.getElementById('inserisci-staff').reset()">Svuota campi</button>
+
+                <!-- Chiusura form -->
+                {{ Form::close() }}
+            </div>
+        </div>
     </div>
 @endsection

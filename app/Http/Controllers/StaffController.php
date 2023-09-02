@@ -130,7 +130,7 @@ class StaffController extends Controller
 
 
     /**
-     *  Ritorno la pagina riguardante la modifica un'auto, data la targa
+     *  Ritorno la pagina riguardante la modifica di un'auto, data la targa
     **/
     public function showModificaAuto($targa){
         $auto = Auto::find($targa);
