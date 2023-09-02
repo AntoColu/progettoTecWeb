@@ -133,7 +133,7 @@ Route::prefix('gestione-faq')->group(function () {
     Route::get("/", [AdminController::class, 'showGestioneFaq'])->middleware('can:isAdmin')
         ->name('gestione-faq');
 
-    Route::get("/inserisci", [AdminController::class, 'showNuovaFaq'])->middleware("can:isAdmin")
+    Route::get("/inserisci", [AdminController::class, 'showInserisciFaq'])->middleware("can:isAdmin")
         ->name("crea-faq");
 
     Route::post("/inserisci", [AdminController::class, 'inserisciFaq'])->middleware("can:isAdmin")

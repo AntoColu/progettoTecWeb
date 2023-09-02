@@ -127,7 +127,7 @@ class AdminController extends Controller
 
 
     /**
-     *  Funzione che va ad eliminare il cliente selezionato
+     *  Funzione elimina il cliente selezionato
     **/
     public function eliminaClienti($username){
         if(User::destroy($username)){
@@ -149,5 +149,75 @@ class AdminController extends Controller
     **/
     public function showGestioneFaq(){
         return view('staff/gestione-faq')->with('faqs', Faq::all());
+    }
+
+
+    /**
+     *  Ritorno la pagina riguardante l'inserimento di una nuova faq
+    **/
+    public function showInserisciFaq(){
+        return view('staff/inserisci-faq');
+    }
+
+
+    /**
+     *  Funzione che inserisce una nuova faq
+    **/
+    public function inserisciFaq(Request $request){
+        Faq::create([
+            'domanda' => $request->domanda,
+            'risposta' => $request->risposta
+        ]);
+
+        return redirect()->route('gestione-faq')->with('success', 'Nuova faq aggiunta con successo');
+    }
+
+
+    /**
+     *  Ritorno la pagina riguardante la modifica di una faq
+    **/
+    public function showModificaFaq(){
+        return view('staff/modifica-faq');
+    }
+
+
+    /**
+     *  Funzione che modifica una faq
+    **/
+    public function modificaFaq(Request $request){
+        $faq = Faq::find($request->faqId);
+        
+        $faq->domanda = $request->domanda;
+        $faq->risposta = $request->risposta;
+
+        $faq->save();
+
+        return redirect()->route('gestione-faq')->with('success', 'Faq modificata con successo');
+    }
+
+
+    /**
+     *  Funzione che elimina una faq in base all'id
+    **/
+    public function eliminaFaq($faqId){
+        if(Faq::destroy($faqId)){
+            return redirect()->route('gestione-faq')->with('success', 'Faq eliminata con successo');
+        }
+        else{
+            return redirect()->route('gestione-faq')->withErrors(['faq-non-eliminata' => 'Eliminazione non effettuata']);
+        }
+    }
+
+
+
+    ///**********************************///
+    /**  AREA DEDICATA ALLE STATISTICHE  **/
+    ///**********************************///
+ 
+    /**
+     *  Ritorno la pagina riguardante le statistiche di noleggio auto
+    **/
+    public function showStatistiche(){
+
     }
 }
