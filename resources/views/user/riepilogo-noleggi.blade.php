@@ -24,6 +24,6 @@
             @endforeach
         </div>
         
-        @include('paginator.paginator', ['paginator' => $automobili->withQueryString()])
+        @include('pagination.paginator', ['paginator' => $automobili->withQueryString()])
     </div>
 @endsection

@@ -28,8 +28,9 @@ class PublicController extends Controller
      *  Mostra la pagina del catalogo
     **/
     public function showCatalogo() {
+        $automobili = Auto::paginate(5);
         return view('public/catalogo')
-            ->with('automobili', Auto::all())
+            ->with('automobili', $automobili)
             ->with('minprezzo', '')
             ->with('maxprezzo', '');
     }
@@ -63,5 +64,13 @@ class PublicController extends Controller
         // Altrimenti ritorno le automobili acquisite con la query
         else
             return view('public/catalogo')->with('automobili', $automobili);
+    }
+
+
+    /**
+     *  Mostra la pagina che stampa tutte le informazioni dell'auto selezionata
+    **/
+    public function showDettagliAuto($targa){
+        return view('public/dettagli-auto')->with('auto', Auto::find($targa));
     }
 }

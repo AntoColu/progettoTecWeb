@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '1200 cc - 70 CV', 'carburante' => 'Benzina',
                 'username' => '', 'catId' => 1,
                 'descrizione' => '4 posti; 4 porte; Cambio manuale; Motore: 1200 cc 70 CV; Carburante: Benzina',
-                'prezzo' => 120, 'data_inizio' => '2023-01-03', 'data_fine' => '2023-03-03', 
+                'prezzo' => 120, 'data_inizio' => '', 'data_fine' => '', 
                 'nome_img' => 'FiatPanda'
                 /*'img_principale' => fread(fopen("./public/images/auto/FiatPanda-principale.png", 'rb'), filesize("./public/images/FiatPanda-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/FiatPanda-destra.png", 'rb'), filesize("./public/images/FiatPanda-destra.png")),
@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '1500 cc - 102 CV', 'carburante' => 'Diesel',
                 'username' => '', 'catId' => 1,
                 'descrizione' => '5 posti; 4 porte; Cambio manuale; Motore: 1500 cc 102 CV; Carburante: Diesel',
-                'prezzo' => 132, 'data_inizio' => '2023-02-12', 'data_fine' => '2023-04-22',
+                'prezzo' => 132, 'data_inizio' => '', 'data_fine' => '',
                 'nome_img' => 'Peugeot208' 
                 /*'img_principale' => fread(fopen("./public/images/auto/Peugeot208-principale.png", 'rb'), filesize("./public/images/Peugeot208-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/Peugeot208-destra.png", 'rb'), filesize("./public/images/Peugeot208-destra.png")),
@@ -84,25 +84,12 @@ class DatabaseSeeder extends Seeder
                 'img_frontale' => fread(fopen("./public/images/auto/Peugeot208-frontale.png", 'rb'), filesize("./public/images/Peugeot208-frontale.png")),
                 'img_posteriore' => fread(fopen("./public/images/auto/Peugeot208-posteriore.png", 'rb'), filesize("./public/images/Peugeot208-posteriore.png"))*/
             ],
-            ['marca' => 'Toyota', 'modello' => 'Aygo', 'targa' => 'GH842HG',
-                'anno' => 2021, 'nPosti' => 5, 
-                'motore' => '1000 cc - 72 CV', 'carburante' => 'Benzina',
-                'username' => '', 'catId' => 1,
-                'descrizione' => '5 posti; 4 porte; Cambio manuale; Motore: 1000 cc 72 CV; Carburante: Benzina',
-                'prezzo' => 125, 'data_inizio' => '2023-02-15', 'data_fine' => '2023-02-28', 
-                'nome_img' => 'ToyotaAygo'
-                /*'img_principale' => fread(fopen("./public/images/auto/ToyotaAygo-principale.png", 'rb'), filesize("./public/images/ToyotaAygo-principale.png")),
-                'img_destra' => fread(fopen("./public/images/auto/ToyotaAygo-destra.png", 'rb'), filesize("./public/images/ToyotaAygo-destra.png")),
-                'img_sinistra' => fread(fopen("./public/images/auto/ToyotaAygo-sinistra.png", 'rb'), filesize("./public/images/ToyotaAygo-sinistra.png")),
-                'img_frontale' => fread(fopen("./public/images/auto/ToyotaAygo-frontale.png", 'rb'), filesize("./public/images/ToyotaAygo-frontale.png")),
-                'img_posteriore' => fread(fopen("./public/images/auto/ToyotaAygo-posteriore.png", 'rb'), filesize("./public/images/ToyotaAygo-posteriore.png"))*/
-            ],
             ['marca' => 'Fiat', 'modello' => 'Tipo', 'targa' => 'GJ654JG',
                 'anno' => 2022, 'nPosti' => 5, 
                 'motore' => '1600 cc - 131 CV', 'carburante' => 'Diesel',
                 'username' => '', 'catId' => 2,
                 'descrizione' => '5 posti; 5 porte; Cambio manuale; Motore: 1600 cc 131 CV; Carburante: Diesel',
-                'prezzo' => 146, 'data_inizio' => '2023-01-25', 'data_fine' => '2023-05-25', 
+                'prezzo' => 146, 'data_inizio' => '', 'data_fine' => '', 
                 'nome_img' => 'FiatTipo'
                 /*'img_principale' => fread(fopen("./public/images/auto/FiatTipo-principale.png", 'rb'), filesize("./public/images/FiatTipo-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/FiatTipo-destra.png", 'rb'), filesize("./public/images/FiatTipo-destra.png")),
@@ -115,7 +102,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '1900 cc - 116 CV', 'carburante' => 'Diesel',
                 'username' => '', 'catId' => 2,
                 'descrizione' => '5 posti; 5 porte; Cambio manuale; Motore: 1900 cc 116 CV; Carburante: Diesel',
-                'prezzo' => 187, 'data_inizio' => '2023-05-22', 'data_fine' => '2023-06-22', 
+                'prezzo' => 187, 'data_inizio' => '', 'data_fine' => '', 
                 'nome_img' => 'AudiA3'
                 /*'img_principale' => fread(fopen("./public/images/auto/AudiA3-principale.png", 'rb'), filesize("./public/images/AudiA3-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/AudiA3-destra.png", 'rb'), filesize("./public/images/AudiA3-destra.png")),
@@ -128,7 +115,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '1000 cc - 110 CV', 'carburante' => 'Benzina',
                 'username' => '', 'catId' => 2,
                 'descrizione' => '5 posti; 5 porte; Cambio manuale; Motore: 1000 cc 110 CV; Carburante: Benzina',
-                'prezzo' => 174, 'data_inizio' => '2023-06-30', 'data_fine' => '2023-07-30', 
+                'prezzo' => 174, 'data_inizio' => '', 'data_fine' => '', 
                 'nome_img' => 'VolkswagenGolf'
                 /*'img_principale' => fread(fopen("./public/images/auto/VolkswagenGolf-principale.png", 'rb'), filesize("./public/images/VolkswagenGolf-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/VolkswagenGolf-destra.png", 'rb'), filesize("./public/images/VolkswagenGolf-destra.png")),
@@ -137,11 +124,11 @@ class DatabaseSeeder extends Seeder
                 'img_posteriore' => fread(fopen("./public/images/auto/VolkswagenGolf-posteriore.png", 'rb'), filesize("./public/images/VolkswagenGolf-posteriore.png"))*/
             ],
             ['marca' => 'Audi', 'modello' => 'A4', 'targa' => 'GN946NG',
-                'anno' => 2023, 'nPosti' => 5,
+                'anno' => 2022, 'nPosti' => 5,
                 'motore' => '1900 cc - 136 CV', 'carburante' => 'Ibrido-Diesel',
                 'username' => '', 'catId' => 3,
                 'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 1900 cc 136 CV; Carburante: Ibrido-Diesel',
-                'prezzo' => 195, 'data_inizio' => '2023-06-02', 'data_fine' => '2023-08-02', 
+                'prezzo' => 195, 'data_inizio' => '', 'data_fine' => '', 
                 'nome_img' => 'AudiA4'
                 /*'img_principale' => fread(fopen("./public/images/auto/AudiA4-principale.png", 'rb'), filesize("./public/images/AudiA4-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/AudiA4-destra.png", 'rb'), filesize("./public/images/AudiA4-destra.png")),
@@ -154,7 +141,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '2000 cc - 163 CV', 'carburante' => 'Ibrido-Diesel',
                 'username' => '', 'catId' => 3,
                 'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 2000 cc 163 CV; Carburante: Ibrido-Diesel',
-                'prezzo' => 200, 'data_inizio' => '2023-05-25', 'data_fine' => '2023-09-25',
+                'prezzo' => 200, 'data_inizio' => '', 'data_fine' => '',
                 'nome_img' => 'MercedesC-Class' 
                 /*'img_principale' => fread(fopen("./public/images/auto/MercedesC-Class-principale.png", 'rb'), filesize("./public/images/MercedesC-Class-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/MercedesC-Class-destra.png", 'rb'), filesize("./public/images/MercedesC-Class-destra.png")),
@@ -165,7 +152,7 @@ class DatabaseSeeder extends Seeder
             ['marca' => 'Peugeot', 'modello' => '508', 'targa' => 'GK987KG',
                 'anno' => 2022, 'nPosti' => 5,
                 'motore' => '1500 cc - 131 CV', 'carburante' => 'Diesel',
-                'username' => '', 'catId' => 3,
+                'username' => 'bertoberto', 'catId' => 3,
                 'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 1500 cc 131 CV; Carburante: Diesel',
                 'prezzo' => 230, 'data_inizio' => '2023-04-13', 'data_fine' => '2023-06-13', 
                 'nome_img' => 'Peugeot508'
@@ -176,11 +163,11 @@ class DatabaseSeeder extends Seeder
                 'img_posteriore' => fread(fopen("./public/images/auto/Peugeot508-posteriore.png", 'rb'), filesize("./public/images/Peugeot508-posteriore.png"))*/
             ],
             ['marca' => 'Audi', 'modello' => 'Q7', 'targa' => 'GE806EG',
-                'anno' => 2021, 'nPosti' => 5,
+                'anno' => 2013, 'nPosti' => 7,
                 'motore' => '3000 cc - 231 CV', 'carburante' => 'Ibrido-Diesel',
                 'username' => '', 'catId' => 4,
-                'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 3000 cc 231 CV; Carburante: Ibrido-Diesel',
-                'prezzo' => 268, 'data_inizio' => '2023-03-30', 'data_fine' => '2023-04-30', 
+                'descrizione' => '7 posti; 4 porte; Cambio automatico; Motore: 3000 cc 231 CV; Carburante: Ibrido-Diesel',
+                'prezzo' => 268, 'data_inizio' => '', 'data_fine' => '', 
                 'nome_img' => 'AudiQ7'
                 /*'img_principale' => fread(fopen("./public/images/auto/AudiQ7-principale.png", 'rb'), filesize("./public/images/AudiQ7-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/AudiQ7-destra.png", 'rb'), filesize("./public/images/AudiQ7-destra.png")),
@@ -189,11 +176,11 @@ class DatabaseSeeder extends Seeder
                 'img_posteriore' => fread(fopen("./public/images/auto/AudiQ7-posteriore.png", 'rb'), filesize("./public/images/AudiQ7-posteriore.png"))*/
             ],
             ['marca' => 'Jeep', 'modello' => 'Compass', 'targa' => 'FM852MF',
-                'anno' => 2017, 'nPosti' => 5,
+                'anno' => 2018, 'nPosti' => 5,
                 'motore' => '1600 cc - 131 CV', 'carburante' => 'Diesel',
                 'username' => '', 'catId' => 4,
-                'descrizione' => '5 posti; 4 porte; Cambio manuale; Motore: 1600 cc 131 CV; Carburante: Diesel',
-                'prezzo' => 214, 'data_inizio' => '2023-05-08', 'data_fine' => '2023-07-08', 
+                'descrizione' => '5 posti; 5 porte; Cambio manuale; Motore: 1600 cc 131 CV; Carburante: Diesel',
+                'prezzo' => 214, 'data_inizio' => '', 'data_fine' => '', 
                 'nome_img' => 'JeepCompass'
                 /*'img_principale' => fread(fopen("./public/images/auto/JeepCompass-principale.png", 'rb'), filesize("./public/images/JeepCompass-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/JeepCompass-destra.png", 'rb'), filesize("./public/images/JeepCompass-destra.png")),
@@ -202,11 +189,11 @@ class DatabaseSeeder extends Seeder
                 'img_posteriore' => fread(fopen("./public/images/auto/JeepCompass-posteriore.png", 'rb'), filesize("./public/images/JeepCompass-posteriore.png"))*/
             ],
             ['marca' => 'Alfa Romeo', 'modello' => 'Stelvio', 'targa' => 'GK819KK',
-                'anno' => 2021, 'nPosti' => 5,
+                'anno' => 2017, 'nPosti' => 5,
                 'motore' => '2100 cc - 160 CV', 'carburante' => 'Diesel',
                 'username' => '', 'catId' => 4,
-                'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 2100 cc 160 CV; Carburante: Diesel',
-                'prezzo' => 252, 'data_inizio' => '2023-02-15', 'data_fine' => '2023-04-15', 
+                'descrizione' => '5 posti; 5 porte; Cambio automatico; Motore: 2100 cc 160 CV; Carburante: Diesel',
+                'prezzo' => 252, 'data_inizio' => '', 'data_fine' => '', 
                 'nome_img' => 'AlfaRomeoStelvio'
                 /*'img_principale' => fread(fopen("./public/images/auto/AlfaRomeoStelvio-principale.png", 'rb'), filesize("./public/images/AlfaRomeoStelvio-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/AlfaRomeoStelvio-destra.png", 'rb'), filesize("./public/images/AlfaRomeoStelvio-destra.png")),
@@ -241,6 +228,11 @@ class DatabaseSeeder extends Seeder
         *   Tabella dedicata agli utenti con diversi ruoli
         */
         DB::table('utente')->insert([
+            ['nome' => 'Roberto', 'cognome' => 'Blu',
+                'residenza' => 'Via della pace, 34, Torino', 'nascita' => '1993-01-31',
+                'email' => 'berto@berto.it', 'occupazione' => 'Commerciante',
+                'username' => 'bertoberto', 'password' => Hash::make('41ecbOq3'), 'ruolo' => 'user'
+            ],
             ['nome' => 'Giacomo', 'cognome' => 'Verdi',
                 'residenza' => 'Via Matteotti, 11, Ancona', 'nascita' => '1999-07-22',
                 'email' => 'clie@clie.it', 'occupazione' => 'Studente',

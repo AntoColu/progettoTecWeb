@@ -36,7 +36,7 @@
                 <span style="color: red">{{ $message }}</span>
                 @enderror
     
-                @include('paginator.paginator', ['paginator' => $automobili->withQueryString()])
+                @include('pagination.paginator', ['paginator' => $automobili->withQueryString()])
             </div>
         </section>
     </div>

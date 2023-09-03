@@ -50,7 +50,7 @@
                 <span style="color: red">{{ $message }}</span>
                 @enderror
     
-                @include('paginator.paginator', ['paginator' => $clienti->withQueryString()])
+                @include('pagination.paginator', ['paginator' => $clienti->withQueryString()])
             </div>
         </section>
     </div>

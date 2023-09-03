@@ -63,7 +63,7 @@
                 <span style="color: red">{{ $message }}</span>
                 @enderror
     
-                @include('paginator.paginator', ['paginator' => $membri_staff->withQueryString()])
+                @include('pagination.paginator', ['paginator' => $membri_staff->withQueryString()])
             </div>
         </section>
     </div>
