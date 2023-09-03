@@ -7,7 +7,7 @@
         <div class="row">
             <h2>Numero totale di auto noleggiate nell'anno corrente</h2>
             <h3>Seleziona un mese:</h3>
-            {{ Form::open(['route' => 'statistiche-auto', 'id' => 'mese-noleggio']) }}
+            {{ Form::open(['route' => 'statistiche-auto', 'id' => 'mese-noleggio-form']) }}
 
                 {{ Form::selectMonth('mese_inizio') }}
                 {{ Form::submit('Vai', ['class' => 'btn btn-primary']) }}

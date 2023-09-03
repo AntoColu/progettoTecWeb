@@ -8,6 +8,9 @@
 
         <div class="wrap">
             {{ Form::open(array('route' => 'modifica-dati.store', 'id' => 'modifica-dati', 'files' => true, 'class' => 'modifica-dati')) }}
+            
+            <!-- Parametro che non sarà visibile nella form, ma che devo passare per modificare i dati -->
+            {{ Form::hidden('ruolo', $user->ruolo) }}
 
             <!-- Campo 'nome' -->
             <div class="form-group">
@@ -35,7 +38,7 @@
 
             <!-- Campo 'email' -->
             <div class="form-group">
-                {{ Form::label('email', 'E-mail') }}
+                {{ Form::label('email', 'Email') }}
                 {{ Form::text('email', $user->email, ['class' => 'form-control', 'id' => 'email']) }}
             </div>
             

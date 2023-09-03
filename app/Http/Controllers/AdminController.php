@@ -223,12 +223,18 @@ class AdminController extends Controller
     }
 
 
+    /**
+     *  Fuznione che calcola il numero di auto noleggiate nel mese selezionato,
+     *  nell'anno corrente
+    **/
     public function statisticheAuto(Request $request){
         $anno_corrente = date('Y'); // Prendo l'anno corrente
+
         $num_auto = Auto::whereYear('data_inizio', $anno_corrente)
                     ->whereMonth('data_inizio', $request->meseInizio)
                     ->count();
 
-        return view('admin/storico-noleggi')->with(['num_auto' => $num_auto]);
+        return json_encode($num_auto);
+        //return view('admin/statistiche')->with(['num_auto' => $num_auto]);
     }
 }

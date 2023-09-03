@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         /*
         *   Tabella dedicata alle categorie di auto: piccole, medie, grandi, SUV
         */
-        DB::table('categoria')->insert([
+        /*DB::table('categoria')->insert([
             ['catId' => 1, 'nome' => 'Piccole', 
                 'imgEsempio' => fread(fopen("./public/images/categorie/piccole.png", 'rb'), filesize("./public/images/categorie/piccole.png")), 
                 'descrizione' => 'Automobili compatte, ottime per l&rsquo;utilizzo in citt&agrave'
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
                 'descrizione' => 'Automobili grandi e alte, che permettono una visuale migliore alla guida 
                                 ed un comfort di primo livello'
             ]
-        ]);
+        ]);*/
 
 
         /*
@@ -224,7 +224,7 @@ class DatabaseSeeder extends Seeder
         /*
         *   Tabella dedicata alle immagini delle auto
         */
-        DB::table('foto')->insert([
+        /*DB::table('foto')->insert([
             ['nome' => 'Fiat500', 'estensione' => '.jpg', 'targa' => 'FQ123QF'],
             ['nome' => 'FiatPanda', 'estensione' => '.jpg', 'targa' => 'FV456VF'],
             ['nome' => 'Peugeot208', 'estensione' => '.jpg', 'targa' => 'GG753GG'],
@@ -238,7 +238,7 @@ class DatabaseSeeder extends Seeder
             ['nome' => 'AudiQ7', 'estensione' => '.jpg', 'targa' => 'GE806EG'],
             ['nome' => 'JeepCompass', 'estensione' => '.jpg', 'targa' => 'FM852MF'],
             ['nome' => 'AlfaRomeoStelvio', 'estensione' => '.jpg', 'targa' => 'GK819KK']
-        ]);
+        ]);*/
 
 
         /*
