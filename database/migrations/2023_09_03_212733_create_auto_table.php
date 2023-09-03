@@ -17,12 +17,19 @@ return new class extends Migration
             $table->string('marca',255);
             $table->string('modello',255);
             $table->string('targa',255)->primary();
-            $table->integer('anno');
-            $table->integer('nPosti');
+            $table->integer('anno')->unsigned();
+            $table->integer('nPosti')->unsigned();
             $table->string('motore',255);
             $table->string('carburante',255);
+            $table->string('username',255);
+
+            $table->integer('catId')->unsigned();
+            $table->foreign('catId')
+                ->references('catId') // Campo riferito nella tabella 'categoria'
+                ->on('categoria');    // Nome della tabella 'categoria'
+
             $table->string('descrizione',255);
-            $table->integer('prezzo');
+            $table->integer('prezzo')->unsigned();
             $table->string('data_inizio',255);
             $table->string('data_fine',255);
             $table->string('nome_img',255);

@@ -14,7 +14,7 @@ class PublicController extends Controller
     **/
     public function showHome() {
         $faqs = Faq::all();
-        return view('public/home')->with('faq', $faqs);
+        return view('public/home')->with('faqs', $faqs);
     }
 
     /**
@@ -28,7 +28,10 @@ class PublicController extends Controller
      *  Mostra la pagina del catalogo
     **/
     public function showCatalogo() {
-        return view('public/catalogo')->with('automobili', Auto::all());
+        return view('public/catalogo')
+            ->with('automobili', Auto::all())
+            ->with('minprezzo', '')
+            ->with('maxprezzo', '');
     }
 
     /**

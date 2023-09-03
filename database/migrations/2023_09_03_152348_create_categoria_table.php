@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('faq', function (Blueprint $table) {
-            $table->increments('faqId');
-            $table->string('domanda',400);
-            $table->string('risposta',400);
+        Schema::create('categoria', function (Blueprint $table) {
+            $table->increments('catId');
+            $table->string('nome',7);
+            $table->string('descrizione',255);
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('faq');
+        Schema::dropIfExists('categoria');
     }
 };

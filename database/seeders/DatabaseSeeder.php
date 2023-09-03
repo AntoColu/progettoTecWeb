@@ -22,27 +22,23 @@ class DatabaseSeeder extends Seeder
         /*
         *   Tabella dedicata alle categorie di auto: piccole, medie, grandi, SUV
         */
-        /*DB::table('categoria')->insert([
+        DB::table('categoria')->insert([
             ['catId' => 1, 'nome' => 'Piccole', 
-                'imgEsempio' => fread(fopen("./public/images/categorie/piccole.png", 'rb'), filesize("./public/images/categorie/piccole.png")), 
                 'descrizione' => 'Automobili compatte, ottime per l&rsquo;utilizzo in citt&agrave'
             ],
             ['catId' => 2, 'nome' => 'Medie', 
-                'imgEsempio' => fread(fopen("./public/images/categorie/medie.png", 'rb'), filesize("./public/images/categorie/medie.png")), 
                 'descrizione' => 'Automobili non troppo grandi, che permettono un buon utilizzo cittadino, 
                                 ma anche possibilit&agrave di spostamenti più lunghi'
             ],
             ['catId' => 3, 'nome' => 'Grandi', 
-                'imgEsempio' => fread(fopen("./public/images/categorie/grandi.png", 'rb'), filesize("./public/images/categorie/grandi.png")), 
                 'descrizione' => 'Automobili comode ed ottime per affrontare lunghi spostamenti, 
                                 con maggiore spazio per i bagagli'
             ],
             ['catId' => 4, 'nome' => 'SUV', 
-                'imgEsempio' => fread(fopen("./public/images/categorie/suv.png", 'rb'), filesize("./public/images/categorie/suv.png")), 
                 'descrizione' => 'Automobili grandi e alte, che permettono una visuale migliore alla guida 
                                 ed un comfort di primo livello'
             ]
-        ]);*/
+        ]);
 
 
         /*
@@ -246,7 +242,7 @@ class DatabaseSeeder extends Seeder
         */
         DB::table('utente')->insert([
             ['nome' => 'Giacomo', 'cognome' => 'Verdi',
-                'residenza' => 'Via Matteotti, 11, Ancona', 'nascita' => '1999-22-07',
+                'residenza' => 'Via Matteotti, 11, Ancona', 'nascita' => '1999-07-22',
                 'email' => 'clie@clie.it', 'occupazione' => 'Studente',
                 'username' => 'clieclie', 'password' => Hash::make('41ecbOq3'), 'ruolo' => 'user'
             ],
@@ -256,7 +252,7 @@ class DatabaseSeeder extends Seeder
                 'username' => 'staffstaff', 'password' => Hash::make('41ecbOq3'), 'ruolo' => 'staff'
             ],
             ['nome' => 'Mario', 'cognome' => 'Rossi',
-                'residenza' => 'Via Cavour, 30, Milano', 'nascita' => '1975-15-10',
+                'residenza' => 'Via Cavour, 30, Milano', 'nascita' => '1975-10-15',
                 'email' => 'mario@rossi.it', 'occupazione' => 'Imprenditore',
                 'username' => 'adminadmin', 'password' => Hash::make('41ecbOq3'), 'ruolo' => 'admin',
             ]
@@ -271,10 +267,10 @@ class DatabaseSeeder extends Seeder
                             <br>Per raggiungerla fai click sull'icona in alto a sinistra."
             ],
             ['faqId' => 2, 'domanda' => 'Di cosa ho bisogno per noleggiare un&rsquo;auto?', 
-                'risposta' => "Avrai bisogno di:<br><ul>
-                            <li>Patente valida da almeno 12 mesi.<\li>
-                            <li>Documento d&rsquo;identit&agrave.<\li>
-                            <li>Carta di credito o debito.<\li><\ul>"
+                'risposta' => "Avrai bisogno di:
+                            1) Patente valida da almeno 12 mesi.
+                            2) Documento d&rsquo;identit&agrave.
+                            3) Carta di credito o debito."
             ],
             ['faqId' => 3, 'domanda' => 'Che età devo avere per noleggiare un&rsquo;auto?', 
                 'risposta' => "Per poter noleggiare un&rsquo;auto devi avere almeno 18 anni ed 1 anno di patente."
@@ -283,10 +279,9 @@ class DatabaseSeeder extends Seeder
                 'risposta' => "Sul nostro sito puoi trovare offerte per tutti i tipi di auto a noleggio, tra cui auto piccole, medie, grandi e SUV."
             ],
             ['faqId' => 5, 'domanda' => 'Cosa devo considerare nella scelta di un&rsquo;auto?', 
-                'risposta' => "<ul>
-                            <li>Spazio: scegli un&rsquo;auto spaziosa sia per i passeggeri che per i bagagli.<\li>
-                            <li>Dimensione: scegli l&rsquo;auto in base alle tue abilità nel parcheggio.<\li>
-                            <li>Budget: non scegliere un&rsquo;auto che non puoi permetterti, solo perchè è bella, grande e tecnologica.<\li>"
+                'risposta' => "1) Spazio: scegli un&rsquo;auto spaziosa sia per i passeggeri che per i bagagli.
+                            2) Dimensione: scegli l&rsquo;auto in base alle tue abilità nel parcheggio.
+                            3) Budget: non scegliere un&rsquo;auto che non puoi permetterti, solo perchè è bella, grande e tecnologica."
             ],
             ['faqId' => 6, 'domanda' => 'Cosa è incluso nel prezzo?', 
                 'risposta' => "Il prezzo include: la protezione dai furti, la limitazione della responsabilità dei danni, le tasse locali e le tasse stradali.
