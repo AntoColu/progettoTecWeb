@@ -31,17 +31,15 @@ class AuthenticatedSessionController extends Controller {
 
         $request->session()->regenerate();
 
-        /*
-         * Redirezione in base al livello
-         */
+        
+        // Redirect in base al ruolo
+        $ruolo = auth()->user()->ruolo;
+        switch ($ruolo) {
+            case 'admin': return redirect()->route('admin');
 
-        $livello = auth()->user()->Livello;
-        switch ($livello) {
-            case '3': return redirect()->route('admin');
+            case 'staff': return redirect()->route('staff');
 
-            case '2': return redirect()->route('staff');
-
-            case '1': return redirect()->route('home');
+            case 'user': return redirect()->route('home');
 
             default: return redirect('/');
         }

@@ -8,6 +8,13 @@ use App\Models\Auto;
 class StaffController extends Controller
 {
     /**
+     *  Ritorno la pagina riguardante la homepage dello staff
+    **/
+    public function showHomeStaff(){
+        return view('staff/home-staff');
+    }
+
+    /**
      *  Ritorno la pagina riguardante la gestione delle auto, passando la lista delle auto
     **/
     public function showGestioneAuto(){

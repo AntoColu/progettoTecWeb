@@ -6,6 +6,7 @@ use App\Models\Auto;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -41,14 +42,30 @@ class UserController extends Controller
         }
         // se il nuovo username non è ancora stato usato, allora effettuo la modifica dei dati
         else{
-            $user->nome = $request->nome;
-            $user->cognome = $request->cognome;
-            $user->residenza = $request->residenza;
-            $user->nascita = $request->nascita;
-            $user->email = $request->email;
-            $user->occupazione = $request->occupazione;
-            $user->username = $request->username;
-            $user->password = $request->password;
+            if($request->nome != null){
+                $user->nome = $request->nome;
+            }
+            if($request->cognome != null){
+                $user->cognome = $request->cognome;
+            }
+            if($request->residenza != null){
+                $user->residenza = $request->residenza;
+            }
+            if($request->nascita != null){
+                $user->nascita = $request->nascita;
+            }
+            if($request->email != null){
+                $user->email = $request->email;
+            }
+            if($request->occupazione != null){
+                $user->occupazione = $request->occupazione;
+            }
+            if($request->username != null){
+                $user->username = $request->username;
+            }
+            if($request->password != null){
+                $user->password = Hash::make($request->password);
+            }
             
             $user->save();
 

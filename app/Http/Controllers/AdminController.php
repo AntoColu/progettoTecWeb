@@ -9,6 +9,15 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    /**
+     *  Ritorno la pagina riguardante la homepage dell'admin
+    **/
+    public function showHomeAdmin(){
+        return view('admin/home-admin');
+    }
+
+
+
     ///*******************************************///
     /**  AREA DEDICATA ALLA GESTIONE DELLO STAFF  **/
     ///*******************************************///
