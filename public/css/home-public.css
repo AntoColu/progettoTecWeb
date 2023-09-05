@@ -3,13 +3,24 @@
     margin-top: 100px;
 }
 
-/* Sezione home */
 
+/********************/
+/**  Sezione home  **/
+/********************/
 .home {
     height: 1000px;
     background-image: url('../images/home-decoration.png');
     background-repeat: no-repeat;
     display: flex;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    width: 54%;
+    margin-top: 2%;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
 .title {
@@ -37,8 +48,10 @@
     max-width: 100%;
 }
 
-/* Forms */
 
+/*************/
+/**  Forms  **/
+/*************/
 .forms {
     margin-top: -80px;
     height: 100%;
@@ -236,8 +249,10 @@
     transform: translate(-500px, -2200px);
 }
 
-/* Sezione servizi */
 
+/***********************/
+/**  Sezione servizi  **/
+/***********************/
 .services {
     /* width: 100%; */
     display: flex;
@@ -277,116 +292,37 @@
     text-align: center;
 }
 
-/* Sezione chi siamo */
 
-.about-us {
+/***************************/
+/**  Sezione 'Chi siamo'  **/
+/***************************/
+.chi-siamo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
 }
 
-.info-container {
-    max-width: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
 
-.info {
-    height: 150px;
-    width: 400px;
-    border-radius: 20px;
-    box-shadow: 5px 5px 5px 5px #c6c6c6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px
-}
-
-.email {
-    color: gray;
-}
-
-.email:hover {
-    text-decoration: underline;
-}
-
-.team-image {
-    max-width: 500px;
-    border-radius: 15px;
-}
-
-.email:active {
-    color: rgb(65, 65, 65);
-}
-
-/* Sezione Dicono di noi */
-
-.reviews {
+/**************************************/
+/**  Sezione 'Perchè scegliere noi'  **/
+/**************************************/
+.perche-noi {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    margin-top: 2%;
 }
 
-.reviews-container {
-    width: 60%;
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    gap: 40px;
+#elenco-perche-noi {
+    padding-bottom: 1%;
 }
 
-.left-review {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    /* background-color: red; */
-}
 
-.review {
-    height: 30px;
-    width: 300px;
-    border-radius: 20px;
-    box-shadow: 5px 5px 5px 5px #c6c6c6;
-    background: none;
-    border: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    cursor: pointer;
-}
-
-.review:active {
-    background-color: #e2e2e2;;
-}
-
-.right-review {
-    width: 300px;
-    height: 200px;
-    border-radius: 20px;
-    background: linear-gradient(45deg, #FFD625 30%, #414141 100%);
-    color: white;
-    padding: 20px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.active-review {
-    display: flex;
-}
-
-/* Sezione FAQ */
-
+/*******************/
+/**  Sezione FAQ  **/
+/*******************/
 .faq {
     display: flex;
     flex-direction: column;
@@ -406,7 +342,7 @@
 }
 
 .dom-risp {
-    height: 150px;
+    height: 200px;
     width: 100%;
     border-radius: 20px;
     box-shadow: 5px 5px 5px 5px #c6c6c6;
@@ -415,26 +351,22 @@
     justify-content: center;
     align-items: center;
     gap: 40px;
-    padding: 20px;
+    padding: 2%;
     box-sizing: border-box;
 }
 
-.question {
+.domanda {
     font-size: 26px;
     font-weight: bold;
     color: black;
 }
 
-.answer {
+.risposta {
     font-size: 20px;
     color: rgb(65, 65, 65);
 }
 
 /* BOTTONE DOCUMENTAZIONE */
-.doc {
-
-}
-
 .bottone-documentazione {
     border-radius: 13px;
     width: 420px;

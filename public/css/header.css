@@ -1,0 +1,37 @@
+nav {
+    width: 90%;
+}
+
+.navbar {
+    background-color: #34568B; /* Colore di sfondo della navbar */
+    color: #ffff; /* Colore del testo */
+    padding: 15px 0; /* Spaziatura interna sopra e sotto la navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Effetto ombra */
+    margin-bottom: 3%;
+  }
+  
+  /* Stile per i link nella navbar */
+.navbar a {
+    color: #ffff; /* Colore del testo dei link */
+    text-decoration: none; /* Rimuovi la sottolineatura dei link */
+    margin: 0 15px; /* Spaziatura tra i link */
+    font-weight: bold; /* Grassetto */
+    transition: color 0.3s; /* Transizione del colore al passaggio del mouse */
+}
+
+/* Cambia colore dei link al passaggio del mouse */
+.navbar a:hover {
+    color: #e74c3c; /* Cambia colore al passaggio del mouse */
+}
+
+/* Stile per il logo nella navbar */
+.navbar .logo {
+    font-size: 24px; /* Dimensione del testo del logo */
+    margin-right: 30px; /* Spaziatura dal margine destro */
+    font-weight: bold; /* Grassetto */
+}
+
+/* Stile per il pulsante di navigazione mobile */
+.navbar .navbar-toggler-icon {
+    color: #fff; /* Colore dell'icona del pulsante mobile */
+}

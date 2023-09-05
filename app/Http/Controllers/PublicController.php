@@ -28,7 +28,7 @@ class PublicController extends Controller
      *  Mostra la pagina del catalogo
     **/
     public function showCatalogo() {
-        $automobili = Auto::paginate(5);
+        $automobili = Auto::paginate(6);
         return view('public/catalogo')
             ->with('automobili', $automobili)
             ->with('minprezzo', '')
@@ -54,12 +54,22 @@ class PublicController extends Controller
         else
             $max_prezzo = $array_auto['max-prezzo'];
 
-        // Ottengo tutte le auto che hanno un prezzo compreso tra il minimo e il massimo
-        $automobili = Auto::where('prezzo', '>=', $min_prezzo)
-                            ->where('prezzo', '<=', $max_prezzo);
+        if($array_auto['catId'] == ''){
+            // Ottengo tutte le auto che hanno un prezzo compreso tra il minimo e il massimo
+            $automobili = Auto::where('prezzo', '>=', $min_prezzo)
+                                ->where('prezzo', '<=', $max_prezzo)
+                                ->paginate(6);
+        }
+        else{
+            // Ottengo tutte le auto che hanno un prezzo compreso tra il minimo e il massimo
+            $automobili = Auto::where('prezzo', '>=', $min_prezzo)
+                                ->where('prezzo', '<=', $max_prezzo)
+                                ->where('catId', $array_auto['catId'])
+                                ->paginate(6);
+        }
 
         // Se non ci sono automobili che hanno quel tipo di prezzo allora ritorno false
-        if($automobili->total() == 0)
+        if($automobili->count() == 0)
             return view('public/catalogo')->with('automobili', false);
         // Altrimenti ritorno le automobili acquisite con la query
         else

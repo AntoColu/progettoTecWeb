@@ -26,7 +26,8 @@ class AdminController extends Controller
      *  Ritorno la pagina riguardante la gestione dello staff, passando la lista dei membri dello staff
     **/
     public function showGestioneStaff(){
-        return view('admin/gestione-staff')->with('membri_staff', User::where('ruolo', 'staff')->get());
+        $membri_staff = User::where('ruolo', 'staff')->paginate(6);
+        return view('admin/gestione-staff')->with('membri_staff', $membri_staff);
     }
 
 

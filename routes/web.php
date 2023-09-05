@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,7 @@ Route::get("/catalogo", [PublicController::class, 'showCatalogo'])
     ->name('catalogo');
 
 // Mostra le auto di una certa categoria e dentro una fascia di prezzo
-Route::get("/catalogo-filtrato", [PublicController::class, 'showCatalogoFiltrato'])
+Route::match(['get', 'post'], "/catalogo-filtrato", [PublicController::class, 'showCatalogoFiltrato'])
     ->name('catalogo-filtrato');
 
 Route::get("/dettagli-auto/{targa}", [PublicController::class, 'showDettagliAuto'])
@@ -54,7 +55,7 @@ Route::prefix('user')->group(function () {
     Route::post("/account/modifica-dati", [UserController::class, 'modificaDati'])->middleware("can:isUser")
         ->name('modifica-dati.store');
 
-    Route::get("/dettagli-auto/noleggio", [UserController::class, 'noleggiaAuto'])->middleware("can:isUser")
+    Route::match(['get', 'post'], "/dettagli-auto/noleggio", [UserController::class, 'noleggiaAuto'])->middleware("can:isUser")
         ->name('noleggio');
 
     Route::get("/riepilogo-noleggi", [UserController::class, 'showRiepilogo'])->middleware("can:isUser")

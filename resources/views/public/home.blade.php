@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <div id='home'>
+    <div id='home' class="mt-5">
         <h1>Benvenuti su Tavernelle Noleggi!</h1>
         <p>Noleggia l'auto dei tuoi sogni e parti per la tua meta preferita!</p>
     </div>

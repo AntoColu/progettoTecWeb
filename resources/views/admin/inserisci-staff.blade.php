@@ -35,6 +35,7 @@
 
         <div class="wrap">
             {{ Form::open(array('route' => 'inserisci-staff.store', 'id' => 'inserisci-staff', 'files' => true, 'class' => 'inserisci-staff')) }}
+            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 
             <!-- Parametri che non saranno visibili nella form, ma che devo passare per inserire il nuovo membro -->
             {{ Form::hidden('occupazione', 'Dipendente') }}
@@ -83,11 +84,12 @@
             </div>
 
             <div>
+                <br><br>
                 <!-- Bottone per confermare l'inserimento -->
                 {{ Form::submit('Conferma', ['class' => 'btn btn-primary', 'onclick' => "return confirm('Sei sicuro di voler proseguire?')"]) }}
 
                 <!-- Bottone per svuotare i campi -->
-                <button class="bottone" onclick="document.getElementById('inserisci-staff').reset()">Svuota campi</button>
+                <button class="btn btn-warning" onclick="document.getElementById('inserisci-staff').reset()">Svuota campi</button>
 
                 <!-- Chiusura form -->
                 {{ Form::close() }}
