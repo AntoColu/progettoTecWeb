@@ -140,10 +140,10 @@ Route::prefix('gestione-faq')->group(function () {
         ->name('gestione-faq');
 
     Route::get("/inserisci", [AdminController::class, 'showInserisciFaq'])->middleware("can:isAdmin")
-        ->name("crea-faq");
+        ->name("inserisci-faq");
 
     Route::post("/inserisci", [AdminController::class, 'inserisciFaq'])->middleware("can:isAdmin")
-        ->name("crea-faq.store");
+        ->name("inserisci-faq.store");
 
     Route::get("/modifica/{faqId}", [AdminController::class, 'showModificaFaq'])->middleware("can:isAdmin")
         ->name("modifica-faq");
@@ -160,7 +160,7 @@ Route::prefix('gestione-faq')->group(function () {
 Route::get("/statistiche", [AdminController::class, 'showStatistiche'])->middleware('can:isAdmin')
     ->name('statistiche');
 
-Route::get("/statistiche/auto-nol", [AdminController::class, 'statisticheAuto'])->middleware('can:isAdmin')
+Route::match(['get', 'post'], "/statistiche/auto-nol", [AdminController::class, 'statisticheAuto'])->middleware('can:isAdmin')
     ->name('statistiche-auto');
 
 

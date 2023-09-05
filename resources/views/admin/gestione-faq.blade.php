@@ -19,8 +19,8 @@
                             <h5 class="card-text">
                                 {{$faq->risposta}}
                             </h5>
-                            <a href="{{ route('modifica-staff', [$faq->faqId]) }}" class="btn btn-info">Modifica</a>
-                            <a href="{{ route('elimina-staff', [$faq->faqId]) }}" class="btn btn-danger"  onclick="return confirm('Sei sicuro di voler proseguire?')">Elimina</a>
+                            <a href="{{ route('modifica-faq', [$faq->faqId]) }}" class="btn btn-info">Modifica</a>
+                            <a href="{{ route('elimina-faq', [$faq->faqId]) }}" class="btn btn-danger"  onclick="return confirm('Sei sicuro di voler proseguire?')">Elimina</a>
                         </div>
                     </div>
                 @endforeach
@@ -32,6 +32,9 @@
                     <strong style="color: green">{{ session('success') }}</strong>
                 @endif
                 @error('faq-non-eliminata')
+                    <span style="color: red">{{ $message }}</span>
+                @enderror
+                @error('faq-non-trovata')
                     <span style="color: red">{{ $message }}</span>
                 @enderror
     

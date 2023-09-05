@@ -10,8 +10,7 @@
             {{ Form::open(array('route' => 'modifica-staff.store', 'id' => 'modifica-staff', 'class' => 'modifica-staff')) }}
         
             <!-- Parametri che non saranno visibili nella form, ma che devo passare per modificare il membro selezionato -->
-            {{ Form::hidden('occupazione', $staff->occupazione) }}
-            {{ Form::hidden('ruolo', $staff->ruolo) }}
+            {{ Form::hidden('username', $staff->username) }}
 
             <!-- Campo 'nome' -->
             <div>
@@ -43,18 +42,8 @@
                 {{ Form::text('email', $staff->email, ['class' => 'form-control', 'id' => 'email']) }}
             </div>
 
-            <!-- Campo 'username' -->
-            <div>
-                {{ Form::label('username', 'Username') }}
-                {{ Form::text('username', $staff->username, ['class' => 'form-control', 'id' => 'username']) }}
-            </div>
-
-            <!-- Campo 'password' -->
-            <div>
-                {{ Form::label('password', 'Password') }}
-                {{ Form::text('password', $staff->password, ['class' => 'form-control', 'id' => 'password']) }}
-            </div>
-
+            <br><br>
+            
             <div>
                 <!-- Bottone per confermare la modifica -->
                 {{ Form::submit('Conferma', ['class' => 'btn btn-primary', 'onclick' => "return confirm('Procedere con la modifica?')"]) }}
@@ -63,4 +52,5 @@
                 {{ Form::close() }}
             </div>
         </div>
+    </div>
 @endsection

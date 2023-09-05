@@ -5,10 +5,10 @@
 @section('js')
     <script src="{{ asset('js/inserimento.js') }}"></script>
 
-    <script>
-        $(function () {
+    <!--<script>
+        /*$(function () {
             // Rotta per l'inserimento dell'auto
-            var actionUrl = "{{ route('inserisci-staff.store') }}";
+            var actionUrl = "{{-- route('inserisci-staff.store') --}}";
             var formId = 'inserisci-staff';
 
             $(":input").on('blur', function (event) {
@@ -24,8 +24,8 @@
                 // Funzione di validazione dell'intera form
                 doFormValidation(actionUrl, formId);
             });
-        });
-    </script>
+        });*/
+    </script>-->
 @endsection
 
 
@@ -35,7 +35,7 @@
 
         <div class="wrap">
             {{ Form::open(array('route' => 'inserisci-staff.store', 'id' => 'inserisci-staff', 'files' => true, 'class' => 'inserisci-staff')) }}
-            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}" />--}}
 
             <!-- Parametri che non saranno visibili nella form, ma che devo passare per inserire il nuovo membro -->
             {{ Form::hidden('occupazione', 'Dipendente') }}

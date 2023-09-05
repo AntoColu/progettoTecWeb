@@ -22,12 +22,6 @@
                                 </svg>
                                 Username: {{$staff->username}}
                             </h5>
-                            <h5 class="card-text">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
-                                    <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                                </svg>
-                                Password: {{$staff->password}}
-                            </h5>
                             <p class="card-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-event-fill" viewBox="0 0 16 16">
                                     <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
@@ -60,7 +54,10 @@
                     <strong style="color: green">{{ session('success') }}</strong>
                 @endif
                 @error('staff-non-eliminato')
-                <span style="color: red">{{ $message }}</span>
+                    <span style="color: red">{{ $message }}</span>
+                @enderror
+                @error('errore-modifica-staff')
+                    <span style="color: red">{{ $message }}</span>
                 @enderror
     
                 @include('pagination.paginator', ['paginator' => $membri_staff->withQueryString()])

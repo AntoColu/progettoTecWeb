@@ -6,6 +6,8 @@ use App\Models\Auto;
 use App\Models\Faq;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -13,7 +15,7 @@ class AdminController extends Controller
      *  Ritorno la pagina riguardante la homepage dell'admin
     **/
     public function showHomeAdmin(){
-        return view('admin/home-admin');
+        return view('admin/admin');
     }
 
 
@@ -51,6 +53,18 @@ class AdminController extends Controller
         }
         // se il nuovo username non è ancora stato usato, allora effettuo l'inserimento del membro dello staff
         else{
+            $request->validate([
+                'nome' => ['required', 'string', 'max:255'],
+                'cognome' => ['required', 'string', 'max:255'],
+                'residenza' => ['required', 'string', 'max:255'],
+                'nascita' => ['required', 'date_format:Y-m-d'],
+                'email' => ['required', 'string', 'email', 'max:255'],
+                'occupazione' => ['required', 'string', 'max:255'],
+                'username' => ['required', 'string', 'unique:utente', 'max:255'],
+                'password' => ['required', 'max:255', Rules\Password::defaults()],
+                'ruolo' => ['required', 'string', 'max:6'],
+            ]);
+
             // Crea il nuovo membro dello staff
             User::create([
                 'nome' => $request->nome,
@@ -60,9 +74,23 @@ class AdminController extends Controller
                 'email' => $request->email,
                 'occupazione' => $request->occupazione,
                 'username' => $request->username,
-                'password' => $request->password,
+                'password' => Hash::make($request->password),
                 'ruolo' => $request->ruolo
             ]);
+            
+            /*$staff = new User();
+
+            $staff->nome = $request->nome;
+            $staff->cognome = $request->cognome;
+            $staff->residenza = $request->residenza;
+            $staff->nascita = $request->nascita;
+            $staff->email = $request->email;
+            $staff->occupazione = $request->occupazione;
+            $staff->username = $request->username;
+            $staff->password = Hash::make($request->password);
+            $staff->ruolo = $request->ruolo;
+
+            $staff->save();*/
 
             return redirect()->route('gestione-staff')->with('success', 'Nuovo membro aggiunto con successo');
         }
@@ -84,30 +112,27 @@ class AdminController extends Controller
      *  Funzione che va a modificare il membro dello staff selezionato
     **/
     public function modificaStaff(Request $request){
-        // Controllo se lo username inserito esiste già:
-        // in caso affermativo l'admin viene reindirizzato di nuovo alla pagina di modifica
-        // con un messaggio d'errore
-        if(User::find($request->username)){
-            return redirect()->route('modifica-staff')->withErrors(['errore-modifica-staff' => 'Username già utilizzato da un altro utente']);
-        }
-        // se il nuovo username non è ancora stato usato, allora effettuo la modifica del membro dello staff
-        else{
-            $staff = new User();
+        //dd($request->all()); // Funzione per il debug, che mi stampa il contenuto di $request
 
-            $staff->nome = $request->nome;
-            $staff->cognome = $request->cognome;
-            $staff->residenza = $request->residenza;
-            $staff->nascita = $request->nascita;
-            $staff->email = $request->email;
-            $staff->occupazione = $request->occupazione;
-            $staff->username = $request->username;
-            $staff->password = $request->password;
-            $staff->ruolo = $request->ruolo;
+        $request->validate([
+            'nome' => ['required', 'string', 'max:255'],
+            'cognome' => ['required', 'string', 'max:255'],
+            'residenza' => ['required', 'string', 'max:255'],
+            'nascita' => ['required', 'date_format:Y-m-d'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+        ]);
+        
+        $staff = User::find($request->username);
 
-            $staff->save();
+        $staff->nome = $request->nome;
+        $staff->cognome = $request->cognome;
+        $staff->residenza = $request->residenza;
+        $staff->nascita = $request->nascita;
+        $staff->email = $request->email;
 
-            return redirect()->route('gestione-staff')->with('success', 'Nuovo membro aggiunto con successo');
-        }
+        $staff->save();
+
+        return redirect()->route('gestione-staff')->with('success', 'Nuovo membro aggiunto con successo');
     }
 
 
@@ -133,7 +158,8 @@ class AdminController extends Controller
      *  Ritorno la pagina riguardante la gestione dei clienti, passando la lista dei clienti
     **/
     public function showGestioneClienti(){
-        return view('admin/gestione-clienti')->with('clienti', User::where('ruolo', 'user')->get());
+        $clienti = User::where('ruolo', 'user')->paginate(6);
+        return view('admin/gestione-clienti')->with('clienti', $clienti);
     }
 
 
@@ -159,7 +185,8 @@ class AdminController extends Controller
      *  Ritorno la pagina riguardante la gestione delle faq, passando la lista delle faq
     **/
     public function showGestioneFaq(){
-        return view('admin/gestione-faq')->with('faqs', Faq::all());
+        $faqs = Faq::paginate(6);
+        return view('admin/gestione-faq')->with('faqs', $faqs);
     }
 
 
@@ -175,6 +202,11 @@ class AdminController extends Controller
      *  Funzione che inserisce una nuova faq
     **/
     public function inserisciFaq(Request $request){
+        $request->validate([
+            'domanda' => ['required', 'string', 'max:400'],
+            'risposta' => ['required', 'string', 'max:400'],
+        ]);
+
         Faq::create([
             'domanda' => $request->domanda,
             'risposta' => $request->risposta
@@ -187,8 +219,15 @@ class AdminController extends Controller
     /**
      *  Ritorno la pagina riguardante la modifica di una faq
     **/
-    public function showModificaFaq(){
-        return view('admin/modifica-faq');
+    public function showModificaFaq($faqId){
+        $faq = Faq::find($faqId);
+        
+        if($faq){
+            return view('admin/modifica-faq')->with('faq', $faq);
+        }
+        else{
+            return redirect()->route('gestione-faq')->withErrors(['faq-non-trovata' => 'FAQ non trovata']);
+        }
     }
 
 
@@ -196,13 +235,27 @@ class AdminController extends Controller
      *  Funzione che modifica una faq
     **/
     public function modificaFaq(Request $request){
-        $faq = Faq::find($request->faqId);
+        //dd($request->all()); // Funzione per il debug, che mi stampa il contenuto di $request
+
+        $request->validate([
+            'domanda' => ['nullable', 'string', 'max:400'],
+            'risposta' => ['nullable', 'string', 'max:400'],
+        ]);
+
+        // Uso la funzione intval() perchè il faqId ritornato dalla form è sotto forma
+        // di stringa, mentre a me serve come numero intero
+        $faq = Faq::find(intval($request->faqId));
+
+        // Se la faq non esiste, torno alla gestione faq
+        if (!$faq) {
+            return redirect()->route('gestione-faq')->withErrors(['faq-non-trovata' => 'FAQ non trovata']);
+        }
         
         $faq->domanda = $request->domanda;
         $faq->risposta = $request->risposta;
-
+        
         $faq->save();
-
+        
         return redirect()->route('gestione-faq')->with('success', 'Faq modificata con successo');
     }
 

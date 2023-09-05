@@ -1,4 +1,4 @@
-@extends('layouts.header-footer')
+@extends('principale')
 
 @section('title', 'Statistiche')
 
@@ -13,13 +13,18 @@
                 {{ Form::submit('Vai', ['class' => 'btn btn-primary']) }}
 
             {{ Form::close() }}
-            @foreach ($mesi as $mese)
-                <div class="text-center">
-                    <h4 id="num-auto">Auto noleggiate a {{ $mese }}</h4>
-                    <br>
-                    <strong id="auto-noleggiate"></strong>
-                </div>
-            @endforeach
+
+            @isset($mesi)
+                @foreach ($mesi as $mese)
+                    <div class="text-center">
+                        <h4 id="num-auto">Auto noleggiate a {{ $mese }}</h4>
+                        <br>
+                        <strong id="auto-noleggiate"></strong>
+                    </div>
+                @endforeach
+            @else
+                <h1>Scegli il mese</h1>
+            @endisset
         </div>
     </div>
 @endsection

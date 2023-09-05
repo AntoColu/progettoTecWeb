@@ -4,9 +4,6 @@
 
 @section('content')
     <div class="container">
-        <!-- Bottone per l'aggiunta di un nuovo cliente -->
-        <a href="{{ route('inserisci-clienti') }}" class="btn btn-primary">Nuovo cliente</a>
-
         <!-- Sezione dedicata alla presentazione di tutti i clienti dove,
             per ogni cliente, è possibile eliminarlo -->
         <section class="catalogo">
