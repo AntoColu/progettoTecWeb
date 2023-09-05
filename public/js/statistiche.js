@@ -20,7 +20,11 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (response) {
-                $('#auto-noleggiate').text(response + "auto");
+                $('#auto-noleggiate').text("Sono state noleggiate: " + response + " auto").css(
+                    {
+                        display: 'block',
+                        margin: '3%'
+                    });
             },
             error: function (xhr, status, error) {
                 $('#auto-noleggiate').text("Ops c'è stato un problema, riprova!").css('color', 'red');
