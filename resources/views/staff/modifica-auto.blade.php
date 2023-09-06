@@ -20,7 +20,7 @@
             <!-- Campo 'categoria' -->
             <div class="form-group">
                 <strong>{{ Form::label('catId', 'Categoria') }}</strong>
-                {{ Form::select('catId', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], $auto->catId, ['placeholder' => 'Scegli una categoria', 'class' => 'form-control'], ['id' => 'catId']) }}
+                {{ Form::select('catId', [1 => 'Piccole', 2 => 'Medie', 3 => 'Grandi', 4 => 'SUV'], $auto->catId, ['placeholder' => 'Scegli una categoria', 'class' => 'form-control'], ['id' => 'catId']) }}
             </div>
 
             <!-- Campo 'marca' -->

@@ -5,7 +5,7 @@
 @section('js')
     <script src="{{ asset('js/inserimento.js') }}"></script>
 
-    {{--<script>
+    <script>
         $(function () {
             // Rotta per l'inserimento dell'auto
             var actionUrl = "{{ route('inserisci-auto.store') }}";
@@ -25,7 +25,7 @@
                 doFormValidation(actionUrl, formId);
             });
         });
-    </script>--}}
+    </script>
 @endsection
 
 
@@ -34,19 +34,18 @@
         <h1>Inserisci una nuova auto:</h1>
 
         <div class="wrap">
-            {{ Form::open(array('route' => 'inserisci-auto.store', 'id' => 'inserisci-auto', 'files' => true, 'class' => 'inserisci-auto')) }}
+            {{ Form::open(array('route' => 'inserisci-auto.store', 'id' => 'inserisci-auto', 'files' => true, 'class' => 'inserisci-auto', 'method' => 'POST')) }}
 
             <!-- Parametri che non saranno visibili nella form, ma che devo passare per inserire l'auto -->
             <!-- li ho impostati vuoti, perchè saranno riempiti una volta che l'auto verrà noleggiata -->
             {{ Form::hidden('username', '') }}
             {{ Form::hidden('data_inizio', '') }}
             {{ Form::hidden('data_fine', '') }}
-            {{ Form::hidden('nome_img', '') }}
 
             <!-- Campo 'categoria' -->
             <div>
                 {{ Form::label('catId', 'Categoria') }}
-                {{ Form::select('catId', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], null, ['placeholder' => 'Scegli una categoria', 'class' => 'form-control'], ['id' => 'catId']) }}
+                {{ Form::select('catId', [1 => 'Piccole', 2 => 'Medie', 3 => 'Grandi', 4 => 'SUV'], null, ['placeholder' => 'Scegli una categoria', 'class' => 'form-control', 'id' => 'catId']) }}
             </div>
 
             <!-- Campo 'marca' -->
@@ -133,7 +132,7 @@
                 {{ Form::file('img_posteriore', ['class' => 'form-control', 'id' => 'img_posteriore']) }}
             </div>
 
-            <div>
+            <div class="mt-4">
                 <!-- Bottone per confermare l'inserimento -->
                 {{ Form::submit('Conferma', ['class' => 'btn btn-primary', 'onclick' => "return confirm('Sei sicuro di voler proseguire?')"]) }}
 
@@ -143,6 +142,13 @@
                 <!-- Chiusura form -->
                 {{ Form::close() }}
             </div>
+        </div>
+
+        <!-- Sezione per eventuale messaggio di errore -->
+        <div class="text-center">
+            @error('errore-inserimento-auto')
+                <span style="color: red">{{ $message }}</span>
+            @enderror
         </div>
     </div>
 @endsection

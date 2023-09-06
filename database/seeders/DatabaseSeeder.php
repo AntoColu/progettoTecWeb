@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '1200 cc - 70 CV', 'carburante' => 'Benzina',
                 'username' => '', 'catId' => 1,
                 'descrizione' => '4 posti; 4 porte; Cambio manuale; Motore: 1200 cc 70 CV; Carburante: Benzina',
-                'prezzo' => 120, 'data_inizio' => '', 'data_fine' => '', 
+                'prezzo' => 120, 'data_inizio' => null, 'data_fine' => null, 
                 'nome_img' => 'FiatPanda'
                 /*'img_principale' => fread(fopen("./public/images/auto/FiatPanda-principale.png", 'rb'), filesize("./public/images/FiatPanda-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/FiatPanda-destra.png", 'rb'), filesize("./public/images/FiatPanda-destra.png")),
@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '1500 cc - 102 CV', 'carburante' => 'Diesel',
                 'username' => '', 'catId' => 1,
                 'descrizione' => '5 posti; 4 porte; Cambio manuale; Motore: 1500 cc 102 CV; Carburante: Diesel',
-                'prezzo' => 132, 'data_inizio' => '', 'data_fine' => '',
+                'prezzo' => 132, 'data_inizio' => null, 'data_fine' => null,
                 'nome_img' => 'Peugeot208' 
                 /*'img_principale' => fread(fopen("./public/images/auto/Peugeot208-principale.png", 'rb'), filesize("./public/images/Peugeot208-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/Peugeot208-destra.png", 'rb'), filesize("./public/images/Peugeot208-destra.png")),
@@ -89,7 +89,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '1600 cc - 131 CV', 'carburante' => 'Diesel',
                 'username' => '', 'catId' => 2,
                 'descrizione' => '5 posti; 5 porte; Cambio manuale; Motore: 1600 cc 131 CV; Carburante: Diesel',
-                'prezzo' => 146, 'data_inizio' => '', 'data_fine' => '', 
+                'prezzo' => 146, 'data_inizio' => null, 'data_fine' => null, 
                 'nome_img' => 'FiatTipo'
                 /*'img_principale' => fread(fopen("./public/images/auto/FiatTipo-principale.png", 'rb'), filesize("./public/images/FiatTipo-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/FiatTipo-destra.png", 'rb'), filesize("./public/images/FiatTipo-destra.png")),
@@ -102,7 +102,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '1900 cc - 116 CV', 'carburante' => 'Diesel',
                 'username' => '', 'catId' => 2,
                 'descrizione' => '5 posti; 5 porte; Cambio manuale; Motore: 1900 cc 116 CV; Carburante: Diesel',
-                'prezzo' => 187, 'data_inizio' => '', 'data_fine' => '', 
+                'prezzo' => 187, 'data_inizio' => null, 'data_fine' => null, 
                 'nome_img' => 'AudiA3'
                 /*'img_principale' => fread(fopen("./public/images/auto/AudiA3-principale.png", 'rb'), filesize("./public/images/AudiA3-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/AudiA3-destra.png", 'rb'), filesize("./public/images/AudiA3-destra.png")),
@@ -115,7 +115,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '1000 cc - 110 CV', 'carburante' => 'Benzina',
                 'username' => '', 'catId' => 2,
                 'descrizione' => '5 posti; 5 porte; Cambio manuale; Motore: 1000 cc 110 CV; Carburante: Benzina',
-                'prezzo' => 174, 'data_inizio' => '', 'data_fine' => '', 
+                'prezzo' => 174, 'data_inizio' => null, 'data_fine' => null, 
                 'nome_img' => 'VolkswagenGolf'
                 /*'img_principale' => fread(fopen("./public/images/auto/VolkswagenGolf-principale.png", 'rb'), filesize("./public/images/VolkswagenGolf-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/VolkswagenGolf-destra.png", 'rb'), filesize("./public/images/VolkswagenGolf-destra.png")),
@@ -128,7 +128,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '1900 cc - 136 CV', 'carburante' => 'Ibrido-Diesel',
                 'username' => '', 'catId' => 3,
                 'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 1900 cc 136 CV; Carburante: Ibrido-Diesel',
-                'prezzo' => 195, 'data_inizio' => '', 'data_fine' => '', 
+                'prezzo' => 195, 'data_inizio' => null, 'data_fine' => null, 
                 'nome_img' => 'AudiA4'
                 /*'img_principale' => fread(fopen("./public/images/auto/AudiA4-principale.png", 'rb'), filesize("./public/images/AudiA4-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/AudiA4-destra.png", 'rb'), filesize("./public/images/AudiA4-destra.png")),
@@ -141,7 +141,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '2000 cc - 163 CV', 'carburante' => 'Ibrido-Diesel',
                 'username' => '', 'catId' => 3,
                 'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 2000 cc 163 CV; Carburante: Ibrido-Diesel',
-                'prezzo' => 200, 'data_inizio' => '', 'data_fine' => '',
+                'prezzo' => 200, 'data_inizio' => null, 'data_fine' => null,
                 'nome_img' => 'MercedesC-Class' 
                 /*'img_principale' => fread(fopen("./public/images/auto/MercedesC-Class-principale.png", 'rb'), filesize("./public/images/MercedesC-Class-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/MercedesC-Class-destra.png", 'rb'), filesize("./public/images/MercedesC-Class-destra.png")),
@@ -167,7 +167,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '3000 cc - 231 CV', 'carburante' => 'Ibrido-Diesel',
                 'username' => '', 'catId' => 4,
                 'descrizione' => '7 posti; 4 porte; Cambio automatico; Motore: 3000 cc 231 CV; Carburante: Ibrido-Diesel',
-                'prezzo' => 268, 'data_inizio' => '', 'data_fine' => '', 
+                'prezzo' => 268, 'data_inizio' => null, 'data_fine' => null, 
                 'nome_img' => 'AudiQ7'
                 /*'img_principale' => fread(fopen("./public/images/auto/AudiQ7-principale.png", 'rb'), filesize("./public/images/AudiQ7-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/AudiQ7-destra.png", 'rb'), filesize("./public/images/AudiQ7-destra.png")),
@@ -180,7 +180,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '1600 cc - 131 CV', 'carburante' => 'Diesel',
                 'username' => '', 'catId' => 4,
                 'descrizione' => '5 posti; 5 porte; Cambio manuale; Motore: 1600 cc 131 CV; Carburante: Diesel',
-                'prezzo' => 214, 'data_inizio' => '', 'data_fine' => '', 
+                'prezzo' => 214, 'data_inizio' => null, 'data_fine' => null, 
                 'nome_img' => 'JeepCompass'
                 /*'img_principale' => fread(fopen("./public/images/auto/JeepCompass-principale.png", 'rb'), filesize("./public/images/JeepCompass-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/JeepCompass-destra.png", 'rb'), filesize("./public/images/JeepCompass-destra.png")),
@@ -193,7 +193,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '2100 cc - 160 CV', 'carburante' => 'Diesel',
                 'username' => '', 'catId' => 4,
                 'descrizione' => '5 posti; 5 porte; Cambio automatico; Motore: 2100 cc 160 CV; Carburante: Diesel',
-                'prezzo' => 252, 'data_inizio' => '', 'data_fine' => '', 
+                'prezzo' => 252, 'data_inizio' => null, 'data_fine' => null, 
                 'nome_img' => 'AlfaRomeoStelvio'
                 /*'img_principale' => fread(fopen("./public/images/auto/AlfaRomeoStelvio-principale.png", 'rb'), filesize("./public/images/AlfaRomeoStelvio-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/AlfaRomeoStelvio-destra.png", 'rb'), filesize("./public/images/AlfaRomeoStelvio-destra.png")),

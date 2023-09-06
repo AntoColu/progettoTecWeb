@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Auto;
+use App\Http\Requests\NewAutoRequest;
 
 class StaffController extends Controller
 {
@@ -34,16 +35,17 @@ class StaffController extends Controller
     /**
      *  Funzione che va ad inserire la nuova auto
     **/
-    public function inserisciAuto(Request $request){
-        $array = $request->all();
-        $nomeCompletoImg = $this->getImgName($array);
+    public function inserisciAuto(NewAutoRequest $request){
+        //dd($request->all());
+        $nomeCompletoImg = $this->getImgName($request->all());
+        //dd($nomeCompletoImg);
 
-        if(Auto::find($request->targa)){
-            return redirect()->route('inserisci-staff')->withErrors(['errore-inserimento-staff' => 'Username già utilizzato da un altro utente']);
+        /*if(Auto::find($request->targa)){
+            return redirect()->route('inserisci-auto')->withErrors(['errore-inserimento-auto' => 'Targa appartenente ad un\'altra auto!']);
         }
-        // se il nuovo username non è ancora stato usato, allora effettuo l'inserimento del membro dello staff
-        else{
-            $request->validate([
+        // se la targa non appartiene a nessun'altra auto, allora effettuo l'inserimento dell'auto
+        else{*/
+            /*$request->validate([
                 'marca' => ['required', 'string', 'max:255'],
                 'modello' => ['required', 'string', 'max:255'],
                 'targa' => ['required', 'string', 'unique:auto', 'max:7'],
@@ -57,39 +59,44 @@ class StaffController extends Controller
                 'prezzo' => ['nullable', 'integer', 'min:1'],
                 'data_inizio' => ['required', 'date_format:Y-m-d'],
                 'data_fine' => ['required', 'date_format:Y-m-d'],
-            ]);
+            ]);*/
 
-            
+            $nuova_auto = new Auto();
+            $nuova_auto->fill($request->validated());
+            $nuova_auto->nome_img = $nomeCompletoImg;
+            $nuova_auto->save();
+
+            dd($nuova_auto);
 
             // Crea l'auto
-            Auto::create([
-                'marca' => $array['marca'],
-                'modello' => $array['modello'],
-                'targa' => $array['targa'],
-                'anno' => $array['anno'],
-                'nPosti' => $array['nPosti'],
-                'motore' => $array['motore'],
-                'carburante' => $array['carburante'],
-                'username' => $array['username'],
-                'catId' => $array['catId'],
-                'descrizione' => $array['descrizione'],
-                'prezzo' => $array['prezzo'],
-                'data_inizio' => $array['data_inizio'],
-                'data_fine' => $array['data_fine'],
+            /*Auto::create([
+                'marca' => $request->marca,
+                'modello' => $request->modello,
+                'targa' => $request->targa,
+                'anno' => $request->anno,
+                'nPosti' => $request->nPosti,
+                'motore' => $request->motore,
+                'carburante' => $request->carburante,
+                'username' => $request->username,
+                'catId' => $request->catId,
+                'descrizione' => $request->descrizione,
+                'prezzo' => $request->prezzo,
+                'data_inizio' => $request->data_inizio,
+                'data_fine' => $request->data_fine,
                 'nome_img' => $nomeCompletoImg
-            ]);
+            ]);*/
         
+            //dd($nomeCompletoImg);
 
             // Elaboro il nome dell'immagine principale
             if($request->hasFile('img_principale')){
                 $image = $request->file('img_principale');
-                $nomeImg = $image->getClientOriginalName();
 
-                $arrayImg = explode('.', $nomeImg);
-                
                 // Ora al nome aggiungo '_principale' e l'estensione
-                $nomeCompletoImg = $nomeCompletoImg . '_principale' . '.' . $arrayImg[1];
-                
+                $nomeCompletoImg .= '_principale' . '.' . 'jpg';
+
+                //dd($nomeCompletoImg);
+
                 // Sposta l'immagine
                 $destinationPath = public_path() . '/images/auto';
                 $image->move($destinationPath, $nomeCompletoImg);
@@ -98,13 +105,9 @@ class StaffController extends Controller
             // Elaboro il nome dell'immagine del lato destro
             if($request->hasFile('img_destra')){
                 $image = $request->file('img_destra');
-                $nomeImg = $image->getClientOriginalName();
 
-                // Separo il nome dall'estensione
-                $arrayImg = explode('.', $nomeImg);
-                
                 // Ora al nome aggiungo '_destra' e l'estensione
-                $nomeCompletoImg = $nomeCompletoImg . '_destra' . '.' . $arrayImg[1];
+                $nomeCompletoImg .= '_destra' . '.' . 'jpg';
                 
                 // Sposta l'immagine
                 $destinationPath = public_path() . '/images/auto';
@@ -114,12 +117,9 @@ class StaffController extends Controller
             // Elaboro il nome dell'immagine del lato sinistro
             if($request->hasFile('img_sinistra')){
                 $image = $request->file('img_sinistra');
-                $nomeImg = $image->getClientOriginalName();
 
-                $arrayImg = explode('.', $nomeImg);
-                
                 // Ora al nome aggiungo '_sinistra' e l'estensione
-                $nomeCompletoImg = $nomeCompletoImg . '_sinistra' . '.' . $arrayImg[1];
+                $nomeCompletoImg .= '_sinistra' . '.' . 'jpg';
                 
                 // Sposta l'immagine
                 $destinationPath = public_path() . '/images/auto';
@@ -129,12 +129,9 @@ class StaffController extends Controller
             // Elaboro il nome dell'immagine del lato frontale
             if($request->hasFile('img_frontale')){
                 $image = $request->file('img_frontale');
-                $nomeImg = $image->getClientOriginalName();
 
-                $arrayImg = explode('.', $nomeImg);
-                
                 // Ora al nome aggiungo '_frontale' e l'estensione
-                $nomeCompletoImg = $nomeCompletoImg . '_frontale' . '.' . $arrayImg[1];
+                $nomeCompletoImg .= '_frontale' . '.' . 'jpg';
                 
                 // Sposta l'immagine
                 $destinationPath = public_path() . '/images/auto';
@@ -144,12 +141,9 @@ class StaffController extends Controller
             // Elaboro il nome dell'immagine del lato posteriore
             if($request->hasFile('img_posteriore')){
                 $image = $request->file('img_posteriore');
-                $nomeImg = $image->getClientOriginalName();
 
-                $arrayImg = explode('.', $nomeImg);
-                
                 // Ora al nome aggiungo '_posteriore' e l'estensione
-                $nomeCompletoImg = $nomeCompletoImg . '_posteriore' . '.' . $arrayImg[1];
+                $nomeCompletoImg .= '_posteriore' . '.' . 'jpg';
                 
                 // Sposta l'immagine
                 $destinationPath = public_path() . '/images/auto';
@@ -157,7 +151,8 @@ class StaffController extends Controller
             }
 
             return response()->json(['redirect' => route('gestione-auto')]);
-        }
+            //return redirect('gestione-auto')->with('success', 'Auto inserita con successo');
+        //}
     }
 
 
@@ -306,15 +301,23 @@ class StaffController extends Controller
         // Se la marca presenta degli spazi, allora li elimino
         $marcaAuto = explode(' ', $array['marca']);
         $nomeCompletoImg = $marcaAuto[0];
-        for($i = 0; $i < count($marcaAuto); $i++){
-            $nomeCompletoImg = $nomeCompletoImg . $marcaAuto[$i];
+
+        // Inserisco nel nome completo solo elementi distinti, non ci devono essere ripetizioni
+        foreach ($marcaAuto as $index => $parteMarca) {
+            if ($index > 0 && $parteMarca !== $marcaAuto[$index - 1]) {
+                $nomeCompletoImg .= $parteMarca;
+            }
         }
 
         // Se il modello presenta degli spazi, allora li elimino
         $modelloAuto = explode(' ', $array['modello']);
         $nomeCompletoImg = $nomeCompletoImg . $modelloAuto[0];
-        for($i = 0; $i < count($modelloAuto); $i++){
-            $nomeCompletoImg = $nomeCompletoImg . $modelloAuto[$i];
+
+        // Inserisco nel nome completo solo elementi distinti, non ci devono essere ripetizioni
+        foreach ($modelloAuto as $index => $parteModello) {
+            if ($index > 0 && $parteModello !== $modelloAuto[$index - 1]) {
+                $nomeCompletoImg .= $parteModello;
+            }
         }
 
         return $nomeCompletoImg;
