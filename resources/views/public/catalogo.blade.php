@@ -70,13 +70,23 @@
                         </div>
                     @endforeach
                 </div>
-            
-                @include('pagination.paginator', ['paginator' => $automobili])
+                
+                <div class="container mt-5">
+                    @include('pagination.paginator', ['paginator' => $automobili])
+                </div>
             @else
                 <h2 class="mt-5" style="height: 100%">Nessun risultato trovato</h2>
             @endif
         </section>
     </div>
 
-    
+    <!-- Sezione per eventuale messaggio di successo del noleggio o di errore -->
+    <div class="text-center mt-4">
+        @if(session('success'))
+            <strong style="color: green">{{ session('success') }}</strong>
+        @endif
+        @error('auto-occupata')
+        <span style="color: red">{{ $message }}</span>
+        @enderror
+    </div>
 @endsection

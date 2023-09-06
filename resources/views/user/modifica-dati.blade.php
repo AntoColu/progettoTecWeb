@@ -2,6 +2,10 @@
 
 @section('title', "Modifica i tuoi dati")
 
+@section('css')
+    <link rel="stylesheet" href="{{asset("css/user-forms.css")}}">
+@endsection
+
 @section('content')
     <div class="container">
         <h1>Modifica i tuoi dati</h1>
@@ -48,21 +52,15 @@
                 {{ Form::select('occupazione', ['Studente' => 'Studente', 'Dipendente' => 'Dipendente', 'Imprenditore' => 'Imprenditore', 'Commerciante' => 'Commerciante'], $user->occupazione, ['placeholder' => 'Scegli la tua occupazione'], ['id' => 'occupazione']) }}
             </div>
 
-            <!-- Campo 'username' -->
-            <div class="form-group">
-                {{ Form::label('username', 'Username') }}
-                {{ Form::text('username', $user->username, ['class' => 'form-control', 'id' => 'username']) }}
-            </div>
-
             <!-- Campo 'password' -->
             <div class="form-group">
                 {{ Form::label('password', 'Password') }}
-                {{ Form::text('password', $user->password, ['class' => 'form-control', 'id' => 'password']) }}
+                {{ Form::text('password', null, ['class' => 'form-control', 'id' => 'password']) }}
             </div>
 
             <div>
                 <!-- Bottone per confermare la modifica -->
-                {{ Form::submit('Conferma', ['class' => 'btn btn-primary', 'onclick' => "return confirm('Procedere con la modifica?')"]) }}
+                {{ Form::submit('Conferma', ['class' => 'btn btn-primary mt-4', 'onclick' => "return confirm('Procedere con la modifica?')"]) }}
 
                 <!-- Chiusura form -->
                 {{ Form::close() }}
@@ -75,4 +73,5 @@
                 <span style="color: red">{{ $message }}</span>
             @enderror
         </div>
+    </div>
 @endsection

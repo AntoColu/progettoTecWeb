@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('categoria', function (Blueprint $table) {
-            $table->increments('catId');
+            $table->integer('catId')->unsigned()->primary();
             $table->string('nome',7);
             $table->string('descrizione',255);
         });

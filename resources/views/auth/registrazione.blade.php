@@ -2,11 +2,15 @@
 
 @section('title', 'Registrazione')
 
+@section('css')
+    <link rel="stylesheet" href="{{asset("css/user-forms.css")}}">
+@endsection
+
 @section('content')
-    <div class="container align-items-center d-flex h-100 py-4">
+    <div class="container align-items-center d-flex">
         <div class="container text-center form_container">
-            <h2 class="titolo_form mb-3">Inserisci i tuoi dati:</h2>
-                {{ Form::open(array('route' => 'registrazione'))}}
+            <h1 class="titolo_form mb-5">Inserisci i tuoi dati:</h1>
+                {{ Form::open(array('route' => 'register'))}}
 
                 <!-- Parametro che non sarà visibile nella form, ma che devo passare per modificare i dati -->
                 {{ Form::hidden('ruolo', 'user') }}

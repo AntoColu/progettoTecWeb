@@ -13,13 +13,12 @@
             <h1> Auto presenti in catalogo </h1>
             <div class="row justify-content-center">
                 @foreach($automobili as $auto)
-                    <div class="card" style="width: 18rem;">
-                        {{$img_path = 'images/auto/' . $auto->nome_img . '_principale.png'}}
-                        <img src="{{asset($img_path)}}" class="card-img-top custom_card" alt="Foto Automobile">
-                        {{--<img class="card-img-top" src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . 'img_principale'})}}" alt="Foto Automobile">--}}
+                    <div class="card" style="width: 18rem; margin: 1%">
+                        <img src="{{asset($img_path = 'images/auto/' . $auto->nome_img . '_principale.jpg')}}" class="card-img-top custom_card" alt="Foto Automobile">
                         <div class="card-body">
-                            <h4 class="card-title">{{$auto->marca}} {{$auto->modello}} - {{$auto->anno}}</h4>
+                            <h3 class="card-title">{{$auto->marca}} {{$auto->modello}} - {{$auto->anno}}</h3>
                             <p class="card-text">{{$auto->descrizione}}</p>
+                            <h5 class="card-text">Prezzo giornaliero: € {{$auto->prezzo}}</h5>
                             <a href="{{ route('modifica-auto', [$auto->targa]) }}" class="btn btn-info">Modifica</a>
                             <a href="{{ route('elimina-auto', [$auto->targa]) }}" class="btn btn-danger"  onclick="return confirm('Sei sicuro di voler proseguire?')">Elimina</a>
                         </div>
@@ -28,12 +27,15 @@
             </div>
 
             <!-- Sezione per eventuale messaggio di successo del noleggio o di errore -->
-            <div class="text-center">
+            <div class="text-center mt-5">
                 @if(session('success'))
                     <strong style="color: green">{{ session('success') }}</strong>
                 @endif
                 @error('auto-non-eliminata')
-                <span style="color: red">{{ $message }}</span>
+                    <span style="color: red">{{ $message }}</span>
+                @enderror
+                @error('auto-non-trovata')
+                    <span style="color: red">{{ $message }}</span>
                 @enderror
     
                 @include('pagination.paginator', ['paginator' => $automobili->withQueryString()])

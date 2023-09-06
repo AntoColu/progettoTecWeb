@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('auto', function (Blueprint $table) {
             $table->string('marca',255);
             $table->string('modello',255);
-            $table->string('targa',255)->primary();
+            $table->string('targa',7)->primary();
             $table->integer('anno')->unsigned();
             $table->integer('nPosti')->unsigned();
             $table->string('motore',255);
@@ -30,8 +30,8 @@ return new class extends Migration
 
             $table->string('descrizione',255);
             $table->integer('prezzo')->unsigned();
-            $table->string('data_inizio',255);
-            $table->string('data_fine',255);
+            $table->date('data_inizio');
+            $table->date('data_fine');
             $table->string('nome_img',255);
         });
     }

@@ -18,7 +18,8 @@ class StaffController extends Controller
      *  Ritorno la pagina riguardante la gestione delle auto, passando la lista delle auto
     **/
     public function showGestioneAuto(){
-        return view('staff/gestione-auto')->with('automobili', Auto::all());
+        $automobili = Auto::paginate(6);
+        return view('staff/gestione-auto')->with('automobili', $automobili);
     }
 
 
@@ -37,102 +38,126 @@ class StaffController extends Controller
         $array = $request->all();
         $nomeCompletoImg = $this->getImgName($array);
 
-        // Crea l'auto
-        Auto::create([
-            'marca' => $array['marca'],
-            'modello' => $array['modello'],
-            'targa' => $array['targa'],
-            'anno' => $array['anno'],
-            'nPosti' => $array['nPosti'],
-            'motore' => $array['motore'],
-            'carburante' => $array['carburante'],
-            'username' => $array['username'],
-            'catId' => $array['catId'],
-            'descrizione' => $array['descrizione'],
-            'prezzo' => $array['prezzo'],
-            'data_inizio' => $array['data_inizio'],
-            'data_fine' => $array['data_fine'],
-            'nome_img' => $nomeCompletoImg
-        ]);
+        if(Auto::find($request->targa)){
+            return redirect()->route('inserisci-staff')->withErrors(['errore-inserimento-staff' => 'Username già utilizzato da un altro utente']);
+        }
+        // se il nuovo username non è ancora stato usato, allora effettuo l'inserimento del membro dello staff
+        else{
+            $request->validate([
+                'marca' => ['required', 'string', 'max:255'],
+                'modello' => ['required', 'string', 'max:255'],
+                'targa' => ['required', 'string', 'unique:auto', 'max:7'],
+                'anno' => ['required', 'integer'],
+                'nPosti' => ['required', 'integer'],
+                'motore' => ['required', 'string', 'max:255'],
+                'carburante' => ['required', 'string', 'max:255'],
+                'username' => ['required', 'string', 'max:255'],
+                'catId' => ['required', 'integer'],
+                'descrizione' => ['required', 'string', 'max:255'],
+                'prezzo' => ['nullable', 'integer', 'min:1'],
+                'data_inizio' => ['required', 'date_format:Y-m-d'],
+                'data_fine' => ['required', 'date_format:Y-m-d'],
+            ]);
+
+            
+
+            // Crea l'auto
+            Auto::create([
+                'marca' => $array['marca'],
+                'modello' => $array['modello'],
+                'targa' => $array['targa'],
+                'anno' => $array['anno'],
+                'nPosti' => $array['nPosti'],
+                'motore' => $array['motore'],
+                'carburante' => $array['carburante'],
+                'username' => $array['username'],
+                'catId' => $array['catId'],
+                'descrizione' => $array['descrizione'],
+                'prezzo' => $array['prezzo'],
+                'data_inizio' => $array['data_inizio'],
+                'data_fine' => $array['data_fine'],
+                'nome_img' => $nomeCompletoImg
+            ]);
         
 
-        // Elaboro il nome dell'immagine principale
-        if($request->hasFile('img_principale')){
-            $image = $request->file('img_principale');
-            $nomeImg = $image->getClientOriginalName();
+            // Elaboro il nome dell'immagine principale
+            if($request->hasFile('img_principale')){
+                $image = $request->file('img_principale');
+                $nomeImg = $image->getClientOriginalName();
 
-            $arrayImg = explode('.', $nomeImg);
-            
-            // Ora al nome aggiungo '_principale' e l'estensione
-            $nomeCompletoImg = $nomeCompletoImg . '_principale' . '.' . $arrayImg[1];
-            
-            // Sposta l'immagine
-            $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompletoImg);
+                $arrayImg = explode('.', $nomeImg);
+                
+                // Ora al nome aggiungo '_principale' e l'estensione
+                $nomeCompletoImg = $nomeCompletoImg . '_principale' . '.' . $arrayImg[1];
+                
+                // Sposta l'immagine
+                $destinationPath = public_path() . '/images/auto';
+                $image->move($destinationPath, $nomeCompletoImg);
+            }
+
+            // Elaboro il nome dell'immagine del lato destro
+            if($request->hasFile('img_destra')){
+                $image = $request->file('img_destra');
+                $nomeImg = $image->getClientOriginalName();
+
+                // Separo il nome dall'estensione
+                $arrayImg = explode('.', $nomeImg);
+                
+                // Ora al nome aggiungo '_destra' e l'estensione
+                $nomeCompletoImg = $nomeCompletoImg . '_destra' . '.' . $arrayImg[1];
+                
+                // Sposta l'immagine
+                $destinationPath = public_path() . '/images/auto';
+                $image->move($destinationPath, $nomeCompletoImg);
+            }
+
+            // Elaboro il nome dell'immagine del lato sinistro
+            if($request->hasFile('img_sinistra')){
+                $image = $request->file('img_sinistra');
+                $nomeImg = $image->getClientOriginalName();
+
+                $arrayImg = explode('.', $nomeImg);
+                
+                // Ora al nome aggiungo '_sinistra' e l'estensione
+                $nomeCompletoImg = $nomeCompletoImg . '_sinistra' . '.' . $arrayImg[1];
+                
+                // Sposta l'immagine
+                $destinationPath = public_path() . '/images/auto';
+                $image->move($destinationPath, $nomeCompletoImg);
+            }
+
+            // Elaboro il nome dell'immagine del lato frontale
+            if($request->hasFile('img_frontale')){
+                $image = $request->file('img_frontale');
+                $nomeImg = $image->getClientOriginalName();
+
+                $arrayImg = explode('.', $nomeImg);
+                
+                // Ora al nome aggiungo '_frontale' e l'estensione
+                $nomeCompletoImg = $nomeCompletoImg . '_frontale' . '.' . $arrayImg[1];
+                
+                // Sposta l'immagine
+                $destinationPath = public_path() . '/images/auto';
+                $image->move($destinationPath, $nomeCompletoImg);
+            }
+
+            // Elaboro il nome dell'immagine del lato posteriore
+            if($request->hasFile('img_posteriore')){
+                $image = $request->file('img_posteriore');
+                $nomeImg = $image->getClientOriginalName();
+
+                $arrayImg = explode('.', $nomeImg);
+                
+                // Ora al nome aggiungo '_posteriore' e l'estensione
+                $nomeCompletoImg = $nomeCompletoImg . '_posteriore' . '.' . $arrayImg[1];
+                
+                // Sposta l'immagine
+                $destinationPath = public_path() . '/images/auto';
+                $image->move($destinationPath, $nomeCompletoImg);
+            }
+
+            return response()->json(['redirect' => route('gestione-auto')]);
         }
-
-        // Elaboro il nome dell'immagine del lato destro
-        if($request->hasFile('img_destra')){
-            $image = $request->file('img_destra');
-            $nomeImg = $image->getClientOriginalName();
-
-            // Separo il nome dall'estensione
-            $arrayImg = explode('.', $nomeImg);
-            
-            // Ora al nome aggiungo '_destra' e l'estensione
-            $nomeCompletoImg = $nomeCompletoImg . '_destra' . '.' . $arrayImg[1];
-            
-            // Sposta l'immagine
-            $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompletoImg);
-        }
-
-        // Elaboro il nome dell'immagine del lato sinistro
-        if($request->hasFile('img_sinistra')){
-            $image = $request->file('img_sinistra');
-            $nomeImg = $image->getClientOriginalName();
-
-            $arrayImg = explode('.', $nomeImg);
-            
-            // Ora al nome aggiungo '_sinistra' e l'estensione
-            $nomeCompletoImg = $nomeCompletoImg . '_sinistra' . '.' . $arrayImg[1];
-            
-            // Sposta l'immagine
-            $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompletoImg);
-        }
-
-        // Elaboro il nome dell'immagine del lato frontale
-        if($request->hasFile('img_frontale')){
-            $image = $request->file('img_frontale');
-            $nomeImg = $image->getClientOriginalName();
-
-            $arrayImg = explode('.', $nomeImg);
-            
-            // Ora al nome aggiungo '_frontale' e l'estensione
-            $nomeCompletoImg = $nomeCompletoImg . '_frontale' . '.' . $arrayImg[1];
-            
-            // Sposta l'immagine
-            $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompletoImg);
-        }
-
-        // Elaboro il nome dell'immagine del lato posteriore
-        if($request->hasFile('img_posteriore')){
-            $image = $request->file('img_posteriore');
-            $nomeImg = $image->getClientOriginalName();
-
-            $arrayImg = explode('.', $nomeImg);
-            
-            // Ora al nome aggiungo '_posteriore' e l'estensione
-            $nomeCompletoImg = $nomeCompletoImg . '_posteriore' . '.' . $arrayImg[1];
-            
-            // Sposta l'immagine
-            $destinationPath = public_path() . '/images/auto';
-            $image->move($destinationPath, $nomeCompletoImg);
-        }
-
-        return response()->json(['redirect' => route('gestione-auto')]);
     }
 
 
@@ -152,37 +177,66 @@ class StaffController extends Controller
     public function modificaAuto(Request $request){
         $array = $request->all();
         $nomeCompletoImg = $this->getImgName($array);
+        
+        $request->validate([
+            'marca' => ['nullable', 'string', 'max:255'],
+            'modello' => ['nullable', 'string', 'max:255'],
+            'anno' => ['nullable', 'integer'],
+            'nPosti' => ['nullable', 'integer'],
+            'motore' => ['nullable', 'string', 'max:255'],
+            'carburante' => ['nullable', 'string', 'max:255'],
+            'catId' => ['nullable', 'integer'],
+            'descrizione' => ['nullable', 'string', 'max:255'],
+            'prezzo' => ['nullable', 'integer', 'min:1'],
+        ]);
 
         // Modifico i dati dell'auto in base alla targa
-        Auto::where('targa', $array['targa'])
-              ->update([
-                'marca' => $array['marca'],
-                'modello' => $array['modello'],
-                'targa' => $array['targa'],
-                'anno' => $array['anno'],
-                'nPosti' => $array['nPosti'],
-                'motore' => $array['motore'],
-                'carburante' => $array['carburante'],
-                'username' => $array['username'],
-                'descrizione' => $array['descrizione'],
-                'prezzo' => $array['prezzo'],
-                'data_inizio' => $array['data_inizio'],
-                'data_fine' => $array['data_fine'],
-                'nome_img' => $nomeCompletoImg
-              ]);
+        $auto_mod = Auto::find($request->targa);
 
+        // Se la faq non esiste, torno alla gestione faq
+        if (!$auto_mod) {
+            return redirect()->route('gestione-auto')->withErrors(['auto-non-trovata' => 'Auto non trovata']);
+        }
+
+        if($request->marca != null){
+            $auto_mod->marca = $request->marca;
+        }
+        if($request->modello != null){
+            $auto_mod->modello = $request->modello;
+        }
+        if($request->anno != null){
+            $auto_mod->anno = $request->anno;
+        }
+        if($request->nPosti != null){
+            $auto_mod->nPosti = $request->nPosti;
+        }
+        if($request->motore != null){
+            $auto_mod->motore = $request->motore;
+        }
+        if($request->carburante != null){
+            $auto_mod->carburante = $request->carburante;
+        }
+        if($request->catId != null){
+            $auto_mod->catId = $request->catId;
+        }
+        if($request->descrizione != null){
+            $auto_mod->descrizione = $request->descrizione;
+        }
+        if($request->prezzo != null){
+            $auto_mod->prezzo = $request->prezzo;
+        }
+        
+        $auto_mod->save();
+
+        
         // Elaboro il nome dell'immagine principale
         if($request->hasFile('img_principale')){
             $image = $request->file('img_principale');
-            $nomeImg = $image->getClientOriginalName();
-
-            $arrayImg = explode('.', $nomeImg);
-            
-            $nomeCompletoImg = $this->getImgName($array);
+            $nomeImg = $auto_mod->nome_img;
 
             // Ora al nome aggiungo '_principale' e l'estensione
-            $nomeCompletoImg = $nomeCompletoImg . '_principale' . '.' . $arrayImg[1];
-            
+            $nomeCompletoImg = $nomeImg . '_principale' . '.' . 'jpg';
+
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
             $image->move($destinationPath, $nomeCompletoImg);
@@ -191,15 +245,10 @@ class StaffController extends Controller
         // Elaboro il nome dell'immagine del lato destro
         if($request->hasFile('img_destra')){
             $image = $request->file('img_destra');
-            $nomeImg = $image->getClientOriginalName();
-
-            // Separo il nome dall'estensione
-            $arrayImg = explode('.', $nomeImg);
-            
-            $nomeCompletoImg = $this->getImgName($array);
+            $nomeImg = $auto_mod->nome_img;
 
             // Ora al nome aggiungo '_destra' e l'estensione
-            $nomeCompletoImg = $nomeCompletoImg . '_destra' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeImg . '_destra' . '.' . 'jpg';
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
@@ -209,14 +258,10 @@ class StaffController extends Controller
         // Elaboro il nome dell'immagine del lato sinistro
         if($request->hasFile('img_sinistra')){
             $image = $request->file('img_sinistra');
-            $nomeImg = $image->getClientOriginalName();
-
-            $arrayImg = explode('.', $nomeImg);
-            
-            $nomeCompletoImg = $this->getImgName($array);
+            $nomeImg = $auto_mod->nome_img;
 
             // Ora al nome aggiungo '_sinistra' e l'estensione
-            $nomeCompletoImg = $nomeCompletoImg . '_sinistra' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeImg . '_sinistra' . '.' . 'jpg';
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
@@ -226,14 +271,10 @@ class StaffController extends Controller
         // Elaboro il nome dell'immagine del lato frontale
         if($request->hasFile('img_frontale')){
             $image = $request->file('img_frontale');
-            $nomeImg = $image->getClientOriginalName();
-
-            $arrayImg = explode('.', $nomeImg);
-            
-            $nomeCompletoImg = $this->getImgName($array);
+            $nomeImg = $auto_mod->nome_img;
 
             // Ora al nome aggiungo '_frontale' e l'estensione
-            $nomeCompletoImg = $nomeCompletoImg . '_frontale' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeImg . '_frontale' . '.' . 'jpg';
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
@@ -243,21 +284,17 @@ class StaffController extends Controller
         // Elaboro il nome dell'immagine del lato posteriore
         if($request->hasFile('img_posteriore')){
             $image = $request->file('img_posteriore');
-            $nomeImg = $image->getClientOriginalName();
-
-            $arrayImg = explode('.', $nomeImg);
-            
-            $nomeCompletoImg = $this->getImgName($array);
+            $nomeImg = $auto_mod->nome_img;
 
             // Ora al nome aggiungo '_posteriore' e l'estensione
-            $nomeCompletoImg = $nomeCompletoImg . '_posteriore' . '.' . $arrayImg[1];
+            $nomeCompletoImg = $nomeImg . '_posteriore' . '.' . 'jpg';
             
             // Sposta l'immagine
             $destinationPath = public_path() . '/images/auto';
             $image->move($destinationPath, $nomeCompletoImg);
         }
 
-        return redirect('gestione-auto');
+        return redirect('gestione-auto')->with('success', 'Auto modificata con successo');
     }
 
 

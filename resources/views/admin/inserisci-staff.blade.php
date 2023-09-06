@@ -5,10 +5,10 @@
 @section('js')
     <script src="{{ asset('js/inserimento.js') }}"></script>
 
-    <!--<script>
-        /*$(function () {
+    {{--<script>
+        $(function () {
             // Rotta per l'inserimento dell'auto
-            var actionUrl = "{{-- route('inserisci-staff.store') --}}";
+            var actionUrl = "{{ route('inserisci-staff.store') }}";
             var formId = 'inserisci-staff';
 
             $(":input").on('blur', function (event) {
@@ -24,8 +24,8 @@
                 // Funzione di validazione dell'intera form
                 doFormValidation(actionUrl, formId);
             });
-        });*/
-    </script>-->
+        });
+    </script>--}}
 @endsection
 
 

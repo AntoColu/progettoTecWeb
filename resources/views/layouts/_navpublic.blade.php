@@ -23,17 +23,25 @@
             <a class="nav-link" href="{{ route('user') }}" class="highlight" title="Home User">Area User</a>
         </li>
     @endcan
-    @auth
-        <li class="nav-item">
-            <a class="nav-link" href="" title="Esci dal sito" class="highlight" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-        </li>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            {{ csrf_field() }}
-        </form>
-    @endauth    
-    @guest
-        <li class="nav-item" style="float: right">
-            <a class="nav-link" href="{{ route('login') }}" class="highlight" title="Accedi all'area riservata del sito">Accedi</a>
-        </li>  
-    @endguest
+</ul>    
+@auth
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+        <a class="nav-link" href="" title="Esci dal sito" class="highlight" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+    </li>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
 </ul>
+@endauth    
+@guest
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('register') }}" class="highlight" title="Registrati al sito">Registrati</a>
+    </li> 
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('login') }}" class="highlight" title="Accedi all'area riservata del sito">Accedi</a>
+    </li>  
+</ul>
+@endguest
+

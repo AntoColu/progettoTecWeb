@@ -2,11 +2,15 @@
 
 @section('title', 'Login')
 
+@section('css')
+    <link rel="stylesheet" href="{{asset("css/user-forms.css")}}">
+@endsection
+
 @section('content')
-    <div class="container align-items-center d-flex h-100">
+    <div class="container align-items-center d-flex">
         <div class="container text-center form_container">
-            <h2 class="titolo_form mb-3">Che bello rivederti!</h2>
-            <h2 class="titolo_form mb-3">Inserisci le tue credenziali d'accesso:</h2>
+            <h1 class="titolo_form mb-3">Che bello rivederti!</h1>
+            <h2 class="titolo_form mb-5">Inserisci le tue credenziali d'accesso:</h2>
 
             {{ Form::open(array('route' => 'login'))}}
             

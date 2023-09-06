@@ -5,7 +5,7 @@
 @section('js')
     <script src="{{ asset('js/inserimento.js') }}"></script>
 
-    <script>
+    {{--<script>
         $(function () {
             // Rotta per l'inserimento dell'auto
             var actionUrl = "{{ route('inserisci-auto.store') }}";
@@ -25,7 +25,7 @@
                 doFormValidation(actionUrl, formId);
             });
         });
-    </script>
+    </script>--}}
 @endsection
 
 
@@ -41,11 +41,12 @@
             {{ Form::hidden('username', '') }}
             {{ Form::hidden('data_inizio', '') }}
             {{ Form::hidden('data_fine', '') }}
+            {{ Form::hidden('nome_img', '') }}
 
             <!-- Campo 'categoria' -->
             <div>
                 {{ Form::label('catId', 'Categoria') }}
-                {{ Form::select('catId', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], null, ['placeholder' => 'Scegli una categoria'], ['id' => 'catId']) }}
+                {{ Form::select('catId', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], null, ['placeholder' => 'Scegli una categoria', 'class' => 'form-control'], ['id' => 'catId']) }}
             </div>
 
             <!-- Campo 'marca' -->
@@ -137,7 +138,7 @@
                 {{ Form::submit('Conferma', ['class' => 'btn btn-primary', 'onclick' => "return confirm('Sei sicuro di voler proseguire?')"]) }}
 
                 <!-- Bottone per svuotare i campi -->
-                <button class="bottone" onclick="document.getElementById('inserisci-auto').reset()">Svuota campi</button>
+                <button class="btn btn-warning" onclick="document.getElementById('inserisci-auto').reset()">Svuota campi</button>
 
                 <!-- Chiusura form -->
                 {{ Form::close() }}

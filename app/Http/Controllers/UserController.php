@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Password;
 
 class UserController extends Controller
 {
@@ -32,45 +33,45 @@ class UserController extends Controller
      *  Funzione che permette la modifica dei dati dell'utente registrato
     **/
     public function modificaDati(Request $request){
+
+        $request->validate([
+            'nome' => ['nullable', 'string', 'max:255'],
+            'cognome' => ['nullable', 'string', 'max:255'],
+            'residenza' => ['nullable', 'string', 'max:255'],
+            'nascita' => ['nullable', 'date_format:Y-m-d'],
+            'email' => ['nullable', 'string', 'email', 'max:255'],
+            'occupazione' => ['nullable', 'string', 'max:255'],
+            'password' => ['nullable', 'max:255', Password::defaults()],
+        ]);
+
         $user = User::find(auth()->user()->getAuthIdentifier()); // Con questa istruzione non ho errori con la save()
 
-        // Controllo se il nuovo username modificato esiste già:
-        // in caso affermativo l'utente viene reindirizzato di nuovo alla pagina di modifica
-        // con un messaggio d'errore
-        if(User::find($request->username)){
-            return redirect()->route('modifica-dati')->withErrors(['errore-modifica-dati' => 'Username già utilizzato da un altro utente']);
+        if($request->nome != null){
+            $user->nome = $request->nome;
         }
-        // se il nuovo username non è ancora stato usato, allora effettuo la modifica dei dati
-        else{
-            if($request->nome != null){
-                $user->nome = $request->nome;
-            }
-            if($request->cognome != null){
-                $user->cognome = $request->cognome;
-            }
-            if($request->residenza != null){
-                $user->residenza = $request->residenza;
-            }
-            if($request->nascita != null){
-                $user->nascita = $request->nascita;
-            }
-            if($request->email != null){
-                $user->email = $request->email;
-            }
-            if($request->occupazione != null){
-                $user->occupazione = $request->occupazione;
-            }
-            if($request->username != null){
-                $user->username = $request->username;
-            }
-            if($request->password != null){
-                $user->password = Hash::make($request->password);
-            }
-            
-            $user->save();
+        if($request->cognome != null){
+            $user->cognome = $request->cognome;
+        }
+        if($request->residenza != null){
+            $user->residenza = $request->residenza;
+        }
+        if($request->nascita != null){
+            $user->nascita = $request->nascita;
+        }
+        if($request->email != null){
+            $user->email = $request->email;
+        }
+        if($request->occupazione != null){
+            $user->occupazione = $request->occupazione;
+        }
+        if($request->password != null){
+            $user->password = Hash::make($request->password);
+        }
+        
+        $user->save();
 
-            return redirect()->route('user-account')->with('success', 'Dati aggiornati con successo');
-        }
+        return redirect()->route('user-account')->with('success', 'Dati aggiornati con successo');
+        
     }
 
 
@@ -82,19 +83,19 @@ class UserController extends Controller
         $auto = Auto::find($request->targa);
 
         // Se il campo username di auto è vuoto allora noleggio l'auto
-        if($auto->username == ''){
+        if($auto->username == null){
             $auto->username = $user->username;
             $auto->data_inizio = $request->data_inizio;
             $auto->data_fine = $request->data_fine;
             $auto->save();
 
             // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un messaggio di successo
-            return redirect()->route('dettagli-auto')->with('success', 'Auto noleggiata con successo');
+            return redirect()->route('riepilogo-noleggi')->with('success', 'Auto noleggiata con successo');
         }
         // altrimenti l'auto è stata già noleggiata da qualcun altro
         else{
             // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un errore
-            return redirect()->route('dettagli-auto')->withErrors(['auto-occupata' => 'Auto già noleggiata da un altro utente']);
+            return redirect()->route('catalogo')->withErrors(['auto-occupata' => 'Auto già noleggiata da un altro utente']);
         }
     }
 
@@ -104,7 +105,7 @@ class UserController extends Controller
     **/
     public function showRiepilogo(){
         $user = Auth::user();
-        $automobili = Auto::where('user', $user->username)->get();
+        $automobili = Auto::where('username', $user->username)->paginate(6);
         return view('user/riepilogo-noleggi')->with('automobili', $automobili);
     }
 }

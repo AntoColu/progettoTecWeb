@@ -6,7 +6,7 @@ use App\Models\Auto;
 use App\Models\Faq;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rules;
+use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -61,7 +61,7 @@ class AdminController extends Controller
                 'email' => ['required', 'string', 'email', 'max:255'],
                 'occupazione' => ['required', 'string', 'max:255'],
                 'username' => ['required', 'string', 'unique:utente', 'max:255'],
-                'password' => ['required', 'max:255', Rules\Password::defaults()],
+                'password' => ['required', 'max:255', Password::defaults()],
                 'ruolo' => ['required', 'string', 'max:6'],
             ]);
 
@@ -77,20 +77,6 @@ class AdminController extends Controller
                 'password' => Hash::make($request->password),
                 'ruolo' => $request->ruolo
             ]);
-            
-            /*$staff = new User();
-
-            $staff->nome = $request->nome;
-            $staff->cognome = $request->cognome;
-            $staff->residenza = $request->residenza;
-            $staff->nascita = $request->nascita;
-            $staff->email = $request->email;
-            $staff->occupazione = $request->occupazione;
-            $staff->username = $request->username;
-            $staff->password = Hash::make($request->password);
-            $staff->ruolo = $request->ruolo;
-
-            $staff->save();*/
 
             return redirect()->route('gestione-staff')->with('success', 'Nuovo membro aggiunto con successo');
         }
