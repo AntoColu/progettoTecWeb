@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('nPosti')->unsigned();
             $table->string('motore',255);
             $table->string('carburante',255);
-            $table->string('username',255)->nullable();
+            $table->string('username',255);
 
             $table->integer('catId')->unsigned();
             $table->foreign('catId')
@@ -30,8 +30,8 @@ return new class extends Migration
 
             $table->string('descrizione',255);
             $table->integer('prezzo')->unsigned();
-            $table->date('data_inizio')->nullable();
-            $table->date('data_fine')->nullable();
+            $table->date('data_inizio');
+            $table->date('data_fine');
             $table->string('nome_img',255);
         });
     }

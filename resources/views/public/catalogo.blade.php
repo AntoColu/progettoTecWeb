@@ -11,10 +11,6 @@
         $(function() {
             // Controllo gli estremi di prezzo, in modo che il prezzo massimo
             // non sia mai minore del prezzo minimo
-            $("#min-prezzo").on('change', function(event) {
-                $("#max-prezzo").val(parseInt($(this).val()));
-            });
-
             $("#max-prezzo").on('change', function(event) {
                 if(parseInt($(this).val()) < parseInt($("#min-prezzo").val())){
                     $(this).val(parseInt($("#min-prezzo").val()));
@@ -31,18 +27,18 @@
             {{ Form::open(['route' => 'catalogo-filtrato', 'id' => 'catalogo-filtrato-form', 'method' => 'get']) }}
             
             <h2>Categoria:</h2>
-            {{ Form::select('catId', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], null, ['placeholder' => 'Scegli una categoria'], ['id' => 'catId']) }}
+            {{ Form::select('catId', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], null, ['placeholder' => 'Scegli una categoria', 'class' => 'form-control', 'id' => 'catId']) }}
             
-            <br><br>
+            <br>
 
             <h2>Fascia di prezzo:</h2>
             {{ Form::label('min-prezzo', 'Min:') }}
-            {{ Form::number('min-prezzo', old('min-prezzo', ''), ['placeholder' => 'Prezzo minimo', 'id'=>'min-prezzo', 'min'=>0]) }}
+            {{ Form::number('min-prezzo', old('min-prezzo', ''), ['placeholder' => 'Prezzo minimo', 'class' => 'form-control', 'id'=>'min-prezzo', 'min'=>0]) }}
             
             {{ Form::label('max-prezzo', 'Max:') }}
-            {{ Form::number('max-prezzo', old('max-prezzo', ''), ['placeholder' => 'Prezzo massimo', 'id'=>'max-prezzo', 'min'=>0]) }}
+            {{ Form::number('max-prezzo', old('max-prezzo', ''), ['placeholder' => 'Prezzo massimo', 'class' => 'form-control', 'id'=>'max-prezzo', 'min'=>0]) }}
             
-            <br><br>
+            <br>
 
             {{ Form::submit('Filtra', ['class' => 'btn btn-primary', 'id'=>'bottone']) }}
 

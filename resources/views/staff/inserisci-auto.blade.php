@@ -36,11 +36,13 @@
         <div class="wrap">
             {{ Form::open(array('route' => 'inserisci-auto.store', 'id' => 'inserisci-auto', 'files' => true, 'class' => 'inserisci-auto', 'method' => 'POST')) }}
 
-            <!-- Parametri che non saranno visibili nella form, ma che devo passare per inserire l'auto -->
-            <!-- li ho impostati vuoti, perchè saranno riempiti una volta che l'auto verrà noleggiata -->
-            {{ Form::hidden('username', '') }}
-            {{ Form::hidden('data_inizio', '') }}
-            {{ Form::hidden('data_fine', '') }}
+            <!-- Parametri che non saranno visibili nella form, ma che devo passare per inserire l'auto
+                li ho impostati su 'nessuno', ottengo l'errore dal browser che non possono essere vuoti, 
+                allora ho usato questo valore predefinito.
+                Quando l'auto verrà noleggiata verranno riempiti con i dati -->
+            {{ Form::hidden('username', 'nessuno') }}
+            {{ Form::hidden('data_inizio', '1990-01-01') }}
+            {{ Form::hidden('data_fine', '1990-01-01') }}
 
             <!-- Campo 'categoria' -->
             <div>
@@ -142,13 +144,6 @@
                 <!-- Chiusura form -->
                 {{ Form::close() }}
             </div>
-        </div>
-
-        <!-- Sezione per eventuale messaggio di errore -->
-        <div class="text-center">
-            @error('errore-inserimento-auto')
-                <span style="color: red">{{ $message }}</span>
-            @enderror
         </div>
     </div>
 @endsection

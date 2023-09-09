@@ -40,119 +40,89 @@ class StaffController extends Controller
         $nomeCompletoImg = $this->getImgName($request->all());
         //dd($nomeCompletoImg);
 
-        /*if(Auto::find($request->targa)){
-            return redirect()->route('inserisci-auto')->withErrors(['errore-inserimento-auto' => 'Targa appartenente ad un\'altra auto!']);
+        $nuova_auto = new Auto();
+        $nuova_auto->fill($request->validated());
+        $nuova_auto->nome_img = $nomeCompletoImg;
+        $nuova_auto->save();
+        //dd($nuova_auto);
+
+        // Elaboro il nome dell'immagine principale
+        if($request->hasFile('img_principale')){
+            $image = $request->file('img_principale');
+
+            // Ora al nome aggiungo '_principale' e l'estensione
+            $nomeCompletoImg .= '_principale' . '.' . 'jpg';
+
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompletoImg);
         }
-        // se la targa non appartiene a nessun'altra auto, allora effettuo l'inserimento dell'auto
-        else{*/
-            /*$request->validate([
-                'marca' => ['required', 'string', 'max:255'],
-                'modello' => ['required', 'string', 'max:255'],
-                'targa' => ['required', 'string', 'unique:auto', 'max:7'],
-                'anno' => ['required', 'integer'],
-                'nPosti' => ['required', 'integer'],
-                'motore' => ['required', 'string', 'max:255'],
-                'carburante' => ['required', 'string', 'max:255'],
-                'username' => ['required', 'string', 'max:255'],
-                'catId' => ['required', 'integer'],
-                'descrizione' => ['required', 'string', 'max:255'],
-                'prezzo' => ['nullable', 'integer', 'min:1'],
-                'data_inizio' => ['required', 'date_format:Y-m-d'],
-                'data_fine' => ['required', 'date_format:Y-m-d'],
-            ]);*/
 
-            $nuova_auto = new Auto();
-            $nuova_auto->fill($request->validated());
-            $nuova_auto->nome_img = $nomeCompletoImg;
-            $nuova_auto->save();
+        // Elaboro il nome dell'immagine del lato destro
+        if($request->hasFile('img_destra')){
+            $image = $request->file('img_destra');
 
-            dd($nuova_auto);
+            // Devo reimpostare nuovamente il nome su <Marca><Modello>
+            // altrimenti il nome verrebbe concatenato a quello dell'if precedente
+            $nomeCompletoImg = $this->getImgName($request->all()); 
 
-            // Crea l'auto
-            /*Auto::create([
-                'marca' => $request->marca,
-                'modello' => $request->modello,
-                'targa' => $request->targa,
-                'anno' => $request->anno,
-                'nPosti' => $request->nPosti,
-                'motore' => $request->motore,
-                'carburante' => $request->carburante,
-                'username' => $request->username,
-                'catId' => $request->catId,
-                'descrizione' => $request->descrizione,
-                'prezzo' => $request->prezzo,
-                'data_inizio' => $request->data_inizio,
-                'data_fine' => $request->data_fine,
-                'nome_img' => $nomeCompletoImg
-            ]);*/
-        
-            //dd($nomeCompletoImg);
+            // Ora al nome aggiungo '_destra' e l'estensione
+            $nomeCompletoImg .= '_destra' . '.' . 'jpg';
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompletoImg);
+        }
 
-            // Elaboro il nome dell'immagine principale
-            if($request->hasFile('img_principale')){
-                $image = $request->file('img_principale');
+        // Elaboro il nome dell'immagine del lato sinistro
+        if($request->hasFile('img_sinistra')){
+            $image = $request->file('img_sinistra');
 
-                // Ora al nome aggiungo '_principale' e l'estensione
-                $nomeCompletoImg .= '_principale' . '.' . 'jpg';
+            // Devo reimpostare nuovamente il nome su <Marca><Modello>
+            // altrimenti il nome verrebbe concatenato a quello dell'if precedente
+            $nomeCompletoImg = $this->getImgName($request->all()); 
 
-                //dd($nomeCompletoImg);
+            // Ora al nome aggiungo '_sinistra' e l'estensione
+            $nomeCompletoImg .= '_sinistra' . '.' . 'jpg';
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompletoImg);
+        }
 
-                // Sposta l'immagine
-                $destinationPath = public_path() . '/images/auto';
-                $image->move($destinationPath, $nomeCompletoImg);
-            }
+        // Elaboro il nome dell'immagine del lato frontale
+        if($request->hasFile('img_frontale')){
+            $image = $request->file('img_frontale');
+            
+            // Devo reimpostare nuovamente il nome su <Marca><Modello>
+            // altrimenti il nome verrebbe concatenato a quello dell'if precedente
+            $nomeCompletoImg = $this->getImgName($request->all()); 
 
-            // Elaboro il nome dell'immagine del lato destro
-            if($request->hasFile('img_destra')){
-                $image = $request->file('img_destra');
+            // Ora al nome aggiungo '_frontale' e l'estensione
+            $nomeCompletoImg .= '_frontale' . '.' . 'jpg';
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompletoImg);
+        }
 
-                // Ora al nome aggiungo '_destra' e l'estensione
-                $nomeCompletoImg .= '_destra' . '.' . 'jpg';
-                
-                // Sposta l'immagine
-                $destinationPath = public_path() . '/images/auto';
-                $image->move($destinationPath, $nomeCompletoImg);
-            }
+        // Elaboro il nome dell'immagine del lato posteriore
+        if($request->hasFile('img_posteriore')){
+            $image = $request->file('img_posteriore');
+            
+            // Devo reimpostare nuovamente il nome su <Marca><Modello>
+            // altrimenti il nome verrebbe concatenato a quello dell'if precedente
+            $nomeCompletoImg = $this->getImgName($request->all()); 
 
-            // Elaboro il nome dell'immagine del lato sinistro
-            if($request->hasFile('img_sinistra')){
-                $image = $request->file('img_sinistra');
+            // Ora al nome aggiungo '_posteriore' e l'estensione
+            $nomeCompletoImg .= '_posteriore' . '.' . 'jpg';
+            
+            // Sposta l'immagine
+            $destinationPath = public_path() . '/images/auto';
+            $image->move($destinationPath, $nomeCompletoImg);
+        }
 
-                // Ora al nome aggiungo '_sinistra' e l'estensione
-                $nomeCompletoImg .= '_sinistra' . '.' . 'jpg';
-                
-                // Sposta l'immagine
-                $destinationPath = public_path() . '/images/auto';
-                $image->move($destinationPath, $nomeCompletoImg);
-            }
-
-            // Elaboro il nome dell'immagine del lato frontale
-            if($request->hasFile('img_frontale')){
-                $image = $request->file('img_frontale');
-
-                // Ora al nome aggiungo '_frontale' e l'estensione
-                $nomeCompletoImg .= '_frontale' . '.' . 'jpg';
-                
-                // Sposta l'immagine
-                $destinationPath = public_path() . '/images/auto';
-                $image->move($destinationPath, $nomeCompletoImg);
-            }
-
-            // Elaboro il nome dell'immagine del lato posteriore
-            if($request->hasFile('img_posteriore')){
-                $image = $request->file('img_posteriore');
-
-                // Ora al nome aggiungo '_posteriore' e l'estensione
-                $nomeCompletoImg .= '_posteriore' . '.' . 'jpg';
-                
-                // Sposta l'immagine
-                $destinationPath = public_path() . '/images/auto';
-                $image->move($destinationPath, $nomeCompletoImg);
-            }
-
-            return response()->json(['redirect' => route('gestione-auto')]);
-            //return redirect('gestione-auto')->with('success', 'Auto inserita con successo');
-        //}
+        return response()->json(['redirect' => route('gestione-auto')]);
     }
 
 

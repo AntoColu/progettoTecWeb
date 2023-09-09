@@ -30,16 +30,16 @@ class NewAutoRequest extends FormRequest
             'marca' => ['required', 'string', 'max:255'],
             'modello' => ['required', 'string', 'max:255'],
             'targa' => ['required', 'string', 'unique:auto', 'max:7'],
-            'anno' => ['required', 'integer'],
-            'nPosti' => ['required', 'integer'],
+            'anno' => ['required', 'numeric'],
+            'nPosti' => ['required', 'numeric'],
             'motore' => ['required', 'string', 'max:255'],
             'carburante' => ['required', 'string', 'max:255'],
-            'username' => ['nullable', 'string', 'max:255'],
-            'catId' => ['required', 'integer'],
+            'username' => ['string', 'max:255'],
+            'catId' => ['required', 'numeric'],
             'descrizione' => ['required', 'string', 'max:255'],
-            'prezzo' => ['nullable', 'integer', 'min:1'],
-            'data_inizio' => ['nullable', 'date_format:Y-m-d'],
-            'data_fine' => ['nullable', 'date_format:Y-m-d']
+            'prezzo' => ['required', 'numeric', 'min:1'],
+            'data_inizio' => ['date_format:Y-m-d'],
+            'data_fine' => ['date_format:Y-m-d']
         ];
     }
 

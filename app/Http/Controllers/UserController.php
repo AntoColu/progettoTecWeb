@@ -83,7 +83,7 @@ class UserController extends Controller
         $auto = Auto::find($request->targa);
 
         // Se il campo username di auto è vuoto allora noleggio l'auto
-        if($auto->username == null){
+        if($auto->username == null || $auto->username == 'nessuno'){
             $auto->username = $user->username;
             $auto->data_inizio = $request->data_inizio;
             $auto->data_fine = $request->data_fine;
