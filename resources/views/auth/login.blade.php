@@ -12,7 +12,12 @@
             <h1 class="titolo_form mb-3">Che bello rivederti!</h1>
             <h2 class="titolo_form mb-5">Inserisci le tue credenziali d'accesso:</h2>
 
-            {{ Form::open(array('route' => 'login'))}}
+            @if($targa)
+                {{ Form::open(array('route' => 'login-for-noleggio'))}}
+                {{ Form::hidden('targa', $targa) }}
+            @else
+                {{ Form::open(array('route' => 'login'))}}
+            @endif
             
             <div class="container inner_form">
                 <!-- Campo USERNAME -->

@@ -60,7 +60,7 @@
                                     <h3 class="card-title">{{$auto->marca}} {{$auto->modello}} - {{$auto->anno}}</h3>
                                     <p class="card-text">{{$auto->descrizione}}</p>
                                     <h5 class="card-text">Prezzo giornaliero: € {{$auto->prezzo}}</h5>
-                                    <a href="{{ route('dettagli-auto', [$auto->targa])}}" class="btn btn-primary">Vai al noleggio</a>
+                                    <a href="{{ route('dettagli-auto', [$auto->targa]) }}" class="btn btn-primary">Vai al noleggio</a>
                                 </div>
                             </div>
                         </div>

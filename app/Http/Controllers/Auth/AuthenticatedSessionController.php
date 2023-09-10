@@ -19,6 +19,16 @@ class AuthenticatedSessionController extends Controller {
         return view('auth/login');
     }
 
+
+    /**
+     *  Funzione che manda alla pagina di login, ma fornisce la targa
+     *  perchè una volta effettuato il login l'utente verrà reindirizzato alla pagina di noleggio
+    **/
+    public function createAndNoleggia(Request $request) {
+        return view('auth/login')->with('targa', $request->targa);;
+    }
+
+
     /**
      * Handle an incoming authentication request.
      *
@@ -44,6 +54,22 @@ class AuthenticatedSessionController extends Controller {
             default: return redirect('/');
         }
     }
+
+
+    /**
+     *  Funzione che viene richiamata quando si viene indirizzati sulla pagina di login,
+     *  premendo sul pulsante di noleggio auto.
+     *  Dopo aver effettuato il login l'utente loggato verrà reindirizzato alla pagina di noleggio.
+    **/
+    public function storeAndNoleggia(LoginRequest $request) {
+
+        $request->authenticate();
+
+        $request->session()->regenerate();
+
+        return redirect()->route('dettagli-auto', ['targa' => $request->targa]);
+    }
+
 
     /**
      * Destroy an authenticated session.

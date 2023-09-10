@@ -14,6 +14,11 @@ Route::middleware('guest')->group(function () {
             ->name('login');
 
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
+
+    Route::get('login-for-noleggio', [AuthenticatedSessionController::class, 'createAndNoleggia'])
+            ->name('login-for-noleggio');
+
+    Route::post('login-for-noleggio', [AuthenticatedSessionController::class, 'storeAndNoleggia']);
 });
 
 Route::middleware('auth')->group(function () {

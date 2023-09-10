@@ -108,18 +108,38 @@
     </div>
 
     <div class="container">
-        {{ Form::open(['route' => 'noleggio', 'id' => 'noleggio-form', 'method' => 'get']) }}
+        @can('isUser')
+            {{ Form::open(['route' => 'noleggio', 'id' => 'noleggio-form', 'method' => 'get']) }}
 
-        <!-- Passo anche la targa dell'auto, ma l'utente non vedrà questo campo -->
-        {{ Form::hidden('targa', $auto->targa) }}
-        
-        <h3>Data di inizio del noleggio:</h3>
-        {{ Form::input('date', 'data_inizio', null, ['class' => 'form-control']) }}
+            <!-- Passo anche la targa dell'auto, ma l'utente non vedrà questo campo -->
+            {{ Form::hidden('targa', $auto->targa) }}
+            
+            <h3>Data di inizio del noleggio:</h3>
+            {{ Form::input('date', 'data_inizio', null, ['class' => 'form-control']) }}
 
-        <h3>Data di fine noleggio:</h3>
-        {{ Form::input('date', 'data_fine', null, ['class' => 'form-control']) }}
-        <br><br>
-        {{ Form::submit('Noleggia', ['class' => 'btn btn-primary', 'id'=>'bottone_noleggio']) }}
-        {{ Form::close() }}
+            <h3>Data di fine noleggio:</h3>
+            {{ Form::input('date', 'data_fine', null, ['class' => 'form-control']) }}
+            <br><br>
+            {{ Form::submit('Noleggia', ['class' => 'btn btn-primary', 'id'=>'bottone_noleggio']) }}
+            {{ Form::close() }}
+        @endcan
+
+        {{-- Se l'utente non è loggato allora viene reindirizzato alla pagina di login e,
+            dopo essersi loggato, verrà reindirizzato nuovamente su questa pagina --}}
+        @guest
+            {{ Form::open(['route' => 'login-for-noleggio', 'id' => 'noleggio-form', 'method' => 'get']) }}
+
+            <!-- Passo anche la targa dell'auto, ma l'utente non vedrà questo campo -->
+            {{ Form::hidden('targa', $auto->targa) }}
+            
+            <h3>Data di inizio del noleggio:</h3>
+            {{ Form::input('date', 'data_inizio', null, ['class' => 'form-control']) }}
+
+            <h3>Data di fine noleggio:</h3>
+            {{ Form::input('date', 'data_fine', null, ['class' => 'form-control']) }}
+            <br><br>
+            {{ Form::submit('Noleggia', ['class' => 'btn btn-primary', 'id'=>'bottone_noleggio']) }}
+            {{ Form::close() }}
+        @endguest
     </div>
 @endsection
