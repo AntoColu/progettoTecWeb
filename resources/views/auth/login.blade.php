@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col">
                         @error('username')
-                        <span style="color: red">{{ $message }}</span>
+                            <h4 style="color: red">{{ $message }}</h4>
                         @enderror
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="col">
                         @error('password')
-                        <span style="color: red">{{ $message }}</span>
+                            <h4 style="color: red">{{ $message }}</h4>
                         @enderror
                     </div>
                 </div>

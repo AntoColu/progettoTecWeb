@@ -32,10 +32,10 @@
                     <strong style="color: green">{{ session('success') }}</strong>
                 @endif
                 @error('faq-non-eliminata')
-                    <span style="color: red">{{ $message }}</span>
+                    <h4 style="color: red">{{ $message }}</h4>
                 @enderror
                 @error('faq-non-trovata')
-                    <span style="color: red">{{ $message }}</span>
+                    <h4 style="color: red">{{ $message }}</h4>
                 @enderror
     
                 @include('pagination.paginator', ['paginator' => $faqs->withQueryString()])

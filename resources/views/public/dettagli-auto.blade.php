@@ -142,4 +142,20 @@
             {{ Form::close() }}
         @endguest
     </div>
+
+    <!-- Sezione per eventuale messaggio di successo del noleggio o di errore -->
+    <div class="text-center mt-4">
+        @if(session('success'))
+            <strong style="color: green">{{ session('success') }}</strong>
+        @endif
+        @error('date-null')
+            <h4 style="color: red">{{ $message }}</h4>
+        @enderror
+        @error('data-prima-oggi')
+            <h4 style="color: red">{{ $message }}</h4>
+        @enderror
+        @error('inizio-dopo-fine')
+            <h4 style="color: red">{{ $message }}</h4>
+        @enderror
+    </div>
 @endsection

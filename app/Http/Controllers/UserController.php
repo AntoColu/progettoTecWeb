@@ -82,20 +82,34 @@ class UserController extends Controller
         $user = Auth::user();
         $auto = Auto::find($request->targa);
 
-        // Se il campo username di auto è vuoto allora noleggio l'auto
-        if($auto->username == null || $auto->username == 'nessuno'){
-            $auto->username = $user->username;
-            $auto->data_inizio = $request->data_inizio;
-            $auto->data_fine = $request->data_fine;
-            $auto->save();
-
-            // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un messaggio di successo
-            return redirect()->route('riepilogo-noleggi')->with('success', 'Auto noleggiata con successo');
-        }
-        // altrimenti l'auto è stata già noleggiata da qualcun altro
-        else{
+        if($request->data_inizio == null || $request->data_fine == null){
             // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un errore
-            return redirect()->route('catalogo')->withErrors(['auto-occupata' => 'Auto già noleggiata da un altro utente']);
+            return redirect()->route('dettagli-auto', ['targa' => $request->targa])->withErrors(['date-null' => 'Impostare le date di inizio e fine noleggio!']);
+        }
+        else if(strtotime($request->data_inizio) < strtotime(date('Y-m-d'))){
+            // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un errore
+            return redirect()->route('dettagli-auto', ['targa' => $request->targa])->withErrors(['data-prima-oggi' => 'Impostare la data di inizio uguale o successiva a quella odierna!']);
+        }
+        else if(strtotime($request->data_fine) < strtotime($request->data_inizio)){
+            // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un errore
+            return redirect()->route('dettagli-auto', ['targa' => $request->targa])->withErrors(['inizio-dopo-fine' => 'Impostare la data di fine noleggio successiva a quella di inizio!']);
+        }
+        else{
+            // Se il campo username di auto è vuoto allora noleggio l'auto
+            if($auto->username == null || $auto->username == 'nessuno'){
+                $auto->username = $user->username;
+                $auto->data_inizio = $request->data_inizio;
+                $auto->data_fine = $request->data_fine;
+                $auto->save();
+
+                // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un messaggio di successo
+                return redirect()->route('riepilogo-noleggi')->with('success', 'Auto noleggiata con successo');
+            }
+            // altrimenti l'auto è stata già noleggiata da qualcun altro
+            else{
+                // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un errore
+                return redirect()->route('catalogo')->withErrors(['auto-occupata' => 'Auto già noleggiata da un altro utente']);
+            }
         }
     }
 

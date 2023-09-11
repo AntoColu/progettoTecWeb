@@ -70,7 +70,7 @@
         <!-- Sezione per eventuale messaggio di errore -->
         <div class="text-center">
             @error('errore-modifica-dati')
-                <span style="color: red">{{ $message }}</span>
+                <h4 style="color: red">{{ $message }}</h4>
             @enderror
         </div>
     </div>

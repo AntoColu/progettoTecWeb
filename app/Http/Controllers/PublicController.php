@@ -41,6 +41,7 @@ class PublicController extends Controller
     public function showCatalogoFiltrato(Request $request) {
        
         $array_auto = $request->all();
+        //dd($array_auto);
 
         // Controllo se il prezzo minimo è stato impostato, altrimenti lo imposto a 0
         if($array_auto['min-prezzo'] == '')

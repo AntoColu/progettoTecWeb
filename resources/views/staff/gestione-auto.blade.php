@@ -32,10 +32,10 @@
                     <strong style="color: green">{{ session('success') }}</strong>
                 @endif
                 @error('auto-non-eliminata')
-                    <span style="color: red">{{ $message }}</span>
+                    <h4 style="color: red">{{ $message }}</h4>
                 @enderror
                 @error('auto-non-trovata')
-                    <span style="color: red">{{ $message }}</span>
+                    <h4 style="color: red">{{ $message }}</h4>
                 @enderror
     
                 @include('pagination.paginator', ['paginator' => $automobili->withQueryString()])

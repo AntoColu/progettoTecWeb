@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="col">
                             @error('nome')
-                                <span style="color: red">{{ $message }}</span>
+                                <h4 style="color: red">{{ $message }}</h4>
                             @enderror
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                     <div class="row">
                         <div class="col">
                             @error('cognome')
-                                <span style="color: red">{{ $message }}</span>
+                                <h4 style="color: red">{{ $message }}</h4>
                             @enderror
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                     <div class="row">
                         <div class="col">
                             @error('residenza')
-                                <span style="color: red">{{ $message }}</span>
+                                <h4 style="color: red">{{ $message }}</h4>
                             @enderror
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                     <div class="row">
                         <div class="col">
                             @error('nascita')
-                                <span style="color: red">{{ $message }}</span>
+                                <h4 style="color: red">{{ $message }}</h4>
                             @enderror
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                     <div class="row">
                         <div class="col">
                             @error('email')
-                                <span style="color: red">{{ $message }}</span>
+                                <h4 style="color: red">{{ $message }}</h4>
                             @enderror
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                     <div class="row">
                         <div class="col">
                             @error('occupazione')
-                                <span style="color: red">{{ $message }}</span>
+                                <h4 style="color: red">{{ $message }}</h4>
                             @enderror
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                     <div class="row">
                         <div class="col">
                             @error('username')
-                                <span style="color: red">{{ $message }}</span>
+                                <h4 style="color: red">{{ $message }}</h4>
                             @enderror
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                     <div class="row">
                         <div class="col">
                             @error('password')
-                                <span style="color: red">{{ $message }}</span>
+                                <h4 style="color: red">{{ $message }}</h4>
                             @enderror
                         </div>
                     </div>

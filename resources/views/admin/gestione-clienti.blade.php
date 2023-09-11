@@ -44,7 +44,7 @@
                     <strong style="color: green">{{ session('success') }}</strong>
                 @endif
                 @error('cliente-non-eliminato')
-                <span style="color: red">{{ $message }}</span>
+                <h4 style="color: red">{{ $message }}</h4>
                 @enderror
     
                 @include('pagination.paginator', ['paginator' => $clienti->withQueryString()])

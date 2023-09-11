@@ -54,10 +54,10 @@
                     <strong style="color: green">{{ session('success') }}</strong>
                 @endif
                 @error('staff-non-eliminato')
-                    <span style="color: red">{{ $message }}</span>
+                    <h4 style="color: red">{{ $message }}</h4>
                 @enderror
                 @error('errore-modifica-staff')
-                    <span style="color: red">{{ $message }}</span>
+                    <h4 style="color: red">{{ $message }}</h4>
                 @enderror
     
                 @include('pagination.paginator', ['paginator' => $membri_staff->withQueryString()])

@@ -21,13 +21,23 @@
 @endsection
 
 @section('content')
+    <!-- Sezione per eventuale messaggio di successo del noleggio o di errore -->
+    <div class="text-center mt-4">
+        @if(session('success'))
+            <strong style="color: green">{{ session('success') }}</strong>
+        @endif
+        @error('auto-occupata')
+            <h4 style="color: red">{{ $message }}</h4>
+        @enderror
+    </div>
+
     <div id="sidebar">
         <!-- Barra laterale dove è possibile filtrare le auto per categoria e prezzo -->
         <aside>
             {{ Form::open(['route' => 'catalogo-filtrato', 'id' => 'catalogo-filtrato-form', 'method' => 'get']) }}
             
             <h2>Categoria:</h2>
-            {{ Form::select('catId', ['1' => 'Piccole', '2' => 'Medie', '3' => 'Grandi', '4' => 'SUV'], null, ['placeholder' => 'Scegli una categoria', 'class' => 'form-control', 'id' => 'catId']) }}
+            {{ Form::select('catId', [1 => 'Piccole', 2 => 'Medie', 3 => 'Grandi', 4 => 'SUV'], null, ['placeholder' => 'Scegli una categoria', 'class' => 'form-control', 'id' => 'catId']) }}
             
             <br>
 
@@ -42,7 +52,7 @@
 
             {{ Form::submit('Filtra', ['class' => 'btn btn-primary', 'id'=>'bottone']) }}
 
-            {!! Form::close() !!}
+            {{ Form::close() }}
         </aside>
     </div>
     <div class="container">
@@ -55,7 +65,6 @@
                         <div class="col-md-4 mb-4">
                             <div class="card">
                                 <img src="{{asset($img_path = 'images/auto/' . $auto->nome_img . '_principale.jpg')}}" class="card-img-top custom_card" alt="Foto Automobile">
-                                {{--<img src="data:image/png/jpeg;base64,{{ base64_encode($auto->{$auto->marca . $auto->modello . '_principale'})}}" class="card-img-top custom_card" alt="Foto Automobile">--}}
                                 <div class="card-body">
                                     <h3 class="card-title">{{$auto->marca}} {{$auto->modello}} - {{$auto->anno}}</h3>
                                     <p class="card-text">{{$auto->descrizione}}</p>
@@ -68,21 +77,11 @@
                 </div>
                 
                 <div class="container mt-5">
-                    @include('pagination.paginator', ['paginator' => $automobili])
+                    @include('pagination.paginator', ['paginator' => $automobili->appends($_GET)])
                 </div>
             @else
                 <h2 class="mt-5" style="height: 100%">Nessun risultato trovato</h2>
             @endif
         </section>
-    </div>
-
-    <!-- Sezione per eventuale messaggio di successo del noleggio o di errore -->
-    <div class="text-center mt-4">
-        @if(session('success'))
-            <strong style="color: green">{{ session('success') }}</strong>
-        @endif
-        @error('auto-occupata')
-        <span style="color: red">{{ $message }}</span>
-        @enderror
     </div>
 @endsection
