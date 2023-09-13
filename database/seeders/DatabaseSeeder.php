@@ -258,22 +258,22 @@ class DatabaseSeeder extends Seeder
                 'risposta' => "Per registrarti puoi andare nella sezione login che trovi sulla pagina Home del sito.
                             <br>Per raggiungerla fai click sull'icona in alto a sinistra."
             ],
-            ['faqId' => 2, 'domanda' => 'Di cosa ho bisogno per noleggiare un&rsquo;auto?', 
+            ['faqId' => 2, 'domanda' => "Di cosa ho bisogno per noleggiare un'auto?", 
                 'risposta' => "Avrai bisogno di:<br>
                             1) Patente valida da almeno 12 mesi.
-                            2) Documento d&rsquo;identit&agrave.
+                            2) Documento d'identità.
                             3) Carta di credito o debito."
             ],
-            ['faqId' => 3, 'domanda' => 'Che età devo avere per noleggiare un&rsquo;auto?', 
-                'risposta' => "Per poter noleggiare un&rsquo;auto devi avere almeno 18 anni ed 1 anno di patente."
+            ['faqId' => 3, 'domanda' => "Che età devo avere per noleggiare un'auto?", 
+                'risposta' => "Per poter noleggiare un'auto devi avere almeno 18 anni ed 1 anno di patente."
             ],
             ['faqId' => 4, 'domanda' => 'Che tipo di auto posso noleggiare?', 
                 'risposta' => "Sul nostro sito puoi trovare offerte per tutti i tipi di auto a noleggio, tra cui auto piccole, medie, grandi e SUV."
             ],
-            ['faqId' => 5, 'domanda' => 'Cosa devo considerare nella scelta di un&rsquo;auto?', 
+            ['faqId' => 5, 'domanda' => "Cosa devo considerare nella scelta di un'auto?", 
                 'risposta' => "1) Spazio: scegli un&rsquo;auto spaziosa sia per i passeggeri che per i bagagli.<br>
                             2) Dimensione: scegli l&rsquo;auto in base alle tue abilità nel parcheggio.<br>
-                            3) Budget: non scegliere un&rsquo;auto che non puoi permetterti, solo perchè è bella, grande e tecnologica."
+                            3) Budget: non scegliere un&rsquo;auto che non puoi permetterti, solo perché è bella, grande e tecnologica."
             ],
             ['faqId' => 6, 'domanda' => 'Cosa è incluso nel prezzo?', 
                 'risposta' => "Il prezzo include: la protezione dai furti, la limitazione della responsabilità dei danni, le tasse locali e le tasse stradali.
