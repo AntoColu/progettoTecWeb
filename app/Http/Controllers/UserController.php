@@ -82,16 +82,17 @@ class UserController extends Controller
         $user = Auth::user();
         $auto = Auto::find($request->targa);
 
+        // Errore se le date non sono state inserite
         if($request->data_inizio == null || $request->data_fine == null){
             // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un errore
             return redirect()->route('dettagli-auto', ['targa' => $request->targa])->withErrors(['date-null' => 'Impostare le date di inizio e fine noleggio!']);
         }
+        // Errore se la data di inizio è precedente alla data odierna
         else if(strtotime($request->data_inizio) < strtotime(date('Y-m-d'))){
-            // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un errore
             return redirect()->route('dettagli-auto', ['targa' => $request->targa])->withErrors(['data-prima-oggi' => 'Impostare la data di inizio uguale o successiva a quella odierna!']);
         }
+        // Errore se la data di fine è precedente alla data di inizio
         else if(strtotime($request->data_fine) < strtotime($request->data_inizio)){
-            // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un errore
             return redirect()->route('dettagli-auto', ['targa' => $request->targa])->withErrors(['inizio-dopo-fine' => 'Impostare la data di fine noleggio successiva a quella di inizio!']);
         }
         else{

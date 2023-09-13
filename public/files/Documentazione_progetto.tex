@@ -1,0 +1,135 @@
+\documentclass[12pt,a4paperS]{report}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\graphicspath{ {./grafici/} }
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			
+			\Large
+			\textbf{Progetto Tecnologie Web 2023}
+			
+			\vspace{0.5cm}
+			
+			Documentazione del progetto sviluppato per il corso di Tecnologie Web
+			
+			\vspace{0.5cm}
+			
+			Anno scolastico: 2022/2023
+			
+			\vspace{1.5cm}
+			
+			\textbf{Gruppo 58}
+			\vspace{0.5cm}
+			
+			\textbf{Antonio Colucci}
+			
+			\vspace{2.5cm}
+			
+			\includegraphics[width=5.5cm]{logo_uni}
+			
+			\vspace{1.5cm}
+			
+			\Large
+			Corso di Ingegneria Informatica e dell'Automazione presso l'Università Politecnica delle Marche
+		\end{center}
+	\end{titlepage}
+	\tableofcontents
+	\newpage
+	
+	\hypertarget{descrizione}{\chapter{Descrizione del sito}}
+	\label{descrizione}
+		\begin{normalsize}
+			Il sito sviluppato è dedicato ad un'azienda di noleggio auto.
+			L'azienda offre appunto servizi di noleggio di svariati modelli di auto suddivisi per categoria:
+			\begin{itemize}
+				\item Auto piccole: sono automobili compatte, ottime per l'utilizzo in città e per piccoli spostamenti;
+				\item Auto medie: sono automobili non troppo grandi, che permettono un buon utilizzo cittadino, ma anche possibilità di spostamenti più lunghi;
+				\item Auto grandi: sono automobili comode e con qualche accorgimento tecnologico in più. Sono ottime per affrontare lunghi spostamenti ed offrono maggiore spazio per i bagagli;
+				\item SUV: sono auto grandi e alte, che permettono una visuale migliore alla guida ed un comfort di altissimo livello.
+			\end{itemize}
+			Il sito offre quattro livelli di utenza, suddivisi in base a diverse funzionalità:
+			
+			\section{Utente pubblico}
+				Gli utenti pubblici posso accedere alle funzionalità base del sito, che sono comuni a tutti i livello di utenza.
+				\newline
+				Nel dettaglio essi possono: reperire informazioni sull'azienda e sulla sua posizione; reperire dettagli sui servizi offerti; ottenere maggiori informazioni consultando le FAQ; accedere al catalogo delle auto che l'azienda mette a disposizione per il noleggio; accedere al sito con le proprie credenziali, oppure effettuare la registrazione di un nuovo account.
+				
+			\section{Utente registrato (Cliente)}
+				I clienti sono gli utenti che hanno effettuato la registrazione al sito, quindi possiedono un proprio account.
+				\newline
+				Oltre a poter usufruire di tutte le funzionalità di un utente pubblico (eccezione fatta per la registrazione di un nuovo account), i clienti possono: noleggiare un'automobile per un determinato periodo di tempo scelto in fase di noleggio; modificare i dati personali nella propria area riservata.
+			
+			\section{Membro dello staff aziendale}
+				Quest'area è dedicata ai membri dello staff aziendale ovvero a tutti i dipendenti, i quali possono: accedere al catalogo auto per andare a modificare o eliminare le auto già presenti in catalogo; inserire una nuova auto, specificando tutti i dettagli e fornendo delle foto esterne; visualizzare un elenco delle auto noleggiate e dei rispettivi clienti, in un determinato mese scelto all'inizio.
+			
+			\section{Amministratore}
+				L'amministratore dell'azienda può effettuare tutte le operazioni consentite agli utenti pubblici ed allo staff, inoltre può: gestire tutto lo staff (creazione, modifica ed eliminazione dei membri); cancellare gli utenti registrati; aggiornare le FAQ del sito; accedere ad un'area dove può ottenere, per l'anno corrente, il numero di auto noleggiate in base al mese scelto.
+		\end{normalsize}
+		
+	\hypertarget{diagrammi}{\chapter{Diagrammi e schemi del Sito}}
+	\label{diagrammi}
+		\begin{normalsize}
+			contenuto...
+			\section{Schemi dei link}
+				contenuto...
+				
+			\section{Database}
+				contenuto...
+		\end{normalsize}
+		
+	\hypertarget{mockup}{\chapter{Mockup}}
+	\label{mockup}
+	\begin{normalsize}
+		In questo capitolo verranno inserite tutte le immagini del mockup realizzato.
+		
+		\section{Sezione pubblica}
+			contenuto...
+			
+			\subsection{Homepage}
+				La homepage è la medesima sia per gli utenti registrati che non.
+				\newline
+				*Immagine*
+				
+			\subsection{Catalogo}
+				Il catalogo delle auto è lo stesso sia per gli utenti registrati che non.
+				\newline
+				*Immagine*
+			
+			\subsection{Dettagli auto selezionata}
+				La pagina riguardante i dettagli dell'auto selezionata nel catalogo è la medesima sia per gli utenti registrati che non.
+				\newline
+				*Immagine*
+			
+			\subsection{Contatti}
+				*Immagine*
+			
+			\subsection{Login}
+				*Immagine*
+			
+			\subsection{Registrazione}
+				*Immagine*
+		
+		\section{Sezione clienti}
+		contenuto...
+			
+			\subsection{Contatti}
+				*Immagine*
+			
+			\subsection{Login}
+				*Immagine*
+			
+			\subsection{Registrazione}
+				*Immagine*
+	\end{normalsize}
+	
+	\hypertarget{soluzioni}{\chapter{Soluzioni tecnologicamente interessanti}}
+	\label{soluzioni}
+	\begin{normalsize}
+		contenuto...
+	\end{normalsize}
+\end{document}
