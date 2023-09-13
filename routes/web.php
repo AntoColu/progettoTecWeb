@@ -94,7 +94,7 @@ Route::prefix('gestione-auto')->group(function () {
 Route::get("/storico-noleggi", [StaffController::class, 'showStorico'])->middleware("can:isStaff")
         ->name('storico-noleggi');
 
-Route::post("/storico-filtrato", [StaffController::class, 'storicoAutoMese'])->middleware("can:isStaff")
+Route::get("/storico-filtrato", [StaffController::class, 'storicoAutoMese'])->middleware("can:isStaff")
         ->name('storico-mese');
 
 

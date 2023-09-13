@@ -314,7 +314,7 @@ class StaffController extends Controller
      *  deve compilare la form con un mese
     **/
     public function showStorico(){
-        return view('staff/storico-noleggi');
+        return view('staff/storico-noleggi')->with(['auto_filtrate' => false]);
     }
 
 
@@ -322,8 +322,19 @@ class StaffController extends Controller
      *  Ritorno la lista delle auto noleggiate un certo mese
     **/
     public function storicoAutoMese(Request $request){
-        $auto_filtrate = Auto::whereMonth('data_inizio', $request->meseInizio)->get();
+         //dd($request->mese_inizio);
+        $auto_filtrate = Auto::whereMonth('data_inizio', $request->mese_inizio)
+                            ->where('data_inizio', '!=' , '1990-01-01') // Mi assicuro che le date di inizio e fine siano diverse da quelle di default
+                            ->where('data_fine', '!=' , '1990-01-01')
+                            ->paginate(6);
+        
 
-        return view('staff/storico-noleggi')->with(['auto_filtrate' => $auto_filtrate]);
+        if($auto_filtrate->count() != 0){
+            //dd($auto_filtrate);
+            return view('staff/storico-noleggi')->with(['auto_filtrate' => $auto_filtrate]);
+        }
+        else{
+            return redirect()->route('storico-noleggi')->withErrors(['auto-non-trovate' => 'Non è stata noleggiata nessuna macchina in questo mese']);
+        }
     }
 }

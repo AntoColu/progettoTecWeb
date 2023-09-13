@@ -141,7 +141,7 @@ class DatabaseSeeder extends Seeder
                 'motore' => '2000 cc - 163 CV', 'carburante' => 'Ibrido-Diesel',
                 'username' => 'nessuno', 'catId' => 3,
                 'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 2000 cc 163 CV; Carburante: Ibrido-Diesel',
-                'prezzo' => 200, 'data_inizio' => '1990-01-01', 'data_fine' => '1990-01-01',
+                'prezzo' => 200, 'data_inizio' => '2023-01-03', 'data_fine' => '2023-02-01',
                 'nome_img' => 'MercedesC-Class' 
                 /*'img_principale' => fread(fopen("./public/images/auto/MercedesC-Class-principale.png", 'rb'), filesize("./public/images/MercedesC-Class-principale.png")),
                 'img_destra' => fread(fopen("./public/images/auto/MercedesC-Class-destra.png", 'rb'), filesize("./public/images/MercedesC-Class-destra.png")),

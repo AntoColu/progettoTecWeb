@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.12)  13 SEP 2023 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.12)  13 SEP 2023 18:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -289,7 +289,7 @@ Package hyperref Info: Link coloring OFF on input line 9.
 \@outlinefile=\write3
 \openout3 = `Documentazione_progetto.out'.
 
-<./grafici/logo_uni.jpg, id=87, 513.92pt x 513.92pt>
+<./grafici/logo_uni.jpg, id=151, 513.92pt x 513.92pt>
 File: ./grafici/logo_uni.jpg Graphic file (type jpg)
 <use ./grafici/logo_uni.jpg>
 Package pdftex.def Info: ./grafici/logo_uni.jpg  used on input line 33.
@@ -305,54 +305,54 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 4.
-)
-\tf@toc=\write4
-\openout4 = `Documentazione_progetto.toc'.
-
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.42 	\newpage
-               [1
+l.30 ...ne {3.4.1}Home Admin}{8}{subsection.3.4.1}
+                                                  % [1
 
-]
+])
+\tf@toc=\write4
+\openout4 = `Documentazione_progetto.toc'.
+
+ [2]
 Capitolo 1.
-[2
+[3
 
-] [3]
+] [4]
 Capitolo 2.
-[4
+[5
 
 ]
 Capitolo 3.
-[5
+[6
 
-] [6]
+] [7] [8] [9]
 Capitolo 4.
-[7
+[10
 
 ] (Documentazione_progetto.aux)
 Package rerunfilecheck Info: File `Documentazione_progetto.out' has not changed
 .
-(rerunfilecheck)             Checksum: CC7FEC71621E7DB1EE45129D07FA7145;2846.
+(rerunfilecheck)             Checksum: D3D426AC9AB07BCD3CDEFDB9258CF03C;5252.
  ) 
 Here is how much of TeX's memory you used:
- 9674 strings out of 475474
- 155100 string characters out of 5773765
- 1925785 words of memory out of 5000000
- 30834 multiletter control sequences out of 15000+600000
+ 9709 strings out of 475474
+ 155643 string characters out of 5773765
+ 1927785 words of memory out of 5000000
+ 30850 multiletter control sequences out of 15000+600000
  563266 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,76p,451b,524s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,76p,451b,599s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\anton\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
 Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on Documentazione_progetto.pdf (8 pages, 148763 bytes).
+Output written on Documentazione_progetto.pdf (11 pages, 164258 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 34 named destinations out of 1000 (max. 500000)
- 174 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 275 PDF objects out of 1000 (max. 8388607)
+ 53 named destinations out of 1000 (max. 500000)
+ 302 words of extra memory for PDF output out of 10000 (max. 10000000)
 
