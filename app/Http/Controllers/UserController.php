@@ -106,10 +106,24 @@ class UserController extends Controller
                 // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un messaggio di successo
                 return redirect()->route('riepilogo-noleggi')->with('success', 'Auto noleggiata con successo');
             }
+
+            // altrimenti se l'auto è già noleggiata da un altro utente,
+            // ma la data di inizio noleggio inserita nella form, è successiva alla data di consegna dell'auto
+            // da parte dell'utente che attualmente la possiede, allora il noleggio può essere effettuato
+            else if(strtotime($request->data_inizio) > strtotime($auto->data_fine) && $auto->data_fine != '1990-01-01'){
+                $auto->username = $user->username;
+                $auto->data_inizio = $request->data_inizio;
+                $auto->data_fine = $request->data_fine;
+                $auto->save();
+
+                // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un messaggio di successo
+                return redirect()->route('riepilogo-noleggi')->with('success', 'Auto noleggiata con successo');
+            }
+
             // altrimenti l'auto è stata già noleggiata da qualcun altro
             else{
                 // Reindirizzo l'utente alla pagina dei dettagli dell'auto scelta con un errore
-                return redirect()->route('catalogo')->withErrors(['auto-occupata' => 'Auto già noleggiata da un altro utente']);
+                return redirect()->route('catalogo')->withErrors(['auto-occupata' => 'Auto già noleggiata in quel periodo']);
             }
         }
     }

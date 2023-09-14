@@ -322,7 +322,7 @@ class StaffController extends Controller
      *  Ritorno la lista delle auto noleggiate un certo mese
     **/
     public function storicoAutoMese(Request $request){
-         //dd($request->mese_inizio);
+        //dd($request->mese_inizio);
         $auto_filtrate = Auto::whereMonth('data_inizio', $request->mese_inizio)
                             ->where('data_inizio', '!=' , '1990-01-01') // Mi assicuro che le date di inizio e fine siano diverse da quelle di default
                             ->where('data_fine', '!=' , '1990-01-01')
