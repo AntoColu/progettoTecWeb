@@ -12,6 +12,12 @@
         <a class="nav-link" href="{{ route('gestione-faq') }}" title="Gestisci le FAQ">FAQ</a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('gestione-auto') }}" title="Aggiungi, modifica, cancella auto">Gestione auto</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('storico-noleggi') }}" title="Visualizza lo storico dei noleggi">Storico dei noleggi</a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('statistiche') }}" title="Statistiche">Statistiche</a>
     </li>
     @auth

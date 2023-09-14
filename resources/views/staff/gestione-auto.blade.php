@@ -13,7 +13,7 @@
             <h1> Auto presenti in catalogo </h1>
             <div class="row justify-content-center">
                 @foreach($automobili as $auto)
-                    <div class="card" style="width: 18rem; margin: 1%">
+                    <div class="card" style="width: 20rem; margin: 1%">
                         <img src="{{asset($img_path = 'images/auto/' . $auto->nome_img . '_principale.jpg')}}" class="card-img-top custom_card" alt="Foto Automobile">
                         <div class="card-body">
                             <h3 class="card-title">{{$auto->marca}} {{$auto->modello}} - {{$auto->anno}}</h3>

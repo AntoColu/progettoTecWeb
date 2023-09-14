@@ -41,16 +41,14 @@
             <div class="row justify-content-center">
                 @foreach($auto_filtrate as $auto)
                     <div class="col-md-4 mb-4">
-                        <div class="card">
+                        <div class="card" style="width: 20rem; margin: 1%">
                             <img src="{{asset($img_path = 'images/auto/' . $auto->nome_img . '_principale.jpg')}}" class="card-img-top custom_card" alt="Foto Automobile">
                 
                             <div class="card-body">
-                                <h3 class="card-title">{{$auto->marca}}</h3>
-                                <h3 class="card-title">{{$auto->modello}}</h3>
-                                <h3 class="card-title"> - {{$auto->anno}}</h3>
+                                <h3 class="card-title">{{$auto->marca}} {{$auto->modello}} - {{$auto->anno}}</h3>
                                 <h5 class="card-text">Utente: {{$auto->username}}</h5>
-                                <p class="card-text">Noleggiata dal: {{$auto->data_inizio}}</p>
-                                <p class="card-text">fino al: {{$auto->data_fine}}</p>
+                                <h6 class="card-text">Noleggiata dal: {{ \Carbon\Carbon::parse($auto->data_inizio)->format('d-m-Y') }}</h6>
+                                <h6 class="card-text">fino al: {{ \Carbon\Carbon::parse($auto->data_fine)->format('d-m-Y') }}</h6>
                             </div>
                         </div>
                     </div>

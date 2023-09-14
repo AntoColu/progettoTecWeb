@@ -72,29 +72,29 @@ Route::get('/home/staff', [StaffController::class, 'showHomeStaff'])->middleware
     ->name('staff');
 
 Route::prefix('gestione-auto')->group(function () {
-    Route::get("/", [StaffController::class, 'showGestioneAuto'])->middleware("can:isStaff")
+    Route::get("/", [StaffController::class, 'showGestioneAuto'])->middleware("can:isAdminOrStaff")
         ->name('gestione-auto');
 
-    Route::get("/inserisci", [StaffController::class, 'showNuovaAuto'])->middleware("can:isStaff")
+    Route::get("/inserisci", [StaffController::class, 'showNuovaAuto'])->middleware("can:isAdminOrStaff")
         ->name('inserisci-auto');
 
-    Route::post("/inserisci", [StaffController::class, 'inserisciAuto'])->middleware("can:isStaff")
+    Route::post("/inserisci", [StaffController::class, 'inserisciAuto'])->middleware("can:isAdminOrStaff")
         ->name('inserisci-auto.store');
 
-    Route::get("/modifica/{targa}", [StaffController::class, 'showModificaAuto'])->middleware("can:isStaff")
+    Route::get("/modifica/{targa}", [StaffController::class, 'showModificaAuto'])->middleware("can:isAdminOrStaff")
         ->name('modifica-auto');
 
-    Route::post("/modifica", [StaffController::class, 'modificaAuto'])->middleware("can:isStaff")
+    Route::post("/modifica", [StaffController::class, 'modificaAuto'])->middleware("can:isAdminOrStaff")
         ->name('modifica-auto.store');
 
-    Route::get("/elimina/{targa}", [StaffController::class, 'eliminaAuto'])->middleware("can:isStaff")
+    Route::get("/elimina/{targa}", [StaffController::class, 'eliminaAuto'])->middleware("can:isAdminOrStaff")
         ->name('elimina-auto');
 });
 
-Route::get("/storico-noleggi", [StaffController::class, 'showStorico'])->middleware("can:isStaff")
+Route::get("/storico-noleggi", [StaffController::class, 'showStorico'])->middleware("can:isAdminOrStaff")
         ->name('storico-noleggi');
 
-Route::get("/storico-filtrato", [StaffController::class, 'storicoAutoMese'])->middleware("can:isStaff")
+Route::get("/storico-filtrato", [StaffController::class, 'storicoAutoMese'])->middleware("can:isAdminOrStaff")
         ->name('storico-mese');
 
 

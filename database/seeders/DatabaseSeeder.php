@@ -139,7 +139,7 @@ class DatabaseSeeder extends Seeder
             ['marca' => 'Mercedes', 'modello' => 'C-Class', 'targa' => 'FU159UF',
                 'anno' => 2019, 'nPosti' => 5,
                 'motore' => '2000 cc - 163 CV', 'carburante' => 'Ibrido-Diesel',
-                'username' => 'nessuno', 'catId' => 3,
+                'username' => 'clieclie', 'catId' => 3,
                 'descrizione' => '5 posti; 4 porte; Cambio automatico; Motore: 2000 cc 163 CV; Carburante: Ibrido-Diesel',
                 'prezzo' => 200, 'data_inizio' => '2023-01-03', 'data_fine' => '2023-02-01',
                 'nome_img' => 'MercedesC-Class' 
