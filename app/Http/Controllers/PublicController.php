@@ -55,17 +55,38 @@ class PublicController extends Controller
         else
             $max_prezzo = $array_auto['max-prezzo'];
 
-        if($array_auto['catId'] == ''){
+        if($array_auto['catId'] == '' && $array_auto['num-posti'] == ''){
             // Ottengo tutte le auto che hanno un prezzo compreso tra il minimo e il massimo
+            // ed almeno un posto a sedere
             $automobili = Auto::where('prezzo', '>=', $min_prezzo)
                                 ->where('prezzo', '<=', $max_prezzo)
+                                ->where('nPosti', '>=', 1)
                                 ->paginate(6);
         }
-        else{
+        elseif($array_auto['catId'] == ''){
             // Ottengo tutte le auto che hanno un prezzo compreso tra il minimo e il massimo
+            // e un numero di posti definito
+            $automobili = Auto::where('prezzo', '>=', $min_prezzo)
+                                ->where('prezzo', '<=', $max_prezzo)
+                                ->where('nPosti', $array_auto['num-posti'])
+                                ->paginate(6);
+        }
+        elseif($array_auto['num-posti'] == ''){
+            // Ottengo tutte le auto che hanno un prezzo compreso tra il minimo e il massimo,
+            // che fanno parte di una determinata categoria e che abbiano almeno un posto a sedere
             $automobili = Auto::where('prezzo', '>=', $min_prezzo)
                                 ->where('prezzo', '<=', $max_prezzo)
                                 ->where('catId', $array_auto['catId'])
+                                ->where('nPosti', '>=', 1)
+                                ->paginate(6);
+        }
+        else{
+            // Ottengo tutte le auto che hanno un prezzo compreso tra il minimo e il massimo,
+            // che facciano parte di una determinata categoria e che abbiano un determinato numero di posti
+            $automobili = Auto::where('prezzo', '>=', $min_prezzo)
+                                ->where('prezzo', '<=', $max_prezzo)
+                                ->where('catId', $array_auto['catId'])
+                                ->where('nPosti', $array_auto['num-posti'])
                                 ->paginate(6);
         }
 

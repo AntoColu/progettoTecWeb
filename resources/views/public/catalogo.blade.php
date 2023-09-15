@@ -50,6 +50,11 @@
             
             <br>
 
+            <h2>Numero di posti:</h2>
+            {{ Form::number('num-posti', old('num-posti', ''), ['placeholder' => 'Numero di posti', 'class' => 'form-control', 'id'=>'num-posti', 'min'=>1]) }}
+
+            <br>
+
             {{ Form::submit('Filtra', ['class' => 'btn btn-primary', 'id'=>'bottone']) }}
 
             {{ Form::close() }}
