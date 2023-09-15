@@ -29,11 +29,6 @@ class Auto extends Model
         'data_inizio',
         'data_fine',
         'nome_img'
-        /*'img_principale',
-        'img_destra',
-        'img_sinistra',
-        'img_frontale',
-        'img_posteriore'*/
     ];
 
     protected $hidden = ['targa'];
