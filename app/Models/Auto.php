@@ -33,14 +33,6 @@ class Auto extends Model
 
     protected $hidden = ['targa'];
 
-    /**
-     * Metodo che restituisce il prezzo giornaliero del noleggio della vettura
-     */
-    public function getDailyPrice() {
-        $prezzo = $this->prezzo;
-        return $prezzo;
-    }
-
     /** 
      * Relazione One-To-One con Categoria
      */

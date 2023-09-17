@@ -2,9 +2,11 @@
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{float}
 \usepackage{hyperref}
 
-\graphicspath{ {./grafici/} }
+\graphicspath{ {./img/} }
 
 \begin{document}
 	\begin{titlepage}
@@ -79,7 +81,18 @@
 				contenuto...
 				
 			\section{Database}
-				contenuto...
+				Il database è composto da 4 tabelle: una dedicata alla categoria rappresentante un gruppo di auto; una dedicata alle auto; una per la FAQ; una per gli utenti.
+				\newline
+				Per quanto riguarda la relazione tra Auto e Categoria, ogni auto appartiene ad una ed una sola categoria, mentre ogni categoria può avere diverse automobili.
+				\newline
+				Parlando invece della relazione tra Auto ed Utente, ogni utente può noleggiare più auto, ma in periodi diversi, ed ugualmente un'auto può essere noleggiata da più utenti in periodi diversi.
+				\subsection{Schema E-R}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=1.15\textwidth, height=1.15\textheight, trim=100 0 0 0,keepaspectratio]{Grafici/Database.png}
+						\newline
+						\caption{Schema E-R del DB}
+					\end{figure}
 		\end{normalsize}
 		
 	\hypertarget{mockup}{\chapter{Mockup}}
@@ -89,28 +102,45 @@
 		
 		\section{Sezione pubblica}
 			Le immagini seguenti rappresentano tutte le pagine di cui si compone la sezione pubblica del sito.
-			
 			\subsection{Homepage}
 				La homepage è la medesima sia per gli utenti registrati che non.
 				\newline
-				*Immagine*
+				L'unica differenza si trova nella barra di navigazione, perchè gli utenti loggati avranno il pulsante per il logout e quello per accedere al proprio account, mentre gli utenti pubblici hanno i bottoni "Registrati" e "Accedi".
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.95\textwidth, height=0.95\textheight, keepaspectratio]{Mockup/Homepage.png}
+					\caption{Homepage pubblica}
+				\end{figure}
 				
 			\subsection{Catalogo noleggi}
 				Il catalogo delle auto è lo stesso sia per gli utenti registrati che non.
 				\newline
-				*Immagine*
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{Mockup/Catalogo.png}
+					\caption{Catalogo noleggi}
+				\end{figure}
 			
 			\subsection{Dettagli auto selezionata}
 				La pagina riguardante i dettagli dell'auto selezionata nel catalogo è la medesima sia per gli utenti registrati che non.
 				\newline
 				Ricordo che il noleggio effettivo dell'auto può essere eseguito solo dagli utenti registrati, infatti qualora un utente non registrato cliccasse sul tasto "Noleggia", verrebbe reindirizzato alla pagina di login.
 				\newline
-				*Immagine*
+				\begin{figure}[H]
+					\centering
+					%\includegraphics[width=1.23\textwidth, height=1.23\textheight, trim=250 0 0 0, keepaspectratio]{Mockup/Dettagli_auto.png}
+					\caption{Dettagli auto}
+				\end{figure}
 			
 			\subsection{Contatti}
 				La pagina riguardante i contatti dello sviluppatore è identica sia per gli utenti registrati che non.
 				\newline
-				*Immagine*
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{Mockup/Contatti.png}
+					\caption{Contatti}
+				\end{figure}
+				
 			
 			\subsection{Login}
 				*Immagine*
@@ -134,25 +164,33 @@
 			Le immagini seguenti rappresentano tutte le pagine di cui si compone la sezione riservata ai membri dello staff.
 			
 			\subsection{Home staff}
-				*Immagine*
+				La homepage dello staff è identica a quella pubblica, con l'aggiunta di un saluto iniziale.
 			
 			\subsection{Gestione auto}
+				Questa pagina è usata anche dall'admin.
+				\newline
 				*Immagine*
 			
 			\subsection{Nuova auto}
+				Questa pagina è usata anche dall'admin.
+				\newline
 				*Immagine*
 			
 			\subsection{Modifica auto}
+				Questa pagina è usata anche dall'admin.
+				\newline
 				*Immagine*
 			
 			\subsection{Storico dei noleggi}
+				Questa pagina è usata anche dall'admin.
+				\newline
 				*Immagine*
 				
 		\section{Sezione admin}
 			Le immagini seguenti rappresentano tutte le pagine di cui si compone la sezione riservata all'amministratore dell'azienda.
 			
 			\subsection{Home Admin}
-				*Immagine*
+				La homepage dell'admin è identica a quella pubblica, con l'aggiunta di un saluto iniziale.
 			
 			\subsection{Gestione Staff}
 				*Immagine*

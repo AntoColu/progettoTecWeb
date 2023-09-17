@@ -54,18 +54,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * Funzione che serve a verificare se l'utente ha 
-     * un determinato ruolo specificato come parametro
-    **/
-    public function hasRole($ruolo) {
-        $ruolo = (array)$ruolo;
-        return in_array($this->ruolo, $ruolo);
-    }
-
-    // è statico perchè mi serve chiamarlo nel controller senza dover istanziare un ogg di user
-    public static function getUtenti()
-    {
-        return User::where('Ruolo', 'user')->get();
-    }
 }
