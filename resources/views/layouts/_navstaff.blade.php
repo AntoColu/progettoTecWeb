@@ -1,6 +1,6 @@
 <ul class="navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('staff') }}" title="Va alla Home dello Staff">Home</a>
+        <a class="nav-link" href="{{ route('home') }}" title="Va alla Home dello Staff">Home</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ route('gestione-auto') }}" title="Aggiungi, modifica, cancella auto">Gestione auto</a>

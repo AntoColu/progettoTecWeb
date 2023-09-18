@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.12)  18 SEP 2023 12:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.12)  18 SEP 2023 18:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -325,7 +325,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...rline {3.4}Sezione admin}{17}{section.3.4}
+l.30 ...rline {3.4}Sezione admin}{23}{section.3.4}
                                                   % [1
 
 ])
@@ -432,37 +432,65 @@ Underfull \hbox (badness 10000) in paragraph at lines 146--154
 <./img/Mockup/Contatti.png, id=274, 722.7pt x 602.25pt>
 File: ./img/Mockup/Contatti.png Graphic file (type png)
 <use ./img/Mockup/Contatti.png>
-Package pdftex.def Info: ./img/Mockup/Contatti.png  used on input line 161.
+Package pdftex.def Info: ./img/Mockup/Contatti.png  used on input line 160.
 (pdftex.def)             Requested size: 389.99855pt x 324.9988pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--163
-
- []
-
-[12 <./img/Mockup/Dettagli_auto.png>]
+ [12 <./img/Mockup/Dettagli_auto.png>]
 <./img/Mockup/Login.png, id=282, 722.7pt x 602.25pt>
 File: ./img/Mockup/Login.png Graphic file (type png)
 <use ./img/Mockup/Login.png>
-Package pdftex.def Info: ./img/Mockup/Login.png  used on input line 169.
+Package pdftex.def Info: ./img/Mockup/Login.png  used on input line 168.
 (pdftex.def)             Requested size: 389.99855pt x 324.9988pt.
  [13 <./img/Mockup/Contatti.png>]
 <./img/Mockup/Registrazione.png, id=289, 722.7pt x 722.7pt>
 File: ./img/Mockup/Registrazione.png Graphic file (type png)
 <use ./img/Mockup/Registrazione.png>
-Package pdftex.def Info: ./img/Mockup/Registrazione.png  used on input line 176
+Package pdftex.def Info: ./img/Mockup/Registrazione.png  used on input line 175
 .
 (pdftex.def)             Requested size: 389.99855pt x 389.99855pt.
  [14 <./img/Mockup/Login.png>]
-<./img/Mockup/Storico_noleggi.png, id=296, 722.7pt x 742.775pt>
-File: ./img/Mockup/Storico_noleggi.png Graphic file (type png)
-<use ./img/Mockup/Storico_noleggi.png>
-Package pdftex.def Info: ./img/Mockup/Storico_noleggi.png  used on input line 1
-86.
+<./img/Mockup/Storico_noleggi_utente.png, id=296, 722.7pt x 742.775pt>
+File: ./img/Mockup/Storico_noleggi_utente.png Graphic file (type png)
+<use ./img/Mockup/Storico_noleggi_utente.png>
+Package pdftex.def Info: ./img/Mockup/Storico_noleggi_utente.png  used on input
+ line 185.
 (pdftex.def)             Requested size: 389.99855pt x 400.83185pt.
- [15 <./img/Mockup/Registrazione.png>] [16 <./img/Mockup/Storico_noleggi.png>] 
-[17] [18]
+ [15 <./img/Mockup/Registrazione.png>]
+<./img/Mockup/Area_riservata.png, id=303, 722.7pt x 722.7pt>
+File: ./img/Mockup/Area_riservata.png Graphic file (type png)
+<use ./img/Mockup/Area_riservata.png>
+Package pdftex.def Info: ./img/Mockup/Area_riservata.png  used on input line 19
+2.
+(pdftex.def)             Requested size: 389.99855pt x 389.99855pt.
+ [16 <./img/Mockup/Storico_noleggi_utente.png>]
+<./img/Mockup/Modifica_dati.png, id=310, 722.7pt x 722.7pt>
+File: ./img/Mockup/Modifica_dati.png Graphic file (type png)
+<use ./img/Mockup/Modifica_dati.png>
+Package pdftex.def Info: ./img/Mockup/Modifica_dati.png  used on input line 199
+.
+(pdftex.def)             Requested size: 389.99855pt x 389.99855pt.
+ [17 <./img/Mockup/Area_riservata.png>] [18 <./img/Mockup/Modifica_dati.png>]
+<./img/Mockup/Gestione_auto.png, id=324, 722.7pt x 903.375pt>
+File: ./img/Mockup/Gestione_auto.png Graphic file (type png)
+<use ./img/Mockup/Gestione_auto.png>
+Package pdftex.def Info: ./img/Mockup/Gestione_auto.png  used on input line 215
+.
+(pdftex.def)             Requested size: 389.99855pt x 487.4982pt.
+ [19]
+<./img/Mockup/Nuova_auto.png, id=329, 722.7pt x 1003.75pt>
+File: ./img/Mockup/Nuova_auto.png Graphic file (type png)
+<use ./img/Mockup/Nuova_auto.png>
+Package pdftex.def Info: ./img/Mockup/Nuova_auto.png  used on input line 223.
+(pdftex.def)             Requested size: 331.49767pt x 460.41344pt.
+ [20 <./img/Mockup/Gestione_auto.png>] [21 <./img/Mockup/Nuova_auto.png>]
+<./img/Mockup/Storico_noleggi_staff.png, id=342, 722.7pt x 742.775pt>
+File: ./img/Mockup/Storico_noleggi_staff.png Graphic file (type png)
+<use ./img/Mockup/Storico_noleggi_staff.png>
+Package pdftex.def Info: ./img/Mockup/Storico_noleggi_staff.png  used on input 
+line 238.
+(pdftex.def)             Requested size: 343.19785pt x 352.73111pt.
+ [22 <./img/Mockup/Storico_noleggi_staff.png>] [23] [24]
 Capitolo 4.
-[19
+[25
 
 ] (Documentazione_progetto.aux)
 Package rerunfilecheck Info: File `Documentazione_progetto.out' has not changed
@@ -470,10 +498,10 @@ Package rerunfilecheck Info: File `Documentazione_progetto.out' has not changed
 (rerunfilecheck)             Checksum: DD3AB97A4EF260A58323EE30223779CB;5367.
  ) 
 Here is how much of TeX's memory you used:
- 10258 strings out of 475474
- 165067 string characters out of 5773765
+ 10319 strings out of 475474
+ 166947 string characters out of 5773765
  1928785 words of memory out of 5000000
- 31355 multiletter control sequences out of 15000+600000
+ 31400 multiletter control sequences out of 15000+600000
  563266 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,7n,76p,451b,597s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -481,9 +509,9 @@ Here is how much of TeX's memory you used:
 1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
 Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on Documentazione_progetto.pdf (20 pages, 466675 bytes).
+Output written on Documentazione_progetto.pdf (26 pages, 600211 bytes).
 PDF statistics:
- 360 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
- 370 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 86 named destinations out of 1000 (max. 500000)
+ 395 words of extra memory for PDF output out of 10000 (max. 10000000)
 

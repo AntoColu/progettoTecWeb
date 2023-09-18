@@ -19,22 +19,22 @@
 \contentsline {subsection}{\numberline {3.1.6}Registrazione}{15}{subsection.3.1.6}%
 \contentsline {section}{\numberline {3.2}Sezione clienti}{15}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}I miei noleggi}{16}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Area riservata}{16}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Modifica dati personali}{17}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Sezione staff}{17}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Home staff}{17}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Gestione auto}{17}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Nuova auto}{17}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Modifica auto}{17}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Storico dei noleggi}{17}{subsection.3.3.5}%
-\contentsline {section}{\numberline {3.4}Sezione admin}{17}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Home Admin}{18}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Gestione Staff}{18}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Inserimento membro staff}{18}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Modifica dati membro staff}{18}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Gestione Clienti}{18}{subsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.4.6}Gestione FAQ}{18}{subsection.3.4.6}%
-\contentsline {subsection}{\numberline {3.4.7}Inserimento nuova FAQ}{18}{subsection.3.4.7}%
-\contentsline {subsection}{\numberline {3.4.8}Modifica FAQ}{18}{subsection.3.4.8}%
-\contentsline {subsection}{\numberline {3.4.9}Statistiche}{18}{subsection.3.4.9}%
-\contentsline {chapter}{\numberline {4}Soluzioni tecnologicamente interessanti}{19}{chapter.4}%
+\contentsline {subsection}{\numberline {3.2.2}Area riservata}{17}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Modifica dati personali}{18}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Sezione staff}{18}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Home staff}{19}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Gestione auto}{19}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Nuova auto}{21}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Modifica auto}{22}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Storico dei noleggi}{22}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4}Sezione admin}{23}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Home Admin}{23}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Gestione Staff}{23}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Inserimento membro staff}{23}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Modifica dati membro staff}{23}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Gestione Clienti}{23}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}Gestione FAQ}{23}{subsection.3.4.6}%
+\contentsline {subsection}{\numberline {3.4.7}Inserimento nuova FAQ}{23}{subsection.3.4.7}%
+\contentsline {subsection}{\numberline {3.4.8}Modifica FAQ}{23}{subsection.3.4.8}%
+\contentsline {subsection}{\numberline {3.4.9}Statistiche}{24}{subsection.3.4.9}%
+\contentsline {chapter}{\numberline {4}Soluzioni tecnologicamente interessanti}{25}{chapter.4}%
