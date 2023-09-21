@@ -9,11 +9,11 @@
 
         <!-- Sezione dedicata alla presentazione di tutti i membri dello staff dove,
             per ogni membro, è possibile modificarne i dati o eliminarlo -->
-        <section class="catalogo">
+        <section>
             <h1> Membri dello staff: </h1>
             <div class="row justify-content-center">
                 @foreach($membri_staff as $staff)
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 18rem; margin: 1%">
                         <div class="card-body">
                             <h3 class="card-title">{{$staff->nome}} {{$staff->cognome}}</h3>
                             <h5 class="card-text">

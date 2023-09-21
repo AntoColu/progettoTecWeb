@@ -9,7 +9,7 @@
 
         <!-- Sezione dedicata alla presentazione di tutte le auto dove, per ogni auto,
              è possibile modificarne i dati o eliminarla -->
-        <section class="catalogo">
+        <section>
             <h1> Auto presenti in catalogo </h1>
             <div class="row justify-content-center">
                 @foreach($automobili as $auto)

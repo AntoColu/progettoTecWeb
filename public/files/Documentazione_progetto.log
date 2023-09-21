@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.12)  18 SEP 2023 18:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.9.12)  21 SEP 2023 11:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -304,10 +304,10 @@ Package hyperref Info: Link coloring OFF on input line 11.
 \@outlinefile=\write3
 \openout3 = `Documentazione_progetto.out'.
 
-<./img/logo_uni.jpg, id=155, 513.92pt x 513.92pt>
+<./img/logo_uni.jpg, id=147, 513.92pt x 513.92pt>
 File: ./img/logo_uni.jpg Graphic file (type jpg)
 <use ./img/logo_uni.jpg>
-Package pdftex.def Info: ./img/logo_uni.jpg  used on input line 35.
+Package pdftex.def Info: ./img/logo_uni.jpg  used on input line 40.
 (pdftex.def)             Requested size: 156.49014pt x 156.49051pt.
  [1
 
@@ -325,7 +325,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...rline {3.4}Sezione admin}{23}{section.3.4}
+l.30 ....4.1}Gestione Staff}{22}{subsection.3.4.1}
                                                   % [1
 
 ])
@@ -338,180 +338,207 @@ Capitolo 1.
 
 ] [4]
 Capitolo 2.
-<./img/Grafici/Link_sez_pubblica.png, id=221, 874.26625pt x 303.1325pt>
+<./img/Grafici/Link_sez_pubblica.png, id=211, 874.26625pt x 303.1325pt>
 File: ./img/Grafici/Link_sez_pubblica.png Graphic file (type png)
 <use ./img/Grafici/Link_sez_pubblica.png>
 Package pdftex.def Info: ./img/Grafici/Link_sez_pubblica.png  used on input lin
-e 83.
+e 88.
 (pdftex.def)             Requested size: 448.50284pt x 175.6782pt.
 
-Overfull \hbox (58.50284pt too wide) in paragraph at lines 83--85
+Overfull \hbox (58.50284pt too wide) in paragraph at lines 88--90
  [][]  
  []
 
-<./img/Grafici/Link_sez_clienti.png, id=223, 983.675pt x 412.54124pt>
+<./img/Grafici/Link_sez_clienti.png, id=213, 983.675pt x 412.54124pt>
 File: ./img/Grafici/Link_sez_clienti.png Graphic file (type png)
 <use ./img/Grafici/Link_sez_clienti.png>
 Package pdftex.def Info: ./img/Grafici/Link_sez_clienti.png  used on input line
- 89.
+ 94.
 (pdftex.def)             Requested size: 448.49565pt x 209.4679pt.
 
-Overfull \hbox (58.49565pt too wide) in paragraph at lines 89--90
+Overfull \hbox (58.49565pt too wide) in paragraph at lines 94--95
  [][] 
  []
 
-<./img/Grafici/Link_sez_staff.png, id=224, 949.5475pt x 352.31625pt>
+<./img/Grafici/Link_sez_staff.png, id=214, 949.5475pt x 352.31625pt>
 File: ./img/Grafici/Link_sez_staff.png Graphic file (type png)
 <use ./img/Grafici/Link_sez_staff.png>
 Package pdftex.def Info: ./img/Grafici/Link_sez_staff.png  used on input line 9
-4.
+9.
 (pdftex.def)             Requested size: 448.50427pt x 186.0816pt.
 
-Overfull \hbox (58.50427pt too wide) in paragraph at lines 94--96
+Overfull \hbox (58.50427pt too wide) in paragraph at lines 99--101
  [][]  
  []
 
 [5
 
  <./img/Grafici/Link_sez_pubblica.png>]
-<./img/Grafici/Link_sez_admin.png, id=231, 1074.0125pt x 653.44125pt>
+<./img/Grafici/Link_sez_admin.png, id=221, 1074.0125pt x 653.44125pt>
 File: ./img/Grafici/Link_sez_admin.png Graphic file (type png)
 <use ./img/Grafici/Link_sez_admin.png>
 Package pdftex.def Info: ./img/Grafici/Link_sez_admin.png  used on input line 1
-00.
+05.
 (pdftex.def)             Requested size: 448.48769pt x 300.99542pt.
 
-Overfull \hbox (58.48769pt too wide) in paragraph at lines 100--101
+Overfull \hbox (58.48769pt too wide) in paragraph at lines 105--106
  [][] 
  []
 
 [6 <./img/Grafici/Link_sez_clienti.png> <./img/Grafici/Link_sez_staff.png>]
-<./img/Grafici/Database.png, id=241, 1048.91875pt x 697.60625pt>
+<./img/Grafici/Database.png, id=231, 1048.91875pt x 697.60625pt>
 File: ./img/Grafici/Database.png Graphic file (type png)
 <use ./img/Grafici/Database.png>
-Package pdftex.def Info: ./img/Grafici/Database.png  used on input line 113.
+Package pdftex.def Info: ./img/Grafici/Database.png  used on input line 118.
 (pdftex.def)             Requested size: 448.49312pt x 329.84422pt.
 
-Overfull \hbox (58.49312pt too wide) in paragraph at lines 113--115
+Overfull \hbox (58.49312pt too wide) in paragraph at lines 118--120
  [][]  
  []
 
 [7 <./img/Grafici/Link_sez_admin.png>] [8 <./img/Grafici/Database.png>]
 Capitolo 3.
-<./img/Mockup/Homepage.png, id=255, 722.7pt x 1084.05pt>
+<./img/Mockup/Homepage.png, id=245, 722.7pt x 1084.05pt>
 File: ./img/Mockup/Homepage.png Graphic file (type png)
 <use ./img/Mockup/Homepage.png>
-Package pdftex.def Info: ./img/Mockup/Homepage.png  used on input line 132.
+Package pdftex.def Info: ./img/Mockup/Homepage.png  used on input line 137.
 (pdftex.def)             Requested size: 347.38829pt x 521.08246pt.
 [9
 
 ]
-<./img/Mockup/Catalogo.png, id=260, 722.7pt x 903.375pt>
+<./img/Mockup/Catalogo.png, id=250, 722.7pt x 903.375pt>
 File: ./img/Mockup/Catalogo.png Graphic file (type png)
 <use ./img/Mockup/Catalogo.png>
-Package pdftex.def Info: ./img/Mockup/Catalogo.png  used on input line 141.
+Package pdftex.def Info: ./img/Mockup/Catalogo.png  used on input line 147.
 (pdftex.def)             Requested size: 354.89803pt x 443.62253pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--143
-
- []
-
-[10 <./img/Mockup/Homepage.png>]
-<./img/Mockup/Dettagli_auto.png, id=267, 722.7pt x 903.375pt>
+ [10 <./img/Mockup/Homepage.png>]
+<./img/Mockup/Dettagli_auto.png, id=257, 722.7pt x 903.375pt>
 File: ./img/Mockup/Dettagli_auto.png Graphic file (type png)
 <use ./img/Mockup/Dettagli_auto.png>
-Package pdftex.def Info: ./img/Mockup/Dettagli_auto.png  used on input line 152
+Package pdftex.def Info: ./img/Mockup/Dettagli_auto.png  used on input line 157
 .
-(pdftex.def)             Requested size: 319.79749pt x 399.74687pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 146--154
-
- []
-
-[11 <./img/Mockup/Catalogo.png>]
-<./img/Mockup/Contatti.png, id=274, 722.7pt x 602.25pt>
+(pdftex.def)             Requested size: 331.49767pt x 414.37209pt.
+ [11 <./img/Mockup/Catalogo.png>]
+<./img/Mockup/Contatti.png, id=264, 722.7pt x 602.25pt>
 File: ./img/Mockup/Contatti.png Graphic file (type png)
 <use ./img/Mockup/Contatti.png>
-Package pdftex.def Info: ./img/Mockup/Contatti.png  used on input line 160.
+Package pdftex.def Info: ./img/Mockup/Contatti.png  used on input line 165.
 (pdftex.def)             Requested size: 389.99855pt x 324.9988pt.
  [12 <./img/Mockup/Dettagli_auto.png>]
-<./img/Mockup/Login.png, id=282, 722.7pt x 602.25pt>
+<./img/Mockup/Login.png, id=272, 722.7pt x 602.25pt>
 File: ./img/Mockup/Login.png Graphic file (type png)
 <use ./img/Mockup/Login.png>
-Package pdftex.def Info: ./img/Mockup/Login.png  used on input line 168.
+Package pdftex.def Info: ./img/Mockup/Login.png  used on input line 173.
 (pdftex.def)             Requested size: 389.99855pt x 324.9988pt.
  [13 <./img/Mockup/Contatti.png>]
-<./img/Mockup/Registrazione.png, id=289, 722.7pt x 722.7pt>
+<./img/Mockup/Registrazione.png, id=279, 722.7pt x 722.7pt>
 File: ./img/Mockup/Registrazione.png Graphic file (type png)
 <use ./img/Mockup/Registrazione.png>
-Package pdftex.def Info: ./img/Mockup/Registrazione.png  used on input line 175
+Package pdftex.def Info: ./img/Mockup/Registrazione.png  used on input line 180
 .
 (pdftex.def)             Requested size: 389.99855pt x 389.99855pt.
- [14 <./img/Mockup/Login.png>]
-<./img/Mockup/Storico_noleggi_utente.png, id=296, 722.7pt x 742.775pt>
+ [14 <./img/Mockup/Login.png>] [15 <./img/Mockup/Registrazione.png>]
+<./img/Mockup/Storico_noleggi_utente.png, id=292, 722.7pt x 742.775pt>
 File: ./img/Mockup/Storico_noleggi_utente.png Graphic file (type png)
 <use ./img/Mockup/Storico_noleggi_utente.png>
 Package pdftex.def Info: ./img/Mockup/Storico_noleggi_utente.png  used on input
- line 185.
+ line 191.
 (pdftex.def)             Requested size: 389.99855pt x 400.83185pt.
- [15 <./img/Mockup/Registrazione.png>]
-<./img/Mockup/Area_riservata.png, id=303, 722.7pt x 722.7pt>
+<./img/Mockup/Area_riservata.png, id=293, 722.7pt x 682.55pt>
 File: ./img/Mockup/Area_riservata.png Graphic file (type png)
 <use ./img/Mockup/Area_riservata.png>
 Package pdftex.def Info: ./img/Mockup/Area_riservata.png  used on input line 19
-2.
-(pdftex.def)             Requested size: 389.99855pt x 389.99855pt.
+9.
+(pdftex.def)             Requested size: 389.99855pt x 368.33197pt.
  [16 <./img/Mockup/Storico_noleggi_utente.png>]
-<./img/Mockup/Modifica_dati.png, id=310, 722.7pt x 722.7pt>
+<./img/Mockup/Modifica_dati.png, id=300, 722.7pt x 722.7pt>
 File: ./img/Mockup/Modifica_dati.png Graphic file (type png)
 <use ./img/Mockup/Modifica_dati.png>
-Package pdftex.def Info: ./img/Mockup/Modifica_dati.png  used on input line 199
+Package pdftex.def Info: ./img/Mockup/Modifica_dati.png  used on input line 206
 .
 (pdftex.def)             Requested size: 389.99855pt x 389.99855pt.
  [17 <./img/Mockup/Area_riservata.png>] [18 <./img/Mockup/Modifica_dati.png>]
-<./img/Mockup/Gestione_auto.png, id=324, 722.7pt x 903.375pt>
+<./img/Mockup/Gestione_auto.png, id=314, 722.7pt x 903.375pt>
 File: ./img/Mockup/Gestione_auto.png Graphic file (type png)
 <use ./img/Mockup/Gestione_auto.png>
-Package pdftex.def Info: ./img/Mockup/Gestione_auto.png  used on input line 215
+Package pdftex.def Info: ./img/Mockup/Gestione_auto.png  used on input line 220
 .
-(pdftex.def)             Requested size: 389.99855pt x 487.4982pt.
- [19]
-<./img/Mockup/Nuova_auto.png, id=329, 722.7pt x 1003.75pt>
+(pdftex.def)             Requested size: 292.4934pt x 365.61676pt.
+<./img/Mockup/Nuova_auto.png, id=315, 722.7pt x 1003.75pt>
 File: ./img/Mockup/Nuova_auto.png Graphic file (type png)
 <use ./img/Mockup/Nuova_auto.png>
-Package pdftex.def Info: ./img/Mockup/Nuova_auto.png  used on input line 223.
-(pdftex.def)             Requested size: 331.49767pt x 460.41344pt.
- [20 <./img/Mockup/Gestione_auto.png>] [21 <./img/Mockup/Nuova_auto.png>]
-<./img/Mockup/Storico_noleggi_staff.png, id=342, 722.7pt x 742.775pt>
+Package pdftex.def Info: ./img/Mockup/Nuova_auto.png  used on input line 230.
+(pdftex.def)             Requested size: 319.79749pt x 444.1632pt.
+ [19 <./img/Mockup/Gestione_auto.png>] [20 <./img/Mockup/Nuova_auto.png>]
+<./img/Mockup/Storico_noleggi_staff.png, id=328, 722.7pt x 742.775pt>
 File: ./img/Mockup/Storico_noleggi_staff.png Graphic file (type png)
 <use ./img/Mockup/Storico_noleggi_staff.png>
 Package pdftex.def Info: ./img/Mockup/Storico_noleggi_staff.png  used on input 
-line 238.
+line 245.
 (pdftex.def)             Requested size: 343.19785pt x 352.73111pt.
- [22 <./img/Mockup/Storico_noleggi_staff.png>] [23] [24]
+ [21 <./img/Mockup/Storico_noleggi_staff.png>]
+<./img/Mockup/Gestione_staff.png, id=335, 722.7pt x 823.075pt>
+File: ./img/Mockup/Gestione_staff.png Graphic file (type png)
+<use ./img/Mockup/Gestione_staff.png>
+Package pdftex.def Info: ./img/Mockup/Gestione_staff.png  used on input line 25
+6.
+(pdftex.def)             Requested size: 335.4014pt x 381.98492pt.
+<./img/Mockup/Nuovo_staff.png, id=336, 722.7pt x 722.7pt>
+File: ./img/Mockup/Nuovo_staff.png Graphic file (type png)
+<use ./img/Mockup/Nuovo_staff.png>
+Package pdftex.def Info: ./img/Mockup/Nuovo_staff.png  used on input line 263.
+(pdftex.def)             Requested size: 389.99855pt x 389.99855pt.
+ [22 <./img/Mockup/Gestione_staff.png>]
+<./img/Mockup/Gestione_clienti.png, id=343, 722.7pt x 823.075pt>
+File: ./img/Mockup/Gestione_clienti.png Graphic file (type png)
+<use ./img/Mockup/Gestione_clienti.png>
+Package pdftex.def Info: ./img/Mockup/Gestione_clienti.png  used on input line 
+274.
+(pdftex.def)             Requested size: 389.99855pt x 444.16502pt.
+ [23 <./img/Mockup/Nuovo_staff.png>]
+<./img/Mockup/Gestione_faq.png, id=350, 722.7pt x 823.075pt>
+File: ./img/Mockup/Gestione_faq.png Graphic file (type png)
+<use ./img/Mockup/Gestione_faq.png>
+Package pdftex.def Info: ./img/Mockup/Gestione_faq.png  used on input line 282.
+
+(pdftex.def)             Requested size: 389.99855pt x 444.16502pt.
+ [24 <./img/Mockup/Gestione_clienti.png>]
+<./img/Mockup/Nuova_faq.png, id=358, 722.7pt x 632.3625pt>
+File: ./img/Mockup/Nuova_faq.png Graphic file (type png)
+<use ./img/Mockup/Nuova_faq.png>
+Package pdftex.def Info: ./img/Mockup/Nuova_faq.png  used on input line 289.
+(pdftex.def)             Requested size: 389.99855pt x 341.24873pt.
+ [25 <./img/Mockup/Gestione_faq.png>] [26 <./img/Mockup/Nuova_faq.png>]
+<./img/Mockup/Statistiche.png, id=371, 722.7pt x 552.0625pt>
+File: ./img/Mockup/Statistiche.png Graphic file (type png)
+<use ./img/Mockup/Statistiche.png>
+Package pdftex.def Info: ./img/Mockup/Statistiche.png  used on input line 301.
+(pdftex.def)             Requested size: 389.99855pt x 297.91556pt.
+ [27 <./img/Mockup/Statistiche.png>]
 Capitolo 4.
-[25
+[28
 
 ] (Documentazione_progetto.aux)
 Package rerunfilecheck Info: File `Documentazione_progetto.out' has not changed
 .
-(rerunfilecheck)             Checksum: DD3AB97A4EF260A58323EE30223779CB;5367.
+(rerunfilecheck)             Checksum: A42EA0488D20626515D68987CAC603FB;5029.
  ) 
 Here is how much of TeX's memory you used:
- 10319 strings out of 475474
- 166947 string characters out of 5773765
+ 10388 strings out of 475474
+ 168950 string characters out of 5773765
  1928785 words of memory out of 5000000
- 31400 multiletter control sequences out of 15000+600000
- 563266 words of font info for 53 fonts, out of 8000000 for 9000
+ 31455 multiletter control sequences out of 15000+600000
+ 563435 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,7n,76p,451b,597s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,7n,76p,430b,599s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\anton\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
 Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on Documentazione_progetto.pdf (26 pages, 600211 bytes).
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Documentazione_progetto.pdf (29 pages, 737261 bytes).
 PDF statistics:
- 402 PDF objects out of 1000 (max. 8388607)
- 86 named destinations out of 1000 (max. 500000)
- 395 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 428 PDF objects out of 1000 (max. 8388607)
+ 93 named destinations out of 1000 (max. 500000)
+ 409 words of extra memory for PDF output out of 10000 (max. 10000000)
 

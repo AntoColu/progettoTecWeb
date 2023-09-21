@@ -13,7 +13,7 @@
             <h1> Elenco delle FAQ: </h1>
             <div class="row justify-content-center">
                 @foreach($faqs as $faq)
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 18rem; margin: 1%">
                         <div class="card-body">
                             <h3 class="card-title">{{$faq->faqId}} {{$faq->domanda}}</h3>
                             <h5 class="card-text">

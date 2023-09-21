@@ -61,7 +61,7 @@
         </aside>
     </div>
     <div class="container">
-        <section class="catalogo">
+        <section>
             <h1 class="mt-5 mb-3">Auto disponibili al noleggio</h1>
             <!-- Elenco di tutte le auto a catalogo, usando la struttura di Bootstrap "card" -->
             @if($automobili)

@@ -6,11 +6,11 @@
     <div class="container">
         <!-- Sezione dedicata alla presentazione di tutti i clienti dove,
             per ogni cliente, è possibile eliminarlo -->
-        <section class="catalogo">
+        <section>
             <h1> Elenco dei clienti: </h1>
             <div class="row justify-content-center">
                 @foreach($clienti as $cliente)
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 18rem; margin: 1%">
                         <div class="card-body">
                             <h3 class="card-title">{{$cliente->nome}} {{$cliente->cognome}}</h3>
                             <p class="card-text">
