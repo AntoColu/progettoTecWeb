@@ -1,4 +1,4 @@
-<div class="static" style="margin-top: 2%">
+<div class="static dove-siamo" id="dove-siamo">
     <br>
     <center>
         <h1>Dove Siamo</h1><br>
@@ -6,4 +6,4 @@
     </center>
 </div>
 
-<center><hr style="margin-top: 4%"></center>
+<center><hr></center>

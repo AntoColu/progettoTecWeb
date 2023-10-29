@@ -1,28 +1,35 @@
-.footer {
+footer {
     background-color: #333; /* Colore di sfondo del footer */
     color: #fff; /* Colore del testo */
-    padding: 20px 0; /* Spaziatura interna sopra e sotto il footer */
-    text-align: center; /* Allinea il testo al centro */
+    padding: 30px 20px; /* Spaziatura interna sopra e sotto il footer */
+    text-align: center;
     margin-top: 3%;
   }
   
-  /* Stile per i link nel footer */
-.footer a {
+/* Stile per i link nel footer */
+footer a {
     color: #fff; /* Colore del testo dei link */
-    text-decoration: none; /* Rimuovi la sottolineatura dei link */
+    text-decoration: none; /* Rimozione della sottolineatura dei link */
     margin: 0 15px; /* Spaziatura tra i link */
     font-weight: bold; /* Grassetto */
     transition: color 0.3s; /* Transizione del colore al passaggio del mouse */
 }
   
-  /* Cambia colore dei link al passaggio del mouse */
-.footer a:hover {
-    color: #e74c3c; /* Cambia colore al passaggio del mouse */
+/* Cambio colore dei link al passaggio del mouse */
+footer a:hover {
+    color: #e74c3c;
 }
   
-  /* Stile per il testo del copyright nel footer */
-.footer .copyright {
+/* Stile per il testo del copyright nel footer */
+footer .dati {
     margin-top: 10px; /* Spaziatura dal margine superiore */
     font-size: 14px; /* Dimensione del testo */
     color: #7a7a7a; /* Colore del testo */
+}
+
+/* Posizionamento degli elementi dell'elenco in orizzontale */
+.footer-ul .footer-li {
+  align-items: center;
+  display: inline-block;
+  margin-right: 20px;
 }

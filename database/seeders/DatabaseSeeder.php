@@ -150,26 +150,6 @@ class DatabaseSeeder extends Seeder
 
 
         /*
-        *   Tabella dedicata alle immagini delle auto
-        */
-        /*DB::table('foto')->insert([
-            ['nome' => 'Fiat500', 'estensione' => '.jpg', 'targa' => 'FQ123QF'],
-            ['nome' => 'FiatPanda', 'estensione' => '.jpg', 'targa' => 'FV456VF'],
-            ['nome' => 'Peugeot208', 'estensione' => '.jpg', 'targa' => 'GG753GG'],
-            ['nome' => 'ToyotaAygo', 'estensione' => '.jpg', 'targa' => 'GH842HG'],
-            ['nome' => 'FiatTipo', 'estensione' => '.jpg', 'targa' => 'GJ654JG'],
-            ['nome' => 'AudiA3', 'estensione' => '.jpg', 'targa' => 'FZ567ZF'],
-            ['nome' => 'VolkswagenGolf', 'estensione' => '.jpg', 'targa' => 'FG849GF'],
-            ['nome' => 'AudiA4', 'estensione' => '.jpg', 'targa' => 'GN946NG'],
-            ['nome' => 'MercedesC-Class', 'estensione' => '.jpg', 'targa' => 'FU159UF'],
-            ['nome' => 'Peugeot508', 'estensione' => '.jpg', 'targa' => 'GK987KG'],
-            ['nome' => 'AudiQ7', 'estensione' => '.jpg', 'targa' => 'GE806EG'],
-            ['nome' => 'JeepCompass', 'estensione' => '.jpg', 'targa' => 'FM852MF'],
-            ['nome' => 'AlfaRomeoStelvio', 'estensione' => '.jpg', 'targa' => 'GK819KK']
-        ]);*/
-
-
-        /*
         *   Tabella dedicata agli utenti con diversi ruoli
         */
         DB::table('utente')->insert([
@@ -194,6 +174,7 @@ class DatabaseSeeder extends Seeder
                 'username' => 'adminadmin', 'password' => Hash::make('41ecbOq3'), 'ruolo' => 'admin',
             ]
         ]);
+
 
         /*
         *   Tabella dedicata alla FAQ
@@ -243,7 +224,6 @@ class DatabaseSeeder extends Seeder
             ['id' => 4, 'mittente' => 'adminadmin', 'destinatario' => 'clieclie',
                 'messaggio' => 'Perché la password è un dato sensibile e non la mostriamo',
                 'created_at' => '2023-05-05 11:35:00'],
-
             ['id' => 5, 'mittente' => 'bertoberto', 'destinatario' => 'adminadmin',
                 'messaggio' => 'Come faccio a vedere le auto che hanno solo 5 posti?',
                 'created_at' => '2023-06-23 15:10:00'],

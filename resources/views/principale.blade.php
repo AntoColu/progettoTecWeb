@@ -45,7 +45,7 @@
         @yield('content')
 
         <!-- Footer della pagina -->
-        <footer class="footer">
+        <footer>
             @include('layouts/footer')
         </footer>
     </body>

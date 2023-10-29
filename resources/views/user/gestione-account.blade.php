@@ -3,7 +3,7 @@
 @section('title', "I tuoi dati")
 
 @section('content')
-    <div class="container">
+    <div class="container" style="margin-bottom: 9%;">
         <h2>I tuoi dati:</h2>
         <ul class="list-group mt-4 mb-4">
             <li class="list-group-item">

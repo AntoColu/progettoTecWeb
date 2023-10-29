@@ -3,7 +3,7 @@
 @section('title', "Le auto che hai noleggiato")
 
 @section('content')
-    <div class="container">
+    <div class="container" style="margin-bottom: 5%;">
         <h2 class="mb-5">Ecco tutte le auto che hai noleggiato:</h2>
 
         <div class="row justify-content-center">

@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <div style="margin: 2%">
+            <div style="margin: 2%; margin-bottom: 22%;">
                 {{ Form::submit('Accedi', ['class' => 'btn btn-primary']) }}
             </div>
 

@@ -1,92 +1,13 @@
-
-.services, .about-us, .reviews, .faq {
-    margin-top: 100px;
-}
-
-
 /********************/
 /**  Sezione home  **/
 /********************/
-.home {
-    height: 1000px;
-    display: flex;
-}
-
 hr {
     border: 0;
     height: 2px;
     width: 54%;
-    margin-top: 2%;
+    margin-top: 3%;
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
-}
-
-.title {
-    margin-top: -80px;
-    height: 100%;
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.title * {
-    margin-left: 70px;
-}
-
-.title span {
-    color: black;
-    font-weight: bold;
-    font-size: 26px;
-    font-style: italic;
-}
-
-.title img {
-    max-width: 100%;
-}
-
-
-/***********************/
-/**  Sezione servizi  **/
-/***********************/
-.services {
-    /* width: 100%; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-}
-
-.service-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.service {
-    height: 375px;
-    width: 300px;
-    padding: 15px;
-    border-radius: 20px;
-    border-top-right-radius: 100px;
-    box-shadow: 5px 5px 5px 5px #c6c6c6;
-}
-
-.titolo-carte {
-    padding-bottom: 10px;
-}
-
-.service:hover {
-    background: linear-gradient(45deg, #FFD625 30%, #414141 100%);
-}
-
-.img-container {
-    text-align: center;
 }
 
 
@@ -98,6 +19,7 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 2%;
 }
 
 
@@ -117,6 +39,14 @@ hr {
 }
 
 
+/****************************/
+/**  Sezione 'Dove siamo'  **/
+/****************************/
+.dove-siamo {
+    margin-top: 2%;
+}
+
+
 /*******************/
 /**  Sezione FAQ  **/
 /*******************/
@@ -126,6 +56,7 @@ hr {
     justify-content: center;
     align-items: center;
     gap: 40px;
+    margin-top: 3%;
 }
 
 .faq-container {
@@ -161,20 +92,4 @@ hr {
 .risposta {
     font-size: 20px;
     color: rgb(65, 65, 65);
-}
-
-/* BOTTONE DOCUMENTAZIONE */
-.bottone-documentazione {
-    border-radius: 13px;
-    width: 420px;
-    height: 60px;
-    background-color: #ffd725;
-    border: 3px solid #414141;
-    text-decoration: none;
-    font-size: 25px;
-    color: #414141;
-    position: relative;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 1s;
 }

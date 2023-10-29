@@ -24,15 +24,15 @@
         <p>Noleggia l'auto dei tuoi sogni e parti per la tua meta preferita!</p>
     </div>
 
-    <div id='chi-siamo'>
+    <div>
         @include('public.chi-siamo')
     </div>
 
-    <div id='dove-siamo'>
+    <div>
         @include('public.dove-siamo')
     </div>
 
-    <div id='faq'>
+    <div>
         @include('public.faq')
     </div>
 @endsection

@@ -1,4 +1,4 @@
-<div class="static chi-siamo">
+<div class="static chi-siamo" id="chi-siamo">
   <br><center><h1>Chi siamo</h1></center><br>
   <p>Benvenuti in Tavernelle Noleggi, la vostra destinazione di fiducia per il noleggio auto di alta qualità.</p>
   <p>Fondata con la passione per la mobilità e l'impegno per il servizio clienti, siamo orgogliosi di essere la scelta preferita per chi cerca un'esperienza di noleggio auto senza paragoni.</p>
