@@ -68,9 +68,6 @@ Route::prefix('user')->group(function () {
  *  Sezione STAFF livello 3
 **/
 
-Route::get('/home/staff', [StaffController::class, 'showHomeStaff'])->middleware('can:isStaff')
-    ->name('staff');
-
 Route::prefix('gestione-auto')->group(function () {
     Route::get("/", [StaffController::class, 'showGestioneAuto'])->middleware("can:isAdminOrStaff")
         ->name('gestione-auto');
@@ -163,11 +160,6 @@ Route::get("/statistiche", [AdminController::class, 'showStatistiche'])->middlew
 
 Route::match(['get', 'post'], "/statistiche/auto-nol", [AdminController::class, 'statisticheAuto'])->middleware('can:isAdmin')
     ->name('statistiche-auto');
-
-
-// Rotta per la homepage dell'admin
-Route::get('/home/admin', [AdminController::class, 'showHomeAdmin'])->middleware('can:isAdmin')
-    ->name('admin');
 
 /**
  *  FINE sezione ADMIN

@@ -52,11 +52,6 @@ class DatabaseSeeder extends Seeder
                 'descrizione' => '4 posti; 3 porte; Cambio manuale; Motore: 1200 cc 70 CV; Carburante: Benzina',
                 'prezzo' => 113, 'data_inizio' => '2023-01-22', 'data_fine' => '2023-02-22', 
                 'nome_img' => 'Fiat500'
-                /*'img_principale' => fread(fopen("./public/images/auto/Fiat500-principale.png", 'rb'), filesize("./public/images/Fiat500-principale.png")),
-                'img_destra' => fread(fopen("./public/images/auto/Fiat500-destra.png", 'rb'), filesize("./public/images/Fiat500-destra.png")),
-                'img_sinistra' => fread(fopen("./public/images/auto/Fiat500-sinistra.png", 'rb'), filesize("./public/images/Fiat500-sinistra.png")),
-                'img_frontale' => fread(fopen("./public/images/auto/Fiat500-frontale.png", 'rb'), filesize("./public/images/Fiat500-frontale.png")),
-                'img_posteriore' => fread(fopen("./public/images/auto/Fiat500-posteriore.png", 'rb'), filesize("./public/images/Fiat500-posteriore.png"))*/
             ],
             ['marca' => 'Fiat', 'modello' => 'Panda', 'targa' => 'FV456VF',
                 'anno' => 2019, 'nPosti' => 4,
@@ -205,37 +200,6 @@ class DatabaseSeeder extends Seeder
                 'risposta' => "Il prezzo include: la protezione dai furti, la limitazione della responsabilità dei danni, le tasse locali e le tasse stradali.
                             <br>Eventuali costi extra andranno pagati al momento del ritiro."
             ]
-        ]);
-
-
-        /*
-        *   Tabella dedicata alla messaggistica
-        */
-        DB::table('messaggio')->insert([
-            ['id' => 1, 'mittente' => 'clieclie', 'destinatario' => 'adminadmin',
-                'messaggio' => 'Salve vorrei informazioni riguardo il mio account',
-                'created_at' => '2023-05-05 10:15:00'],
-            ['id' => 2, 'mittente' => 'adminadmin', 'destinatario' => 'clieclie',
-                'messaggio' => 'Salve di cosa ha bisogno?',
-                'created_at' => '2023-05-05 10:30:00'],
-            ['id' => 3, 'mittente' => 'clieclie', 'destinatario' => 'adminadmin',
-                'messaggio' => 'Perché non vedo la mia password?',
-                'created_at' => '2023-05-05 11:00:00'],
-            ['id' => 4, 'mittente' => 'adminadmin', 'destinatario' => 'clieclie',
-                'messaggio' => 'Perché la password è un dato sensibile e non la mostriamo',
-                'created_at' => '2023-05-05 11:35:00'],
-            ['id' => 5, 'mittente' => 'bertoberto', 'destinatario' => 'adminadmin',
-                'messaggio' => 'Come faccio a vedere le auto che hanno solo 5 posti?',
-                'created_at' => '2023-06-23 15:10:00'],
-            ['id' => 6, 'mittente' => 'adminadmin', 'destinatario' => 'bertoberto',
-                'messaggio' => 'Salve, puoi impostare il filtro che trovi nella pagina del catalogo',
-                'created_at' => '2023-06-23 16:45:00'],
-            ['id' => 7, 'mittente' => 'bertoberto', 'destinatario' => 'adminadmin',
-                'messaggio' => 'Grazie! Stessa cosa vale per il prezzo?',
-                'created_at' => '2023-06-23 17:00:00'],
-            ['id' => 8, 'mittente' => 'adminadmin', 'destinatario' => 'bertoberto',
-                'messaggio' => 'Certamente, puoi impostare i filtri per: categoria, prezzo e numero di posti',
-                'created_at' => '2023-06-23 17:25:00']
         ]);
     }
 }

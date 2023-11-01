@@ -34,8 +34,8 @@
             {{ Form::close() }}
         </aside>
     </div>
-    <div class="container">
-        <h1>Storico delle auto noleggiate</h1>
+    <div class="container h-100 py-4">
+        <h1 style="margin-bottom: 5%">Storico delle auto noleggiate</h1>
         @if($auto_filtrate)
             <!-- Elenco delle auto noleggiate in un determinato mese -->
             <div class="row justify-content-center">

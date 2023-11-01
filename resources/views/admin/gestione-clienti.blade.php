@@ -3,11 +3,11 @@
 @section('title', 'Gestione clienti')
 
 @section('content')
-    <div class="container">
+    <div class="container h-100">
         <!-- Sezione dedicata alla presentazione di tutti i clienti dove,
             per ogni cliente, è possibile eliminarlo -->
         <section>
-            <h1> Elenco dei clienti: </h1>
+            <h1 class="mb-4"> Elenco dei clienti: </h1>
             <div class="row justify-content-center">
                 @foreach($clienti as $cliente)
                     <div class="card" style="width: 18rem; margin: 1%">

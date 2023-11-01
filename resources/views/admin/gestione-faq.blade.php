@@ -3,14 +3,14 @@
 @section('title', 'Gestione FAQ')
 
 @section('content')
-    <div class="container">
+    <div class="container h-100">
         <!-- Bottone per l'aggiunta di un nuovo cliente -->
         <a href="{{ route('inserisci-faq') }}" class="btn btn-primary">Inserisci nuova FAQ</a>
 
         <!-- Sezione dedicata alla presentazione di tutte le faq dove,
             per ogni faq, è possibile modificarla o eliminarla -->
         <section>
-            <h1> Elenco delle FAQ: </h1>
+            <h1 class="mb-4"> Elenco delle FAQ: </h1>
             <div class="row justify-content-center">
                 @foreach($faqs as $faq)
                     <div class="card" style="width: 18rem; margin: 1%">
@@ -27,7 +27,7 @@
             </div>
             
             <!-- Sezione per eventuale messaggio di successo o di errore -->
-            <div class="text-center">
+            <div class="text-center mt-5">
                 @if(session('success'))
                     <strong style="color: green">{{ session('success') }}</strong>
                 @endif

@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <div class="container align-items-center d-flex">
+    <div class="container align-items-center h-100">
         <div class="container text-center form_container">
             <h1 class="titolo_form mb-3">Che bello rivederti!</h1>
             <h2 class="titolo_form mb-5">Inserisci le tue credenziali d'accesso:</h2>
@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <div style="margin: 2%; margin-bottom: 22%;">
+            <div class="mt-5">
                 {{ Form::submit('Accedi', ['class' => 'btn btn-primary']) }}
             </div>
 

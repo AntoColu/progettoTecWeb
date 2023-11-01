@@ -11,15 +11,6 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    /**
-     *  Ritorno la pagina riguardante la homepage dell'admin
-    **/
-    public function showHomeAdmin(){
-        return view('admin/admin');
-    }
-
-
-
     ///*******************************************///
     /**  AREA DEDICATA ALLA GESTIONE DELLO STAFF  **/
     ///*******************************************///

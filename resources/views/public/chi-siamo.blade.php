@@ -4,7 +4,7 @@
   <p>Fondata con la passione per la mobilità e l'impegno per il servizio clienti, siamo orgogliosi di essere la scelta preferita per chi cerca un'esperienza di noleggio auto senza paragoni.</p>
 
   <br><center><h1>La nostra storia</h1></center><br>
-  <p>Da quando abbiamo aperto le nostre porte nel 1986, ci siamo impegnati a fornire soluzioni di noleggio auto convenienti, sicure e affidabili per soddisfare le esigenze dei nostri clienti.</p>
+  <p>Da quando abbiamo aperto le nostre porte nel 2010, ci siamo impegnati a fornire soluzioni di noleggio auto convenienti, sicure e affidabili per soddisfare le esigenze dei nostri clienti.</p>
   <p>Nel corso degli anni, abbiamo costantemente lavorato per migliorare i nostri servizi, costruendo una solida reputazione nel settore del noleggio auto.</p>
 </div>
 

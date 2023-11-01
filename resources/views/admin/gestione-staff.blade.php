@@ -3,14 +3,14 @@
 @section('title', 'Gestione staff')
 
 @section('content')
-    <div class="container">
+    <div class="container h-100">
         <!-- Bottone per l'aggiunta di un nuovo membro dello staff -->
         <a href="{{ route('inserisci-staff') }}" class="btn btn-primary">Nuovo membro staff</a>
 
         <!-- Sezione dedicata alla presentazione di tutti i membri dello staff dove,
             per ogni membro, è possibile modificarne i dati o eliminarlo -->
         <section>
-            <h1> Membri dello staff: </h1>
+            <h1 class="mb-4"> Membri dello staff: </h1>
             <div class="row justify-content-center">
                 @foreach($membri_staff as $staff)
                     <div class="card" style="width: 18rem; margin: 1%">
