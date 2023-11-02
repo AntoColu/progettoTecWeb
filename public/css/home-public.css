@@ -44,6 +44,23 @@ hr {
 /****************************/
 .dove-siamo {
     margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+
+/****************************/
+/**  Sezione 'Regolamento'  **/
+/****************************/
+.regolamento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+#elenco-regolamento {
+    padding-bottom: 1%;
 }
 
 

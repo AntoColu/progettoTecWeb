@@ -33,6 +33,10 @@
     </div>
 
     <div>
+        @include('public.regolamento')
+    </div>
+
+    <div>
         @include('public.faq')
     </div>
 @endsection
