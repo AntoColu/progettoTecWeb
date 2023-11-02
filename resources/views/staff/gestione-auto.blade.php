@@ -17,6 +17,7 @@
                         <img src="{{asset($img_path = 'images/auto/' . $auto->nome_img . '_principale.jpg')}}" class="card-img-top custom_card" alt="Foto Automobile">
                         <div class="card-body">
                             <h3 class="card-title">{{$auto->marca}} {{$auto->modello}} - {{$auto->anno}}</h3>
+                            <h5 class="card-text">Targa: {{$auto->targa}}</h5>
                             <p class="card-text">{{$auto->descrizione}}</p>
                             <h5 class="card-text">Prezzo giornaliero: € {{$auto->prezzo}}</h5>
                             <a href="{{ route('modifica-auto', [$auto->targa]) }}" class="btn btn-info">Modifica</a>

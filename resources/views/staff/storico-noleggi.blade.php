@@ -46,6 +46,7 @@
                 
                             <div class="card-body">
                                 <h3 class="card-title">{{$auto->marca}} {{$auto->modello}} - {{$auto->anno}}</h3>
+                                <h5 class="card-text">Targa: {{$auto->targa}}</h5>
                                 <h5 class="card-text">Utente: {{$auto->username}}</h5>
                                 <h6 class="card-text">Noleggiata dal: {{ \Carbon\Carbon::parse($auto->data_inizio)->format('d-m-Y') }}</h6>
                                 <h6 class="card-text">fino al: {{ \Carbon\Carbon::parse($auto->data_fine)->format('d-m-Y') }}</h6>

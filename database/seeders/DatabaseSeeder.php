@@ -23,21 +23,10 @@ class DatabaseSeeder extends Seeder
         *   Tabella dedicata alle categorie di auto: piccole, medie, grandi, SUV
         */
         DB::table('categoria')->insert([
-            ['catId' => 1, 'nome' => 'Piccole', 
-                'descrizione' => 'Automobili compatte, ottime per l&rsquo;utilizzo in citt&agrave'
-            ],
-            ['catId' => 2, 'nome' => 'Medie', 
-                'descrizione' => 'Automobili non troppo grandi, che permettono un buon utilizzo cittadino, 
-                                ma anche possibilit&agrave di spostamenti più lunghi'
-            ],
-            ['catId' => 3, 'nome' => 'Grandi', 
-                'descrizione' => 'Automobili comode ed ottime per affrontare lunghi spostamenti, 
-                                con maggiore spazio per i bagagli'
-            ],
-            ['catId' => 4, 'nome' => 'SUV', 
-                'descrizione' => 'Automobili grandi e alte, che permettono una visuale migliore alla guida 
-                                ed un comfort di primo livello'
-            ]
+            ['catId' => 1, 'nome' => 'Piccole'],
+            ['catId' => 2, 'nome' => 'Medie'],
+            ['catId' => 3, 'nome' => 'Grandi'],
+            ['catId' => 4, 'nome' => 'SUV']
         ]);
 
 
