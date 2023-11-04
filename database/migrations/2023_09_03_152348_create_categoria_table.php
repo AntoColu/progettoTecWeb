@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('categoria', function (Blueprint $table) {
             $table->integer('catId')->unsigned()->primary();
             $table->string('nome',7);
-            $table->string('descrizione',255);
         });
     }
 

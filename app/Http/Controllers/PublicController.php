@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Auto;
 use App\Models\User;
-use App\Models\FAQ;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class PublicController extends Controller

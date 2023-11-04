@@ -60,7 +60,7 @@
             {{ Form::close() }}
         </aside>
     </div>
-    <div class="container">
+    <div class="container h-100">
         <section>
             <h1 class="mt-5 mb-3">Auto disponibili al noleggio</h1>
             <!-- Elenco di tutte le auto a catalogo, usando la struttura di Bootstrap "card" -->
